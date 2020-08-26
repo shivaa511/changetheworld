@@ -583,6 +583,7 @@
                             <fieldset>
                               
                                 <div class="form-group">
+                                        <h4>Discover your personality , Please rank the imporatance of the following charecteristics on a scale 1 disagree strongly to 7 agree strongly</h4>
                                         <table class="table">
                                               <thead>
                                                 <tr>
@@ -1417,11 +1418,11 @@
                                               <thead>
                                                 <tr>
                                                 <th scope="col">Score</th>
-                                                  <th scope="col">1</th>
-                                                  <th scope="col">2</th>
-                                                  <th scope="col">3</th>
-                                                  <th scope="col">4</th>
-                                                  <th scope="col">5</th>
+                                                  <th scope="col">Not important at all</th>
+                                                  <th scope="col">Not important</th>
+                                                  <th scope="col">Neutral</th>
+                                                  <th scope="col">Important</th>
+                                                  <th scope="col">Very important</th>
                                                   
                                                 </tr>
                                               </thead>
@@ -2296,6 +2297,7 @@
                                 <div class="form-group"  >
                                     <h5>5. Which working hour model would you prefer?</h5>
                                     <select class="form-control" name="whereworkplace">
+                                        <option value="" selected="selected" disabled="disabled">-- select your working hour model  --</option>
                                         <option>Fixed working time</option>
                                         <option>Flexible working time (with core time) </option>
                                         <option>Flexible working time (without core time)</option>
@@ -2367,7 +2369,11 @@
         $(".time1").each(function(){
             sum += +$(this).val();
         });
-        $(".total").val(sum);
+        
+    
+            $(".total").val(sum);
+       
+   
     });
         function CheckRadio(){
              
