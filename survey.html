@@ -480,16 +480,58 @@
                                 
                                 <div class="form-group"  >
                                     <h5>6. How is your weekly working time allocated(one week = 100% => max. 100%?</h5>
-                                    <select class="form-control" name="Size">
-                                        <option>Concentration, silent work at the workstation</option>
-                                        <option>Speaking at the workstation (e. g. phonecalls, videoconferences, personal talks at workstation)</option>
-                                        <option>In conference rooms</option>
-                                        <option>Making phone calls at the workstation</option>
-                                        <option>Informal meeting places</option>
-                                        <option>Working with objects at the workstation</option>
-                                        <option>Workshops/laboratory (e. g. examing samples, drafting plans) </option>
-                                      
-                                    </select>
+                                    
+                                    <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                  
+                                                
+                                                </tr>
+                                              </thead>
+                                              <tbody>
+                                                <tr>
+                                                  <td scope="row">Concentration, silent work at the workstation</td>
+                                                  <td><input type="text" class="form-control time1"  name="workstaion" placeholder="value" value =""></td>
+                                                  
+                                                </tr>
+                                                <tr>
+                                                  <td scope="row">Speaking at the workstation (e. g. phonecalls, videoconferences, personal talks at workstation)</td>
+                                                  <td><input type="text" class="form-control time1"  name="workstaion" placeholder="value" value =""></td>
+                                                  
+                                                </tr>
+                                                  <tr>
+                                                  <td scope="row">In conference rooms</td>
+                                                  <td><input type="text" class="form-control time1"  name="workstaion" placeholder="value" value =""></td>
+                                                  
+                                                </tr>
+                                                  <tr>
+                                                  <td scope="row">Making phone calls at the workstation</td>
+                                                  <td><input type="text" class="form-control time1"  name="workstaion" placeholder="value" value =""></td>
+                                                  
+                                                </tr>
+                                                  <tr>
+                                                  <td scope="row">Informal meeting places</td>
+                                                  <td><input type="text" class="form-control time1"  name="workstaion" placeholder="value" value =""></td>
+                                                  
+                                                </tr>
+                                                  <tr>
+                                                  <td scope="row">Working with objects at the workstation</td>
+                                                  <td><input type="text" class="form-control time1"  name="workstaion" placeholder="value" value =""></td>
+                                                  
+                                                </tr>
+                                                  <tr>
+                                                  <td scope="row">Workshops/laboratory (e. g. examing samples, drafting plans)</td>
+                                                  <td><input type="text" class="form-control time1"  name="workstaion" placeholder="value" value =""></td>
+                                                  
+                                                </tr>
+                                                  <tr>
+                                                  <th scope="row">Total</th>
+                                                  <td><input type="text" class="form-control total"  name="total" placeholder="value" value =""></td>
+                                                  
+                                                </tr>
+                                              </tbody>
+                                        </table>
+                                    
                                 </div>
                                 <div class="form-group"  >
                                     <h5>7.In what kind of office type are you working?</h5>
@@ -2319,6 +2361,14 @@
             
             myRadio.value = "shiva";
         }
+            
+        $(document).on("change", ".time1", function() {
+        var sum = 0;
+        $(".time1").each(function(){
+            sum += +$(this).val();
+        });
+        $(".total").val(sum);
+    });
         function CheckRadio(){
              
              var val = document.querySelector('input[name="optradio"]:checked').value;
