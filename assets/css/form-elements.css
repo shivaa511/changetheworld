@@ -1,7 +1,9 @@
 
 input[type="text"], 
-input[type="password"], 
-textarea, 
+input[type="password"],
+input[type="radio"], 
+textarea,
+select,
 textarea.form-control {
 	height: 35px;
     margin: 0;
@@ -28,7 +30,10 @@ textarea.form-control {
 }
 
 input[type="text"]:focus, 
-input[type="password"]:focus, 
+input[type="password"]:focus,
+input[type="radio"]:focus, 
+select:focus,
+select:focus.form-control:focus,
 textarea:focus, 
 textarea.form-control:focus {
 	outline: 0;

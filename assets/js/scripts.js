@@ -38,7 +38,7 @@ jQuery(document).ready(function() {
     */
     $('.f1 fieldset:first').fadeIn('slow');
     
-    $('.f1 input[type="text"], .f1 input[type="password"], .f1 textarea').on('focus', function() {
+    $('.f1 input[type="text"], .f1 input[type="password"],.f1 input[type="radio"], .f1 textarea, .f1 select' ).on('focus', function() {
     	$(this).removeClass('input-error');
     });
     
@@ -51,7 +51,7 @@ jQuery(document).ready(function() {
     	var progress_line = $(this).parents('.f1').find('.f1-progress-line');
     	
     	// fields validation
-    	parent_fieldset.find('input[type="text"], input[type="password"], textarea').each(function() {
+    	parent_fieldset.find('input[type="text"], input[type="password"], textarea, select').each(function() {
     		if( $(this).val() == "" ) {
     			$(this).addClass('input-error');
     			next_step = false;
@@ -60,8 +60,59 @@ jQuery(document).ready(function() {
     			$(this).removeClass('input-error');
     		}
     	});
+        
+        var textgender = document.getElementById("textgender");
+        if(($("input[name='usersex']:checked").length === 0)){
+                        next_step = false;
+						textgender.style.display = "block";
+            
+            
+                        }
+        else {
+            
+            textgender.style.display = "none";
+        }
+       if ($("#religion :selected").val() == 0) {
+                $("#religion").addClass("input-error");
+                next_step = false;
+            }
+        else {
+    			$("#religion").removeClass('input-error');
+    		}
+        
+        if ($("#country :selected").val() == 0) {
+                $("#country").addClass("input-error");
+                next_step = false;
+            }
+        else {
+    			$("#country").removeClass('input-error');
+    		}
+        if ($("#workarea :selected").val() == 0) {
+                $("#workarea").addClass("input-error");
+                next_step = false;
+            }
+        else {
+    			$("#workarea").removeClass('input-error');
+    		}
+        if ($("#offficetype :selected").val() == 0) {
+                $("#offficetype").addClass("input-error");
+                next_step = false;
+            }
+        else {
+    			$("#offficetype").removeClass('input-error');
+    		}
+        if ($("#Worktypology :selected").val() == 0) {
+                $("#Worktypology").addClass("input-error");
+                next_step = false;
+            }
+        else {
+    			$("#Worktypology").removeClass('input-error');
+    		}
+        
+            
     	// fields validation
     	
+        
     	if( next_step ) {
     		parent_fieldset.fadeOut(400, function() {
     			// change icons
@@ -74,7 +125,8 @@ jQuery(document).ready(function() {
     			scroll_to_class( $('.f1'), 20 );
 	    	});
     	}
-    	
+      
+       
     });
     
     // previous step
@@ -99,8 +151,8 @@ jQuery(document).ready(function() {
     $('.f1').on('submit', function(e) {
     	
     	// fields validation
-    	$(this).find('input[type="text"], input[type="password"], textarea').each(function() {
-    		if( $(this).val() == "" ) {
+    	$(this).find('select').each(function() {
+    		if( $(this).val() == "" || $(this).val() == 0 ) {
     			e.preventDefault();
     			$(this).addClass('input-error');
     		}
@@ -109,6 +161,11 @@ jQuery(document).ready(function() {
     		}
     	});
     	// fields validation
+      
+     
+       
+					
+        
     	
     });
     

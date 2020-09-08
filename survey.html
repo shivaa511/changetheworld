@@ -15,6 +15,11 @@
 		<link rel="stylesheet" href="assets/css/form-elements.css">
         <link rel="stylesheet" href="assets/css/style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="validation.js"></script><!--
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.min.css" />-->
         
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -97,6 +102,71 @@
     margin-bottom: 10px
 }
         
+        
+input[type=range] {
+    -webkit-appearance: none;
+    margin: 20px 0;
+    width: 100%;
+}
+input[type=range]:focus {
+    outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: #03a9f4;
+    border-radius: 25px;
+}
+input[type=range]::-webkit-slider-thumb {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 4px 0 rgba(0,0,0, 1);
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -8px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #03a9f4;
+}
+.range-wrap{
+    width: 500px;
+    position: relative;
+}
+.range-value{
+    position: absolute;
+    top: -50%;
+}
+.range-value span{
+    width: 30px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    background: #03a9f4;
+    color: #fff;
+    font-size: 12px;
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 6px;
+}
+.range-value span:before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 10px solid #03a9f4;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    margin-top: -1px;
+}
     </style>
 
     </head>
@@ -118,7 +188,7 @@
                 
                 <div class="row">
                     <div>
-                    	<form role="form" action="thankyou.html" method="post" class="f1" name="google-sheet">
+                    	<form role="form" action="thankyou.html" method="post" class="f1" name="google-sheet" id ="surveyform" >
                     		<div class="f1-steps">
                     			<div class="f1-progress">
                     			    <div class="f1-progress-line" data-now-value="16.66" data-number-of-steps="3" style="width: 16.66%;"></div>
@@ -143,16 +213,21 @@
                     		<fieldset>
                     		 
                     			<div class="form-group">
-                                        <h5>1. What is your sex?</h5>
+                                        <h5>1. What is your Gender?</h5>
                                         
                                         <div class="form-check form-check-inline">
-                                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                          <input class="form-check-input" type="radio" name="usersex" id="inlineRadio1" value="1">
                                           <label class="form-check-label" for="inlineRadio1">Male</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                          <input class="form-check-input" type="radio" name="usersex" id="inlineRadio2" value="2" >
                                           <label class="form-check-label" for="inlineRadio2">Female</label>
                                         </div>
+                                       <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="radio" name="usersex" id="inlineRadio3" value="3" >
+                                          <label class="form-check-label" for="inlineRadio3">Others</label>
+                                        </div>
+                                       <p id="textgender" style="display:none;color: red">Please select one of the above option !!</p>
                                 </div>
                                 <div class="form-group">
                                         <h5>2. What is your Age?</h5>
@@ -161,7 +236,7 @@
                                 </div>
                                 <div class="form-group"  >
                                     <h5>3. What is your Religion?</h5>
-                                    <select class="form-control dropdown" id="religion" name="religion" >
+                                    <select class="form-control" id="religion" name="religion" class="required">
                                         <option value="" selected="selected" disabled="disabled">-- select one --</option>
                                         <option value="African Traditional &amp; Diasporic">African Traditional &amp; Diasporic</option>
                                         <option value="Agnostic">Agnostic</option>
@@ -189,14 +264,14 @@
                                         <option value="primal-indigenous">primal-indigenous</option>
                                         <option value="Other">Other</option>
                                       </select>
-                                    
+                                      
                                     
                                     
                                     
                                 </div>
                                 <div class="form-group">
                                     <h5>4. Where are you from?</h5>
-                                       <select class="form-control" name="Country" >
+                                       <select class="form-control" id ="country" name="Country" >
                                            
                                            <option value="" selected="selected" disabled="disabled">-- select your country --</option>
                                            <option value="Afganistan">Afghanistan</option>
@@ -448,11 +523,9 @@
                                     </select>
                                 </div>
                                 
-                                
-                                
                                 <div class="form-group"  >
-                                    <h5>5. Whats your profession? (Area of work/studies)</h5>
-                                    <select class="form-control" name="workarea">
+                                    <h5>5. What is your profession? (Area of work/studies)</h5>
+                                    <select class="form-control" id ="workarea" name="workarea">
                                         <option value="" selected="selected" disabled="disabled">-- select your profession --</option>
                                         <option>Public institutions, government agencies, associations</option>
                                         <option>consulting communication</option>
@@ -474,12 +547,12 @@
                                         <option>Consumer goods</option>
                                         <option>Food, luxury foods</option>
                                         <option>Skilled crafts, trades</option>
-                                        <option>Mecial technology</option>
+                                        <option>Medical technology</option>
                                     </select>
                                 </div>
                                 
                                 <div class="form-group"  >
-                                    <h5>6. How is your weekly working time allocated(one week = 100% => max. 100%?</h5>
+                                    <h5>6. How is your weekly working time allocated (Total of 100% in One Week)</h5>
                                     
                                     <table class="table table-bordered">
                                             <thead>
@@ -491,37 +564,37 @@
                                               <tbody>
                                                 <tr>
                                                   <td scope="row">Concentration, silent work at the workstation</td>
-                                                  <td><input type="text" class="form-control time1"  name="workstaion" placeholder="value" value =""></td>
+                                                  <td><input type="text" class="form-control time1"  name="workstaiona" placeholder="value" value =""></td>
                                                   
                                                 </tr>
                                                 <tr>
                                                   <td scope="row">Speaking at the workstation (e. g. phonecalls, videoconferences, personal talks at workstation)</td>
-                                                  <td><input type="text" class="form-control time1"  name="workstaion" placeholder="value" value =""></td>
+                                                  <td><input type="text" class="form-control time1"  name="workstaionb" placeholder="value" value =""></td>
                                                   
                                                 </tr>
                                                   <tr>
                                                   <td scope="row">In conference rooms</td>
-                                                  <td><input type="text" class="form-control time1"  name="workstaion" placeholder="value" value =""></td>
+                                                  <td><input type="text" class="form-control time1"  name="workstaionc" placeholder="value" value =""></td>
                                                   
                                                 </tr>
                                                   <tr>
                                                   <td scope="row">Making phone calls at the workstation</td>
-                                                  <td><input type="text" class="form-control time1"  name="workstaion" placeholder="value" value =""></td>
+                                                  <td><input type="text" class="form-control time1"  name="workstaiond" placeholder="value" value =""></td>
                                                   
                                                 </tr>
                                                   <tr>
                                                   <td scope="row">Informal meeting places</td>
-                                                  <td><input type="text" class="form-control time1"  name="workstaion" placeholder="value" value =""></td>
+                                                  <td><input type="text" class="form-control time1"  name="workstaione" placeholder="value" value =""></td>
                                                   
                                                 </tr>
                                                   <tr>
                                                   <td scope="row">Working with objects at the workstation</td>
-                                                  <td><input type="text" class="form-control time1"  name="workstaion" placeholder="value" value =""></td>
+                                                  <td><input type="text" class="form-control time1"  name="workstaionf" placeholder="value" value =""></td>
                                                   
                                                 </tr>
                                                   <tr>
                                                   <td scope="row">Workshops/laboratory (e. g. examing samples, drafting plans)</td>
-                                                  <td><input type="text" class="form-control time1"  name="workstaion" placeholder="value" value =""></td>
+                                                  <td><input type="text" class="form-control time1"  name="workstaiong" placeholder="value" value =""></td>
                                                   
                                                 </tr>
                                                   <tr>
@@ -535,9 +608,9 @@
                                 </div>
                                 <div class="form-group"  >
                                     <h5>7.In what kind of office type are you working?</h5>
-                                    <select class="form-control" name="Size">
+                                    <select class="form-control" id ="offficetype" name="offficetype">
                                         <option value="" selected="selected" disabled="disabled">-- select your office type --</option>
-                                        <option>individual office (enclosed office, one workstation for one person)</option>
+                                        <option>Individual office (enclosed office, one workstation for one person)</option>
                                         <option>Combination office (Special form of individual office with glass walls on the the side, with the door and an additonal multi-functional zone (e.g. meeting point,printer zone)</option>
                                         <option>Two-person office (enclosed office, two workstations for two persons)</option>
                                         <option>Multi-person office (enclosed office, 3-5 workstations)</option>
@@ -554,7 +627,7 @@
                                 
                                 <div class="form-group"  >
                                     <h5>8.How does your Worktypology look like? </h5>
-                                    <select class="form-control" name="Size">
+                                    <select class="form-control" id="Worktypology" name="Worktypology">
                                         <option value="" selected="selected" disabled="disabled">-- select your Worktypology  --</option>
                                         <option>Stationary (usage of same workspace)</option>
                                         <option>Variable (usage of different workspaces)</option>
@@ -568,7 +641,7 @@
                                 <div class="form-group-inline"  >
                                     <h5>9. Are you satisfied with your current working condtions? Rate from Worst 1 to 5 Best</h5>
                                      <div class="range-field my-4 w-25" >
-                                    <input class="border-0 slider11" type="range" min="0" max="5" />
+                                    <input class="border-0 slider11" name ="workconditionrating"style="width: 50%" type="range" min="0" max="5" />
                                       <span class="font-weight-bold text-primary ml-2 mt-1 valueSpan"></span>
                                     
                                     </div>
@@ -576,7 +649,7 @@
                                 </div>
                                 
                                 <div class="f1-buttons">
-                                    <button type="button" class="btn btn-next">Next</button>
+                                    <button id ="firstn"  type="button" class="btn btn-next">Next</button>
                                 </div>
                             </fieldset>
 
@@ -584,6 +657,7 @@
                               
                                 <div class="form-group">
                                         <h4>Discover your personality , Please rank the imporatance of the following charecteristics on a scale 1 disagree strongly to 7 agree strongly</h4>
+                                     
                                         <table class="table">
                                               <thead>
                                                 <tr>
@@ -1414,6 +1488,7 @@
                             <fieldset>
                                 <div class="form-group">
                                         <h5>1. Which of these factors is most important for your well-being at work? Please rank from not important at all 1 – to very important 5 - Scale from 1-5</h5>
+                                    <p id="perosnalityerror" style="display:none;color: red">Please select one of the above option !!</p>
                                         <table class="table">
                                               <thead>
                                                 <tr>
@@ -2259,7 +2334,7 @@
                                 
                                 <div class="form-group"  >
                                     <h5>2. What kind of workstation type or distribution would you prefer?</h5>
-                                    <select class="form-control" name="workstationtype">
+                                    <select class="form-control" id ="workdistribution" name="workdistribution">
                                         <option value="" selected="selected" disabled="disabled">-- select your workstation type --</option>
                                         <option>individual office (enclosed office, one workstation for one person)</option>
                                         <option>Combination office (Special form of individual office with glass walls on the the side, with the door and an additonal multi-functional zone (e.g. meeting point, printer zone) </option>
@@ -2272,7 +2347,7 @@
                                 
                                 <div class="form-group"  >
                                     <h5>3. I am at my most productive when working…</h5>
-                                    <select class="form-control" name="productivity">
+                                    <select class="form-control" name="productivitywork">
                                         <option value="" selected="selected" disabled="disabled">-- select your workstation type --</option>
                                         <option>Away from my desk</option>
                                         <option>from home</option>
@@ -2286,7 +2361,7 @@
                                 
                                 <div class="form-group"  >
                                     <h5>4. Which Worktypology you would prefer?</h5>
-                                    <select class="form-control" name="whereworkplace">
+                                    <select class="form-control" name="whereworkplaceprefer">
                                         <option value="" selected="selected" disabled="disabled">-- select your Worktypology  --</option>
                                         <option>Stationary (usage of same workspace)</option>
                                         <option>Variable (usage of different workspaces) </option>
@@ -2296,7 +2371,7 @@
                                 
                                 <div class="form-group"  >
                                     <h5>5. Which working hour model would you prefer?</h5>
-                                    <select class="form-control" name="whereworkplace">
+                                    <select class="form-control" name="hourmodel">
                                         <option value="" selected="selected" disabled="disabled">-- select your working hour model  --</option>
                                         <option>Fixed working time</option>
                                         <option>Flexible working time (with core time) </option>
@@ -2305,30 +2380,415 @@
                                         <option>Trust based working time (without core time))</option>
                                     </select>
                                 </div>
-                                <div class="form-card">
-                        <h5 class="sub-heading">6. What ratio of the following pairs of workfactors would you like?</h5>
-                        <div class="row px-3 radio-group">
-                            <div class="card-block text-center radio selected">
-                                <div class="image-icon"> <img class="icon icon1" src="https://i.imgur.com/vZxfo9x.png"> </div>
-                                <p class="sub-desc">One time paper cleanout</p>
-                            </div>
-                            <span> VS</span>
-                            <div class="card-block text-center radio">
-                                <div class="image-icon"> <img class="icon icon1 fit-image" src="https://i.imgur.com/ynKYPkk.png"> </div>
-                                <p class="sub-desc">Hard Drive destruction</p>
-                            </div>
-                            
-                   
-                        </div>
+                                <div class="form-group">
+                                <h5>6. What ratio of the following pairs of workfactors would you like?</h5>
+                                <table class="table">
+                                            
+                                            <tbody>
+                                              <tr>
+                                                
+                                                <td>
+                                                
+                                                <div class="card" style="width:200px;float: right"><br><br>
+                                                    <img class="card-img-top" src="assets/img/family.png" alt="Card image" style="width:90%" width="150" height="150">
+                                                    <div class="card-body"> <br>
+
+                                                      <p class="card-text" style ="text-align: center">Work with human</p>
+
+                                                    </div>
+                                                </div>
+                                                  
+                                                  
+                                                </td>
+                                                <td>
+                                                <h5 class="text-center">Work with human or things/data</h5>
+                                                <div class="range-wrap" style="width: 95%;padding-top:70px;">
+                                                  <input class="border-0 slider111" type="range" min="-100" max="100" />
+                                                    <span class="font-weight-bold text-primary ml-2 mt-1 valueSpana"></span>
+                                                </div>
+                                                
+                                               
+                                                 
+                                                </td>
+                                                <td>
+                                                  <div class="card" style="width:200px;float: left"><br><br>
+                                                    <img class="card-img-top" src="assets/img/presentation.png" alt="Card image" style="width:90%" width="150" height="150">
+                                                    <div class="card-body"><br>
+
+                                                      <p class="card-text" style ="text-align: center">Work with things/data</p>
+
+                                                    </div>
+                                                </div>
+                                        
+                                                  
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                
+                                                <td>
+                                                
+                                                <div class="card" style="width:200px;float: right"><br><br>
+                                                    <img class="card-img-top" src="assets/img/interview.png" alt="Card image" style="width:90%" width="150" height="150">
+                                                    <div class="card-body"> <br>
+
+                                                      <p class="card-text" style ="text-align: center">Personal</p>
+
+                                                    </div>
+                                                </div>
+                                                  
+                                                  
+                                                </td>
+                                                <td>
+                                                <h5 class="text-center">Personal vs Virtual Communication</h5>
+                                                <div class="range-wrap" style="width: 95%;padding-top:70px;">
+                                                  <input class="border-0 slider112" type="range" min="-100" max="100" />
+                                                    <span class="font-weight-bold text-primary ml-2 mt-1 valueSpanb"></span>
+                                                </div>
+                                                
+                                               
+                                                 
+                                                </td>
+                                                <td>
+                                                  <div class="card" style="width:200px;float: left"><br><br>
+                                                    <img class="card-img-top" src="assets/img/meeting.png" alt="Card image" style="width:90%" width="150" height="150">
+                                                    <div class="card-body"><br>
+
+                                                      <p class="card-text" style ="text-align: center">Virtual</p>
+
+                                                    </div>
+                                                </div>
+                                        
+                                                  
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                
+                                                <td>
+                                                
+                                                <div class="card" style="width:200px;float: right"><br><br>
+                                                    <img class="card-img-top" src="assets/img/people.png" alt="Card image" style="width:90%" width="150" height="150">
+                                                    <div class="card-body"> <br>
+
+                                                      <p class="card-text" style ="text-align: center">Communication</p>
+
+                                                    </div>
+                                                </div>
+                                                  
+                                                  
+                                                </td>
+                                                <td>
+                                                <h5 class="text-center">Communication work vs concentration work</h5>
+                                                <div class="range-wrap" style="width: 95%;padding-top:70px;">
+                                                  <input class="border-0 slider113" type="range" min="-5" max="5" />
+                                                    <span class="font-weight-bold text-primary ml-2 mt-1 valueSpanc"></span>
+                                                </div>
+                                                
+                                               
+                                                 
+                                                </td>
+                                                <td>
+                                                  <div class="card" style="width:200px;float: left"><br><br>
+                                                    <img class="card-img-top" src="assets/img/focus.png" alt="Card image" style="width:90%" width="150" height="150">
+                                                    <div class="card-body"><br>
+
+                                                      <p class="card-text" style ="text-align: center">concentration</p>
+
+                                                    </div>
+                                                </div>
+                                        
+                                                  
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                
+                                                <td>
+                                                
+                                                <div class="card" style="width:200px;float: right"><br><br>
+                                                    <img class="card-img-top" src="assets/img/organization.png" alt="Card image" style="width:90%" width="150" height="150">
+                                                    <div class="card-body"> <br>
+
+                                                      <p class="card-text" style ="text-align: center">organised</p>
+
+                                                    </div>
+                                                </div>
+                                                  
+                                                  
+                                                </td>
+                                                <td>
+                                                <h5 class="text-center">Working task are organised vs improvised</h5>
+                                                <div class="range-wrap" style="width: 95%;padding-top:70px;">
+                                                  <input class="border-0 slider114" type="range" min="-5" max="5" />
+                                                    <span class="font-weight-bold text-primary ml-2 mt-1 valueSpand"></span>
+                                                </div>
+                                                
+                                               
+                                                 
+                                                </td>
+                                                <td>
+                                                  <div class="card" style="width:200px;float: left"><br><br>
+                                                    <img class="card-img-top" src="assets/img/idea.png" alt="Card image" style="width:90%" width="150" height="150">
+                                                    <div class="card-body"><br>
+
+                                                      <p class="card-text" style ="text-align: center">improvised</p>
+
+                                                    </div>
+                                                </div>
+                                        
+                                                  
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                
+                                                <td>
+                                                
+                                                <div class="card" style="width:200px;float: right"><br><br>
+                                                    <img class="card-img-top" src="assets/img/work.png" alt="Card image" style="width:90%" width="150" height="150">
+                                                    <div class="card-body"> <br>
+
+                                                      <p class="card-text" style ="text-align: center">routine</p>
+
+                                                    </div>
+                                                </div>
+                                                  
+                                                  
+                                                </td>
+                                                <td>
+                                                <h5 class="text-center">Work is based on routine vs new</h5>
+                                                <div class="range-wrap" style="width: 95%;padding-top:70px;">
+                                                  <input class="border-0 slider115" type="range" min="-5" max="5" />
+                                                    <span class="font-weight-bold text-primary ml-2 mt-1 valueSpane"></span>
+                                                </div>
+                                                
+                                               
+                                                 
+                                                </td>
+                                                <td>
+                                                  <div class="card" style="width:200px;float: left"><br><br>
+                                                    <img class="card-img-top" src="assets/img/newwork.png" alt="Card image" style="width:90%" width="150" height="150">
+                                                    <div class="card-body"><br>
+
+                                                      <p class="card-text" style ="text-align: center">new</p>
+
+                                                    </div>
+                                                </div>
+                                        
+                                                  
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                
+                                                <td>
+                                                
+                                                <div class="card" style="width:200px;float: right"><br><br>
+                                                    <img class="card-img-top" src="assets/img/worki.png" alt="Card image" style="width:90%" width="150" height="150">
+                                                    <div class="card-body"> <br>
+
+                                                      <p class="card-text" style ="text-align: center">Individual</p>
+
+                                                    </div>
+                                                </div>
+                                                  
+                                                  
+                                                </td>
+                                                <td>
+                                                <h5 class="text-center">Individual work vs teamwork</h5>
+                                                <div class="range-wrap" style="width: 95%;padding-top:70px;">
+                                                  <input class="border-0 slider116" type="range" min="-5" max="5" />
+                                                    <span class="font-weight-bold text-primary ml-2 mt-1 valueSpanf"></span>
+                                                </div>
+                                                
+                                               
+                                                 
+                                                </td>
+                                                <td>
+                                                  <div class="card" style="width:200px;float: left"><br><br>
+                                                    <img class="card-img-top" src="assets/img/teamwork.png" alt="Card image" style="width:90%" width="150" height="150">
+                                                    <div class="card-body"><br>
+
+                                                      <p class="card-text" style ="text-align: center">Team</p>
+
+                                                    </div>
+                                                </div>
+                                        
+                                                  
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                
+                                                <td>
+                                                
+                                                <div class="card" style="width:200px;float: right"><br><br>
+                                                    <img class="card-img-top" src="assets/img/planning.png" alt="Card image" style="width:90%" width="150" height="150">
+                                                    <div class="card-body"> <br>
+
+                                                      <p class="card-text" style ="text-align: center">Analog working evironment</p>
+
+                                                    </div>
+                                                </div>
+                                                  
+                                                  
+                                                </td>
+                                                <td>
+                                                <h5 class="text-center">Analog working evironment vs digital working environment</h5>
+                                                <div class="range-wrap" style="width: 95%;padding-top:70px;">
+                                                  <input class="border-0 slider117" type="range" min="-5" max="5" />
+                                                    <span class="font-weight-bold text-primary ml-2 mt-1 valueSpang"></span>
+                                                </div>
+                                                
+                                               
+                                                 
+                                                </td>
+                                                <td>
+                                                  <div class="card" style="width:200px;float: left"><br><br>
+                                                    <img class="card-img-top" src="assets/img/laptop.png" alt="Card image" style="width:90%" width="150" height="150">
+                                                    <div class="card-body"><br>
+
+                                                      <p class="card-text" style ="text-align: center">Digital working environmen</p>
+
+                                                    </div>
+                                                </div>
+                                        
+                                                  
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                
+                                                <td>
+                                                
+                                                <div class="card" style="width:200px;float: right"><br><br>
+                                                    <img class="card-img-top" src="assets/img/monitor.png" alt="Card image" style="width:90%" width="150" height="150">
+                                                    <div class="card-body"> <br>
+
+                                                      <p class="card-text" style ="text-align: center">Fixed workplace</p>
+
+                                                    </div>
+                                                </div>
+                                                  
+                                                  
+                                                </td>
+                                                <td>
+                                                <h5 class="text-center">Fixed workplace vs multiple workplaces</h5>
+                                                <div class="range-wrap" style="width: 95%;padding-top:70px;">
+                                                  <input class="border-0 slider118" type="range" min="-5" max="5" />
+                                                    <span class="font-weight-bold text-primary ml-2 mt-1 valueSpanh"></span>
+                                                </div>
+                                                
+                                               
+                                                 
+                                                </td>
+                                                <td>
+                                                  <div class="card" style="width:200px;float: left"><br><br>
+                                                    <img class="card-img-top" src="assets/img/multiwork.png" alt="Card image" style="width:90%" width="150" height="150">
+                                                    <div class="card-body"><br>
+
+                                                      <p class="card-text" style ="text-align: center">Multiple workplaces</p>
+
+                                                    </div>
+                                                </div>
+                                        
+                                                  
+                                                </td>
+                                              </tr>
+                                                
+                                            <tr>
+                                                
+                                                
+                                                
+                                                
+                                                
+                                              </tr>
+                                             
+                                                 
+                                                 
+                                            </tbody>
+                                </table>
+                                
+                                </div>
+                                 <div class="form-group">
+                                <table class="table" style=" margin-left: 50px;">
+    
+                                <tbody>
+
+                                  <tr>
+                                   <td>
+                                                
+                                                <div class="card" style="width:200px;float: left"><br><br>
+                                                    <img class="card-img-top" src="assets/img/skyscraper.png" alt="Card image" style="width:80%" width="150" height="150">
+                                                    <div class="card-body"> <br>
+
+                                                      <p class="card-text" style ="text-align: center">Sky Scrapper</p>
+                                                      
+                                                    </div>
+                                                </div>
+                                                <div class="range-wrap" style="width: 80%;padding-top:70px;">
+                                                  <input class="border-0 slider111" type="range" min="-5" max="5" />
+                                                    <span class="font-weight-bold text-primary ml-2 mt-1 valueSpani"></span>
+                                                </div>
+                                                  
+                                                </td>
+                                      <td>
+                                                
+                                                <div class="card" style="width:200px;float: left"><br><br>
+                                                    <img class="card-img-top" src="assets/img/homeofc.png" alt="Card image" style="width:80%" width="150" height="150">
+                                                    <div class="card-body"> <br>
+
+                                                      <p class="card-text" style ="text-align: center">Home Office</p>
+
+                                                    </div>
+                                                </div>
+                                                 <div class="range-wrap" style="width: 80%;padding-top:70px;">
+                                                  <input class="border-0 slider111" type="range" min="-5" max="5" />
+                                                    <span class="font-weight-bold text-primary ml-2 mt-1 valueSpank"></span>
+                                                </div> 
+                                                  
+                                                </td>
+                                      <td>
+                                                
+                                                <div class="card" style="width:200px;float: left"><br><br>
+                                                    <img class="card-img-top" src="assets/img/internet-of-things.png" alt="Card image" style="width:80%" width="150" height="150">
+                                                    <div class="card-body"> <br>
+
+                                                      <p class="card-text" style ="text-align: center">Fixed workplace</p>
+
+                                                    </div>
+                                                </div>
+                                                <div class="range-wrap" style="width: 80%;padding-top:70px;">
+                                                  <input class="border-0 slider111" type="range" min="-5" max="5" />
+                                                    <span class="font-weight-bold text-primary ml-2 mt-1 valueSpanl"></span>
+                                                </div>  
+                                                  
+                                                </td>
+                                      <td>
+                                                
+                                                <div class="card" style="width:200px;float: left"><br><br>
+                                                    <img class="card-img-top" src="assets/img/factory.png" alt="Card image" style="width:80%" width="150" height="150">
+                                                    <div class="card-body"> <br>
+
+                                                      <p class="card-text" style ="text-align: center">Fixed workplace</p>
+
+                                                    </div>
+                                                </div>
+                                                <div class="range-wrap" style="width: 80%;padding-top:70px;">
+                                                  <input class="border-0 slider111" type="range" min="-5" max="5" />
+                                                    <span class="font-weight-bold text-primary ml-2 mt-1 valueSpanm"></span>
+                                                </div> 
+                                                  
+                                                </td>
+                                      
+                                  </tr>
+                                  
+                                </tbody>
+                              </table>
                                 
                                 
+                                </div>
                          
                                 
                                 <div class="f1-buttons">
                                     <button type="button" class="btn btn-previous">Previous</button>
                                     <button type="submit" class="btn btn-submit">Submit</button>
                                 </div>
-                                </div>
+                                
                             </fieldset>
                     	
                     	</form>
@@ -2343,7 +2803,7 @@
         <script src="assets/js/jquery-1.11.1.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="assets/js/jquery.backstretch.min.js"></script>
-        <script src="assets/js/retina-1.1.0.min.js"></script>
+        
         <script src="assets/js/scripts.js"></script>
      
         <script>
@@ -2403,6 +2863,28 @@
     $valueSpan.html($value.val());
   });
 });
+$(document).ready(function() {
+
+  const $valueSpana = $('.valueSpana');
+  const $valuea = $('.slider111');
+  $valueSpana.html($valueSpana.val());
+  $valuea.on('input change', () => {
+    if($valuea.val() > 0)
+        $valueSpana.html("Work With Data :"+ $valuea.val());
+    else
+        $valueSpana.html("Work With human :"+ Math.abs($valuea.val()));
+  });
+  
+  const $valueSpanb = $('.valueSpanb');
+  const $valueb = $('.slider112');
+  $valueSpana.html($valueSpanb.val());
+  $valueb.on('input change', () => {
+    if($valueb.val() > 0)
+        $valueSpanb.html("Work With Data :"+ $valueb.val());
+    else
+        $valueSpanb.html("Work With human :"+ Math.abs($valueb.val()));
+  });
+});
          $(".neuroticism").click(function() {
           var totala = 0;
           $(".neuroticism:checked").each(function() { totala += +this.value/3; });
@@ -2445,7 +2927,21 @@ $(this).toggleClass('selected');
 });
 
    
-        
+        const
+            range = document.getElementById('range'),
+            rangeV = document.getElementById('rangeV'),
+            setValue = ()=>{
+                const
+                    newValue = Number( (range.value - range.min) * 100 / (range.max - range.min) ),
+                    newPosition = 10 - (newValue * 0.2);
+                rangeV.innerHTML = `<span>${range.value}</span>`;
+                rangeV.style.left = `calc(${newValue}% + (${newPosition}px))`;
+            };
+            
+        document.addEventListener("DOMContentLoaded", setValue);
+        range.addEventListener('input', setValue);
+
+           
 
         </script>
 
