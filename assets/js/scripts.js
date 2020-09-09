@@ -61,7 +61,8 @@ jQuery(document).ready(function() {
     		}
     	});
         
-        var textgender = document.getElementById("textgender");
+        
+         var textgender = document.getElementById("textgender");
         if(($("input[name='usersex']:checked").length === 0)){
                         next_step = false;
 						textgender.style.display = "block";
@@ -72,6 +73,8 @@ jQuery(document).ready(function() {
             
             textgender.style.display = "none";
         }
+        
+       
        if ($("#religion :selected").val() == 0) {
                 $("#religion").addClass("input-error");
                 next_step = false;
@@ -112,7 +115,8 @@ jQuery(document).ready(function() {
             
     	// fields validation
     	
-        
+      
+       
     	if( next_step ) {
     		parent_fieldset.fadeOut(400, function() {
     			// change icons
@@ -151,8 +155,8 @@ jQuery(document).ready(function() {
     $('.f1').on('submit', function(e) {
     	
     	// fields validation
-    	$(this).find('select').each(function() {
-    		if( $(this).val() == "" || $(this).val() == 0 ) {
+    	$(this).find('input[type="text"], input[type="password"],input[type="radio"], select').each(function() {
+    		if( $(this).val() == "" ) {
     			e.preventDefault();
     			$(this).addClass('input-error');
     		}
@@ -161,7 +165,13 @@ jQuery(document).ready(function() {
     		}
     	});
     	// fields validation
-      
+         if ($("#workdistribution :selected").val() == 0) {
+                $("#workdistribution").addClass("input-error");
+                e.preventDefault();
+            }
+        else {
+    			$("#workdistribution").removeClass('input-error');
+    		}
      
        
 					

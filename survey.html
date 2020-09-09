@@ -195,18 +195,18 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                     			</div>
                     			<div class="f1-step active">
                     				<div class="f1-step-icon"><i class="fa fa-user"></i></div>
-                    				<p>about</p>
+                    				<p>Current workspace of User</p>
                     			</div>
                     			<div class="f1-step">
                     				<div class="f1-step-icon"><i class="fa fa-university"></i></div>
-                    				<p>Different office types</p>
+                    				<p>Personality traits</p>
                     			</div>
                                 
                                
                                 
                     		    <div class="f1-step">
                     				<div class="f1-step-icon"><i class="fa fa-building-o"></i></div>
-                    				<p>Choose by own</p>
+                    				<p>His/her workspace preference</p>
                     			</div>
                     		</div>
                     		
@@ -232,7 +232,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                 <div class="form-group">
                                         <h5>2. What is your Age?</h5>
                                         
-                                        <input type="text" class="form-control"  name="Age" placeholder="value" >
+                                        <input type="text" class="form-control"  name="Age" placeholder="Value" >
                                 </div>
                                 <div class="form-group"  >
                                     <h5>3. What is your Religion?</h5>
@@ -261,7 +261,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                         <option value="Tenrikyo">Tenrikyo</option>
                                         <option value="Unitarian-Universalism">Unitarian-Universalism</option>
                                         <option value="Zoroastrianism">Zoroastrianism</option>
-                                        <option value="primal-indigenous">primal-indigenous</option>
+                                        <option value="primal-indigenous">Primal-indigenous</option>
                                         <option value="Other">Other</option>
                                       </select>
                                       
@@ -564,42 +564,42 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                               <tbody>
                                                 <tr>
                                                   <td scope="row">Concentration, silent work at the workstation</td>
-                                                  <td><input type="text" class="form-control time1"  name="workstaiona" placeholder="value" value =""></td>
+                                                  <td><input type="text" class="form-control time1"  name="workstaiona" placeholder="Value" value =""></td>
                                                   
                                                 </tr>
                                                 <tr>
                                                   <td scope="row">Speaking at the workstation (e. g. phonecalls, videoconferences, personal talks at workstation)</td>
-                                                  <td><input type="text" class="form-control time1"  name="workstaionb" placeholder="value" value =""></td>
+                                                  <td><input type="text" class="form-control time1"  name="workstaionb" placeholder="Value" value =""></td>
                                                   
                                                 </tr>
                                                   <tr>
                                                   <td scope="row">In conference rooms</td>
-                                                  <td><input type="text" class="form-control time1"  name="workstaionc" placeholder="value" value =""></td>
+                                                  <td><input type="text" class="form-control time1"  name="workstaionc" placeholder="Value" value =""></td>
                                                   
                                                 </tr>
                                                   <tr>
                                                   <td scope="row">Making phone calls at the workstation</td>
-                                                  <td><input type="text" class="form-control time1"  name="workstaiond" placeholder="value" value =""></td>
+                                                  <td><input type="text" class="form-control time1"  name="workstaiond" placeholder="Value" value =""></td>
                                                   
                                                 </tr>
                                                   <tr>
                                                   <td scope="row">Informal meeting places</td>
-                                                  <td><input type="text" class="form-control time1"  name="workstaione" placeholder="value" value =""></td>
+                                                  <td><input type="text" class="form-control time1"  name="workstaione" placeholder="Value" value =""></td>
                                                   
                                                 </tr>
                                                   <tr>
                                                   <td scope="row">Working with objects at the workstation</td>
-                                                  <td><input type="text" class="form-control time1"  name="workstaionf" placeholder="value" value =""></td>
+                                                  <td><input type="text" class="form-control time1"  name="workstaionf" placeholder="Value" value =""></td>
                                                   
                                                 </tr>
                                                   <tr>
                                                   <td scope="row">Workshops/laboratory (e. g. examing samples, drafting plans)</td>
-                                                  <td><input type="text" class="form-control time1"  name="workstaiong" placeholder="value" value =""></td>
+                                                  <td><input type="text" class="form-control time1"  name="workstaiong" placeholder="Value" value =""></td>
                                                   
                                                 </tr>
                                                   <tr>
                                                   <th scope="row">Total</th>
-                                                  <td><input type="text" class="form-control total"  name="total" placeholder="value" value =""></td>
+                                                  <td><input type="text" id="totaltime" class="form-control total"  name="total" placeholder="Value" value =""></td>
                                                   
                                                 </tr>
                                               </tbody>
@@ -639,9 +639,9 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                             
                                 </div>
                                 <div class="form-group-inline"  >
-                                    <h5>9. Are you satisfied with your current working condtions? Rate from Worst 1 to 5 Best</h5>
+                                    <h5>9. Are you satisfied with your current working conditions? Rate from Worst 1 to 5 Best</h5>
                                      <div class="range-field my-4 w-25" >
-                                    <input class="border-0 slider11" name ="workconditionrating"style="width: 50%" type="range" min="0" max="5" />
+                                    <input class="border-0 slider11" name ="workconditionrating"style="width: 50%" type="range" min="0" max="5"  value=""/>
                                       <span class="font-weight-bold text-primary ml-2 mt-1 valueSpan"></span>
                                     
                                     </div>
@@ -656,8 +656,9 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                             <fieldset>
                               
                                 <div class="form-group">
-                                        <h4>Discover your personality , Please rank the imporatance of the following charecteristics on a scale 1 disagree strongly to 7 agree strongly</h4>
-                                     
+                                        <h4>Discover your personality - Please rank the importance of the following characteristics on a
+scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
+                                       <p id="perosnalityerror" style="display:none;color: red">Please select one of the above option !!</p>
                                         <table class="table">
                                               <thead>
                                                 <tr>
@@ -779,7 +780,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                                   </td>
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">remains calm in tense situations</th>
+                                                  <th scope="row">Remains calm in tense situations</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -832,7 +833,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                                   </td>
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">is talkative</th>
+                                                  <th scope="row">Is talkative</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -885,7 +886,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                                   </td>
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">is outgoing,sociable</th>
+                                                  <th scope="row">Is outgoing,sociable</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -938,7 +939,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                                   </td>
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">is reserved</th>
+                                                  <th scope="row">Is reserved</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -991,7 +992,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                                   </td>
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">is original,comes up with new ideas</th>
+                                                  <th scope="row">Is original,comes up with new ideas</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -1044,7 +1045,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                                   </td>
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">values artistic, aesthetic experiences</th>
+                                                  <th scope="row">Values artistic, aesthetic experiences</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -1097,7 +1098,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                                   </td>
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">has an active imagination</th>
+                                                  <th scope="row">Has an active imagination</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -1150,7 +1151,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                                   </td>
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">is sometimes rude to others</th>
+                                                  <th scope="row">Is sometimes rude to others</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -1203,7 +1204,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                                   </td>
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">has a forgiving nature</th>
+                                                  <th scope="row">Has a forgiving nature</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -1256,7 +1257,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                                   </td>
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">is considerate and kind to almost everyone</th>
+                                                  <th scope="row">Is considerate and kind to almost everyone</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -1309,7 +1310,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                                   </td>
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">does a thorough job</th>
+                                                  <th scope="row">Does a thorough job</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -1362,7 +1363,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                                   </td>
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">tends to be lazy</th>
+                                                  <th scope="row">Tends to be lazy</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -1415,7 +1416,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                                   </td>
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">does things efficiently</th>
+                                                  <th scope="row">Does things efficiently</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -1481,14 +1482,14 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                 
                                 <div class="f1-buttons">
                                     <button type="button" class="btn btn-previous">Previous</button>
-                                    <button type="button" class="btn btn-next">Next</button>
+                                    <button type="button" id ="levelbtn" class="btn btn-next">Next</button>
                                 </div>
                             </fieldset>
 
                             <fieldset>
                                 <div class="form-group">
-                                        <h5>1. Which of these factors is most important for your well-being at work? Please rank from not important at all 1 – to very important 5 - Scale from 1-5</h5>
-                                    <p id="perosnalityerror" style="display:none;color: red">Please select one of the above option !!</p>
+                                        <h5>Discover your working preferences -  Please rank the following factors for your well-being at work on a scale from &quot;not important at all&quot; (1) to &quot; veryimportant &quot; (5).</h5>
+                                    
                                         <table class="table">
                                               <thead>
                                                 <tr>
@@ -1659,7 +1660,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                                   
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">Cleaness and saftyness</th>
+                                                  <th scope="row">Cleanliness and safetiness</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -1815,7 +1816,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                                   
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">Proximity of co-workerst</th>
+                                                  <th scope="row">Proximity of co-workerest</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -2248,7 +2249,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                                   
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">Office location (transport connectiviy, backyard, image, etc.)</th>
+                                                  <th scope="row">Office location (transport connectivity, backyard, image, etc.)</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -2336,25 +2337,25 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                     <h5>2. What kind of workstation type or distribution would you prefer?</h5>
                                     <select class="form-control" id ="workdistribution" name="workdistribution">
                                         <option value="" selected="selected" disabled="disabled">-- select your workstation type --</option>
-                                        <option>individual office (enclosed office, one workstation for one person)</option>
-                                        <option>Combination office (Special form of individual office with glass walls on the the side, with the door and an additonal multi-functional zone (e.g. meeting point, printer zone) </option>
+                                        <option>Individual office (enclosed office, one workstation for one person)</option>
+                                        <option>Combination office (Special form of individual office with glass walls on side, with the door and an additonal multi-functional zone (e.g. meeting point, printer zone) </option>
                                         <option>Two-person office (enclosed office, two workstations for two persons) </option>
                                         <option>Group office (6-20 workstations in one room)</option>
-                                        <option>Open-plan office (> 20 workstations in one roome</option>
+                                        <option>Open-plan office (> 20 workstations in one room</option>
                                         <option>Multi-space (flexible workstation/ location concepts, variety of opportunities for meetings, concentration, breaks, etc.)</option>
                                     </select>
                                 </div>
                                 
                                 <div class="form-group"  >
-                                    <h5>3. I am at my most productive when working…</h5>
+                                    <h5>3. I am most productive, when working...</h5>
                                     <select class="form-control" name="productivitywork">
                                         <option value="" selected="selected" disabled="disabled">-- select your workstation type --</option>
-                                        <option>Away from my desk</option>
+                                        <option>away from my desk</option>
                                         <option>from home</option>
-                                        <option>On my own</option>
-                                        <option>In a stimulating office</option>
-                                        <option>Amongst creative people</option>
-                                        <option>In a buzzy environment </option>
+                                        <option>on my own</option>
+                                        <option>in a stimulating office</option>
+                                        <option>imongst creative people</option>
+                                        <option>in a buzzy environment </option>
                                         <option>under time pressure</option>
                                     </select>
                                 </div>
@@ -2403,8 +2404,8 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                                 <td>
                                                 <h5 class="text-center">Work with human or things/data</h5>
                                                 <div class="range-wrap" style="width: 95%;padding-top:70px;">
-                                                  <input class="border-0 slider111" type="range" min="-100" max="100" />
-                                                    <span class="font-weight-bold text-primary ml-2 mt-1 valueSpana"></span>
+                                                  <input class="border-0 slider111" type="range" min="-10" max="10" />
+                                                    <span class="font-weight-bold text-primary ml-2 mt-1 valueSpana" name="workwithhumansdata" ></span>
                                                 </div>
                                                 
                                                
@@ -2441,7 +2442,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                                 <td>
                                                 <h5 class="text-center">Personal vs Virtual Communication</h5>
                                                 <div class="range-wrap" style="width: 95%;padding-top:70px;">
-                                                  <input class="border-0 slider112" type="range" min="-100" max="100" />
+                                                  <input class="border-0 slider112" type="range" min="-10" max="10" />
                                                     <span class="font-weight-bold text-primary ml-2 mt-1 valueSpanb"></span>
                                                 </div>
                                                 
@@ -2479,7 +2480,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                                 <td>
                                                 <h5 class="text-center">Communication work vs concentration work</h5>
                                                 <div class="range-wrap" style="width: 95%;padding-top:70px;">
-                                                  <input class="border-0 slider113" type="range" min="-5" max="5" />
+                                                  <input class="border-0 slider113" type="range" min="-10" max="10" />
                                                     <span class="font-weight-bold text-primary ml-2 mt-1 valueSpanc"></span>
                                                 </div>
                                                 
@@ -2517,7 +2518,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                                 <td>
                                                 <h5 class="text-center">Working task are organised vs improvised</h5>
                                                 <div class="range-wrap" style="width: 95%;padding-top:70px;">
-                                                  <input class="border-0 slider114" type="range" min="-5" max="5" />
+                                                  <input class="border-0 slider114" type="range" min="-10" max="10" />
                                                     <span class="font-weight-bold text-primary ml-2 mt-1 valueSpand"></span>
                                                 </div>
                                                 
@@ -2555,7 +2556,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                                 <td>
                                                 <h5 class="text-center">Work is based on routine vs new</h5>
                                                 <div class="range-wrap" style="width: 95%;padding-top:70px;">
-                                                  <input class="border-0 slider115" type="range" min="-5" max="5" />
+                                                  <input class="border-0 slider115" type="range" min="-10" max="10" />
                                                     <span class="font-weight-bold text-primary ml-2 mt-1 valueSpane"></span>
                                                 </div>
                                                 
@@ -2593,7 +2594,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                                 <td>
                                                 <h5 class="text-center">Individual work vs teamwork</h5>
                                                 <div class="range-wrap" style="width: 95%;padding-top:70px;">
-                                                  <input class="border-0 slider116" type="range" min="-5" max="5" />
+                                                  <input class="border-0 slider116" type="range" min="-10" max="10" />
                                                     <span class="font-weight-bold text-primary ml-2 mt-1 valueSpanf"></span>
                                                 </div>
                                                 
@@ -2631,7 +2632,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                                 <td>
                                                 <h5 class="text-center">Analog working evironment vs digital working environment</h5>
                                                 <div class="range-wrap" style="width: 95%;padding-top:70px;">
-                                                  <input class="border-0 slider117" type="range" min="-5" max="5" />
+                                                  <input class="border-0 slider117" type="range" min="-10" max="10" />
                                                     <span class="font-weight-bold text-primary ml-2 mt-1 valueSpang"></span>
                                                 </div>
                                                 
@@ -2669,7 +2670,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                                 <td>
                                                 <h5 class="text-center">Fixed workplace vs multiple workplaces</h5>
                                                 <div class="range-wrap" style="width: 95%;padding-top:70px;">
-                                                  <input class="border-0 slider118" type="range" min="-5" max="5" />
+                                                  <input class="border-0 slider118" type="range" min="-10" max="10" />
                                                     <span class="font-weight-bold text-primary ml-2 mt-1 valueSpanh"></span>
                                                 </div>
                                                 
@@ -2705,6 +2706,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                 
                                 </div>
                                  <div class="form-group">
+                                     <h5>What part of your working time would you like to spend where?</h5>
                                 <table class="table" style=" margin-left: 50px;">
     
                                 <tbody>
@@ -2721,7 +2723,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                                     </div>
                                                 </div>
                                                 <div class="range-wrap" style="width: 80%;padding-top:70px;">
-                                                  <input class="border-0 slider111" type="range" min="-5" max="5" />
+                                                  <input class="border-0 slider11a" type="range" min="0" max="10" />
                                                     <span class="font-weight-bold text-primary ml-2 mt-1 valueSpani"></span>
                                                 </div>
                                                   
@@ -2737,7 +2739,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                                     </div>
                                                 </div>
                                                  <div class="range-wrap" style="width: 80%;padding-top:70px;">
-                                                  <input class="border-0 slider111" type="range" min="-5" max="5" />
+                                                  <input class="border-0 slider11b" type="range" min="0" max="10" />
                                                     <span class="font-weight-bold text-primary ml-2 mt-1 valueSpank"></span>
                                                 </div> 
                                                   
@@ -2753,7 +2755,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                                     </div>
                                                 </div>
                                                 <div class="range-wrap" style="width: 80%;padding-top:70px;">
-                                                  <input class="border-0 slider111" type="range" min="-5" max="5" />
+                                                  <input class="border-0 slider11c" type="range" min="0" max="10" />
                                                     <span class="font-weight-bold text-primary ml-2 mt-1 valueSpanl"></span>
                                                 </div>  
                                                   
@@ -2769,7 +2771,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                                     </div>
                                                 </div>
                                                 <div class="range-wrap" style="width: 80%;padding-top:70px;">
-                                                  <input class="border-0 slider111" type="range" min="-5" max="5" />
+                                                  <input class="border-0 slider11d" type="range" min="0" max="10" />
                                                     <span class="font-weight-bold text-primary ml-2 mt-1 valueSpanm"></span>
                                                 </div> 
                                                   
@@ -2779,7 +2781,20 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                   
                                 </tbody>
                               </table>
-                                
+                                        <input type="hidden" class="form-control" id="humanorthings"  name = "humanorthings"  value="0" readonly>
+                                        <input type="hidden" class="form-control" id="PersonalvsVirtual"  name = "PersonalvsVirtual"  value="0" readonly>
+                                        <input type="hidden" class="form-control" id="Communication"  name = "Communication"  value="0" readonly>
+                                        <input type="hidden" class="form-control" id="organised"  name = "organised"  value="0" readonly>
+                                        <input type="hidden" class="form-control" id="routine"  name = "routine"  value="0" readonly>
+                                        <input type="hidden" class="form-control" id="Individual"  name = "Individual"  value="0" readonly>
+                                        <input type="hidden" class="form-control" id="Analog"  name = "Analog"  value="0" readonly>
+                                        <input type="hidden" class="form-control" id="multiplea"  name = "multiplea"  value="0" readonly>
+                                     
+                                        <input type="hidden" class="form-control" id="last1"  name = "last1"  value="0" readonly>
+                                        <input type="hidden" class="form-control" id="last2"  name = "last2"  value="0" readonly>
+                                        <input type="hidden" class="form-control" id="last3"  name = "last3"  value="0" readonly>
+                                        <input type="hidden" class="form-control" id="last4"  name = "last4"  value="0" readonly>
+                                        
                                 
                                 </div>
                          
@@ -2867,23 +2882,174 @@ $(document).ready(function() {
 
   const $valueSpana = $('.valueSpana');
   const $valuea = $('.slider111');
+  
   $valueSpana.html($valueSpana.val());
   $valuea.on('input change', () => {
-    if($valuea.val() > 0)
-        $valueSpana.html("Work With Data :"+ $valuea.val());
-    else
-        $valueSpana.html("Work With human :"+ Math.abs($valuea.val()));
+    if($valuea.val() > 0){
+        
+        $valueSpana.html("Work With Data :"+ $valuea.val()* 10 +"%");
+        $("#humanorthings").val("Work With Data :"+ $valuea.val()* 10 +"%");
+    }
+        
+        
+    else{
+        $valueSpana.html("Work With human :"+ $valuea.val()* -10 + "%");
+        $("#humanorthings").val("Work With human :"+ $valuea.val()* -10 + "%");
+    }
+        
   });
   
   const $valueSpanb = $('.valueSpanb');
   const $valueb = $('.slider112');
-  $valueSpana.html($valueSpanb.val());
+  $valueSpanb.html($valueSpanb.val());
   $valueb.on('input change', () => {
-    if($valueb.val() > 0)
-        $valueSpanb.html("Work With Data :"+ $valueb.val());
-    else
-        $valueSpanb.html("Work With human :"+ Math.abs($valueb.val()));
+    if($valueb.val() > 0){
+        $valueSpanb.html("Virtual Communication :"+ $valueb.val()* 10 +"%");
+        $("#PersonalvsVirtual").val("Virtual Communication :"+ $valueb.val()* 10 +"%");
+    }
+        
+    else{
+         $valueSpanb.html("Personal Communication  :"+ $valueb.val()* -10 +"%");
+         $("#PersonalvsVirtual").val("Personal Communication  :"+ $valueb.val()* -10 +"%");
+    }
+        
   });
+    
+  const $valueSpanc = $('.valueSpanc');
+  const $valuec = $('.slider113');
+  $valueSpanc.html($valueSpanc.val());
+  $valuec.on('input change', () => {
+    if($valuec.val() > 0){
+         $valueSpanc.html("Concentration work :"+ $valuec.val()* 10 +"%");
+         $("#Communication").val("Concentration work :"+ $valuec.val()* 10 +"%");
+    }
+        
+    else{
+         $valueSpanc.html("Communication work :"+ $valuec.val()* -10 +"%");
+         $("#Communication").val("Communication work :"+ $valuec.val()* -10 +"%");
+    }
+        
+  });
+  const $valueSpand = $('.valueSpand');
+  const $valued = $('.slider114');
+  $valueSpand.html($valueSpand.val());
+  $valued.on('input change', () => {
+    if($valued.val() > 0){
+         $valueSpand.html("Working task are improvised :"+ $valued.val()* 10 +"%");
+         $("#organised").val("Working task are improvised :"+ $valued.val()* 10 +"%");
+    }
+        
+    else{
+         $valueSpand.html("Working task are organised :"+ $valued.val()* -10 +"%");
+         $("#organised").val("Working task are organised :"+ $valued.val()* -10 +"%");
+    }
+        
+  });
+ 
+  const $valueSpane = $('.valueSpane');
+  const $valuee = $('.slider115');
+  $valueSpane.html($valueSpane.val());
+  $valuee.on('input change', () => {
+    if($valuee.val() > 0){
+         $valueSpane.html("Work is based on new :"+ $valuee.val()* 10 +"%");
+         $("#routine").val("Work is based on new :"+ $valuee.val()* 10 +"%");
+    }
+        
+    else{
+         $valueSpane.html("Work is based on routine :"+ $valuee.val()* -10 +"%");
+         $("#routine").val("Work is based on routine :"+ $valuee.val()* -10 +"%");
+    }
+        
+  });
+  
+  const $valueSpanf = $('.valueSpanf');
+  const $valuef = $('.slider116');
+  $valueSpanf.html($valueSpanf.val());
+  $valuef.on('input change', () => {
+    if($valuef.val() > 0){
+         $valueSpanf.html("Teamwork :"+ $valuef.val()* 10 +"%");
+         $("#Individual").val("Teamwork :"+ $valuef.val()* 10 +"%");
+    }
+        
+    else{
+         $valueSpanf.html("Individual work :"+ $valuef.val()* -10 +"%");
+         $("#Individual").val("Individual work :"+ $valuef.val()* -10 +"%");
+    }
+        
+  });
+  
+  const $valueSpang = $('.valueSpang');
+  const $valueg = $('.slider117');
+  $valueSpang.html($valueSpang.val());
+  $valueg.on('input change', () => {
+    if($valueg.val() > 0){
+         $valueSpang.html("Digital working environment :"+ $valueg.val()* 10 +"%");
+         $("#Analog").val("Digital working environment :"+ $valueg.val()* 10 +"%");
+    }
+        
+    else{
+         $valueSpang.html("Analog working evironment :"+ $valueg.val()* -10 +"%");
+         $("#Analog").val("Analog working evironment :"+ $valueg.val()* -10 +"%");
+    }
+        
+  });
+  
+  const $valueSpanh = $('.valueSpanh');
+  const $valueh = $('.slider118');
+  $valueSpanh.html($valueSpanh.val());
+  $valueh.on('input change', () => {
+    if($valueh.val() > 0){
+         $valueSpanh.html("Multiple workplaces :"+ $valueh.val()* 10 +"%");
+         $("#multiplea").val("Multiple workplaces :"+ $valueh.val()* 10 +"%");
+    }
+        
+    else{
+         $valueSpanh.html("Fixed workplace :"+ $valueh.val()* -10 +"%");
+         $("#multiplea").val("Fixed workplace :"+ $valueh.val()* -10 +"%");
+    }
+        
+  });
+    
+  const $valueSpani = $('.valueSpani');
+  const $valuei = $('.slider11a');
+  $valueSpani.html($valueSpani.val());
+  $valuei.on('input change', () => {
+    
+        $valueSpani.html($valuei.val()* 10 +"%");
+        $("#last1").val($valuei.val()* 10 +"%");
+    
+  });
+  const $valueSpanm = $('.valueSpanm');
+  const $valuem = $('.slider11d');
+  $valueSpanm.html($valueSpanm.val());
+  $valuem.on('input change', () => {
+    
+        $valueSpanm.html($valuem.val()* 10 +"%");
+        $("#last2").val($valuej.val()* 10 +"%");
+    
+  });
+  const $valueSpank = $('.valueSpank');
+  const $valuek = $('.slider11b');
+  $valueSpank.html($valueSpank.val());
+  $valuek.on('input change', () => {
+    
+        $valueSpank.html($valuek.val()* 10 +"%");
+        $("#last3").val($valuek.val()* 10 +"%");
+    
+  });
+  const $valueSpanl = $('.valueSpanl');
+  const $valuel = $('.slider11c');
+  $valueSpanl.html($valueSpanl.val());
+  $valuel.on('input change', () => {
+    
+        $valueSpanl.html($valuel.val()* 10 +"%");
+        $("#last4").val($valuel.val()* 10 +"%");
+       
+    
+  });
+    
+
+    
 });
          $(".neuroticism").click(function() {
           var totala = 0;
