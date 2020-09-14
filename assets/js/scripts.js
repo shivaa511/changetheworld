@@ -51,7 +51,7 @@ jQuery(document).ready(function() {
     	var progress_line = $(this).parents('.f1').find('.f1-progress-line');
     	
     	// fields validation
-    	parent_fieldset.find('input[type="text"], input[type="password"], textarea, select').each(function() {
+    	parent_fieldset.find('input[type="text"]').each(function() {
     		if( $(this).val() == "" ) {
     			$(this).addClass('input-error');
     			next_step = false;
@@ -61,9 +61,22 @@ jQuery(document).ready(function() {
     		}
     	});
         
+         var perosnalityerror = document.getElementById("perosnalityerror");
         
-         var textgender = document.getElementById("textgender");
-        if(($("input[name='usersex']:checked").length === 0)){
+        
+        var texttotaltime = document.getElementById("texttotaltime");
+        var totaltime = document.getElementById("totaltime").value;
+
+          // If x is Not a Number or less than one or greater than 10
+          if (isNaN(totaltime) || totaltime < 100 || totaltime > 100) {
+            texttotaltime.style.display = "block";
+            next_step = false;
+          } else {
+            texttotaltime.style.display = "none";
+          }
+        var textgender = document.getElementById("textgender");
+       
+        if(($("input[name='usersex']:checked").length === 0)  ){
                         next_step = false;
 						textgender.style.display = "block";
             
@@ -74,6 +87,21 @@ jQuery(document).ready(function() {
             textgender.style.display = "none";
         }
         
+        var peronalitytrait = document.getElementById("peronalitytrait");
+        var textpersonality = document.getElementById("textpersonality");
+        var substr = ['optradio11','optradio12', 'optradio13', 'optradio14','optradio15','optradio16', 'optradio17', 'optradio18','optradio19','optradio10', 'optradio21', 'optradio22','optradio23','optradio24', 'optradio25'];
+        $.each(substr , function(index, val) { 
+                        if(($("input[name="+val+"]:checked").length === 0) && peronalitytrait.style.display === "block"){
+                        next_step = false;
+						textpersonality.style.display = "block";
+                        }
+                else {
+            
+                textpersonality.style.display = "none";
+            }
+        });
+       
+       
        
        if ($("#religion :selected").val() == 0) {
                 $("#religion").addClass("input-error");
@@ -112,10 +140,9 @@ jQuery(document).ready(function() {
     			$("#Worktypology").removeClass('input-error');
     		}
         
-            
+        
     	// fields validation
     	
-      
        
     	if( next_step ) {
     		parent_fieldset.fadeOut(400, function() {
@@ -166,8 +193,9 @@ jQuery(document).ready(function() {
     	});
     	// fields validation
          if ($("#workdistribution :selected").val() == 0) {
-                $("#workdistribution").addClass("input-error");
                 e.preventDefault();
+                $("#workdistribution").addClass("input-error");
+                
             }
         else {
     			$("#workdistribution").removeClass('input-error');

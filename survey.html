@@ -16,10 +16,7 @@
         <link rel="stylesheet" href="assets/css/style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="validation.js"></script><!--
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.css"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.min.css" />-->
+    
         
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -103,70 +100,7 @@
 }
         
         
-input[type=range] {
-    -webkit-appearance: none;
-    margin: 20px 0;
-    width: 100%;
-}
-input[type=range]:focus {
-    outline: none;
-}
-input[type=range]::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 4px;
-    cursor: pointer;
-    animate: 0.2s;
-    background: #03a9f4;
-    border-radius: 25px;
-}
-input[type=range]::-webkit-slider-thumb {
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    background: #fff;
-    box-shadow: 0 0 4px 0 rgba(0,0,0, 1);
-    cursor: pointer;
-    -webkit-appearance: none;
-    margin-top: -8px;
-}
-input[type=range]:focus::-webkit-slider-runnable-track {
-    background: #03a9f4;
-}
-.range-wrap{
-    width: 500px;
-    position: relative;
-}
-.range-value{
-    position: absolute;
-    top: -50%;
-}
-.range-value span{
-    width: 30px;
-    height: 24px;
-    line-height: 24px;
-    text-align: center;
-    background: #03a9f4;
-    color: #fff;
-    font-size: 12px;
-    display: block;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0);
-    border-radius: 6px;
-}
-.range-value span:before{
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-top: 10px solid #03a9f4;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    margin-top: -1px;
-}
+
     </style>
 
     </head>
@@ -228,6 +162,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                           <label class="form-check-label" for="inlineRadio3">Others</label>
                                         </div>
                                        <p id="textgender" style="display:none;color: red">Please select one of the above option !!</p>
+                                       <div class="result"></div>
                                 </div>
                                 <div class="form-group">
                                         <h5>2. What is your Age?</h5>
@@ -239,30 +174,14 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                     <select class="form-control" id="religion" name="religion" class="required">
                                         <option value="" selected="selected" disabled="disabled">-- select one --</option>
                                         <option value="African Traditional &amp; Diasporic">African Traditional &amp; Diasporic</option>
-                                        <option value="Agnostic">Agnostic</option>
-                                        <option value="Atheist">Atheist</option>
-                                        <option value="Baha'i">Baha'i</option>
-                                        <option value="Buddhism">Buddhism</option>
-                                        <option value="Cao Dai">Cao Dai</option>
+                                        <option value="Buddhism">Buddhism</option>-
                                         <option value="Chinese traditional religion">Chinese traditional religion</option>
                                         <option value="Christianity">Christianity</option>
                                         <option value="Hinduism">Hinduism</option>
                                         <option value="Islam">Islam</option>
-                                        <option value="Jainism">Jainism</option>
-                                        <option value="Juche">Juche</option>
                                         <option value="Judaism">Judaism</option>
-                                        <option value="Neo-Paganism">Neo-Paganism</option>
-                                        <option value="Nonreligious">Nonreligious</option>
-                                        <option value="Rastafarianism">Rastafarianism</option>
-                                        <option value="Secular">Secular</option>
-                                        <option value="Shinto">Shinto</option>
-                                        <option value="Sikhism">Sikhism</option>
-                                        <option value="Spiritism">Spiritism</option>
-                                        <option value="Tenrikyo">Tenrikyo</option>
-                                        <option value="Unitarian-Universalism">Unitarian-Universalism</option>
-                                        <option value="Zoroastrianism">Zoroastrianism</option>
-                                        <option value="primal-indigenous">Primal-indigenous</option>
                                         <option value="Other">Other</option>
+                                        <option value="Other">No Religion</option>
                                       </select>
                                       
                                     
@@ -564,42 +483,43 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                               <tbody>
                                                 <tr>
                                                   <td scope="row">Concentration, silent work at the workstation</td>
-                                                  <td><input type="text" class="form-control time1"  name="workstaiona" placeholder="Value" value =""></td>
+                                                  <td><input type="text" class="form-control time1"  name="workstaiona" placeholder="0" value =""></td>
                                                   
                                                 </tr>
                                                 <tr>
                                                   <td scope="row">Speaking at the workstation (e. g. phonecalls, videoconferences, personal talks at workstation)</td>
-                                                  <td><input type="text" class="form-control time1"  name="workstaionb" placeholder="Value" value =""></td>
+                                                  <td><input type="text" class="form-control time1"  name="workstaionb" placeholder="0" value ="0"></td>
                                                   
                                                 </tr>
                                                   <tr>
                                                   <td scope="row">In conference rooms</td>
-                                                  <td><input type="text" class="form-control time1"  name="workstaionc" placeholder="Value" value =""></td>
+                                                  <td><input type="text" class="form-control time1"  name="workstaionc" placeholder="0" value ="0"></td>
                                                   
                                                 </tr>
                                                   <tr>
                                                   <td scope="row">Making phone calls at the workstation</td>
-                                                  <td><input type="text" class="form-control time1"  name="workstaiond" placeholder="Value" value =""></td>
+                                                  <td><input type="text" class="form-control time1"  name="workstaiond" placeholder="0" value ="0"></td>
                                                   
                                                 </tr>
                                                   <tr>
                                                   <td scope="row">Informal meeting places</td>
-                                                  <td><input type="text" class="form-control time1"  name="workstaione" placeholder="Value" value =""></td>
+                                                  <td><input type="text" class="form-control time1"  name="workstaione" placeholder="0" value ="0"></td>
                                                   
                                                 </tr>
                                                   <tr>
                                                   <td scope="row">Working with objects at the workstation</td>
-                                                  <td><input type="text" class="form-control time1"  name="workstaionf" placeholder="Value" value =""></td>
+                                                  <td><input type="text" class="form-control time1"  name="workstaionf" placeholder="0" value ="0"></td>
                                                   
                                                 </tr>
                                                   <tr>
                                                   <td scope="row">Workshops/laboratory (e. g. examing samples, drafting plans)</td>
-                                                  <td><input type="text" class="form-control time1"  name="workstaiong" placeholder="Value" value =""></td>
+                                                  <td><input type="text" class="form-control time1"  name="workstaiong" placeholder="0" value ="0"></td>
                                                   
                                                 </tr>
                                                   <tr>
                                                   <th scope="row">Total</th>
-                                                  <td><input type="text" id="totaltime" class="form-control total"  name="total" placeholder="Value" value =""></td>
+                                                  <td><input type="text" id="totaltime" class="form-control total"  name="total" placeholder="Total" value ="" readonly><p id="texttotaltime" style="display:none;color: red">Please do not exceed 100!!</p></td>
+                                                  
                                                   
                                                 </tr>
                                               </tbody>
@@ -638,13 +558,19 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                     </select>
                             
                                 </div>
-                                <div class="form-group-inline"  >
+                                <div class="form-group"  >
                                     <h5>9. Are you satisfied with your current working conditions? Rate from Worst 1 to 5 Best</h5>
-                                     <div class="range-field my-4 w-25" >
-                                    <input class="border-0 slider11" name ="workconditionrating"style="width: 50%" type="range" min="0" max="5"  value=""/>
-                                      <span class="font-weight-bold text-primary ml-2 mt-1 valueSpan"></span>
-                                    
-                                    </div>
+                                     <div class="slider-container">
+                                          <input type="range" min="0" max="4" class="slider">
+                                        </div>
+
+                                        <div class="label-container">
+                                          <div class="label-slider">None</div>
+                                          <div class="label-slider">1</div>
+                                          <div class="label-slider">2</div>
+                                          <div class="label-slider">3</div>
+                                          <div class="label-slider">4+</div>
+                                        </div>
                                 
                                 </div>
                                 
@@ -653,12 +579,13 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                                 </div>
                             </fieldset>
 
-                            <fieldset>
+                            <fieldset id="peronalitytrait">
                               
                                 <div class="form-group">
                                         <h4>Discover your personality - Please rank the importance of the following characteristics on a
 scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
-                                       <p id="perosnalityerror" style="display:none;color: red">Please select one of the above option !!</p>
+                                    <p id="textpersonality" style="display:none;color: red">Please select one of the above option !!</p>
+                                       <div class="result"></div><div class="table-responsive">
                                         <table class="table">
                                               <thead>
                                                 <tr>
@@ -678,7 +605,7 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input neuroticism" name="optradio11"  value = "1"  >
+                                                        <input type="radio" class="form-check-input shiva" name="optradio11"  value = "1"  >
                                                         </label>
                                                       </div>
                                                   </td>
@@ -1470,7 +1397,7 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                 </tr>
                                                 
                                               </tbody>
-                                        </table>
+                                        </table></div>
                                         <input type="hidden" class="form-control" id="result1"  name = "neuroticism"  value="0" readonly>
                                         <input type="hidden" class="form-control" id="result2"  name = "etroversion"  value="0" readonly>
                                         <input type="hidden" class="form-control" id="result3"  name = "openness"  value="0" readonly>
@@ -1486,11 +1413,11 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                 </div>
                             </fieldset>
 
-                            <fieldset>
+                            <fieldset  id="preference">
                                 <div class="form-group">
                                         <h5>Discover your working preferences -  Please rank the following factors for your well-being at work on a scale from &quot;not important at all&quot; (1) to &quot; veryimportant &quot; (5).</h5>
-                                    
-                                        <table class="table">
+                                        <p id="textworkpref" style="display:none;color: red">Please select one of the above option !!</p>
+                                        <div class="table-responsive"> <table class="table">
                                               <thead>
                                                 <tr>
                                                 <th scope="col">Score</th>
@@ -1816,7 +1743,7 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                   
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">Proximity of co-workerest</th>
+                                                  <th scope="row">Proximity of co-workers</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -1933,7 +1860,7 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                   
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">Ergonomics (furniture)t</th>
+                                                  <th scope="row">Ergonomics (furniture)</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -2330,7 +2257,7 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                 
                                                 
                                               </tbody>
-                                    </table>
+                                    </table></div>
                                 </div>
                                 
                                 <div class="form-group"  >
@@ -2403,9 +2330,17 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                 </td>
                                                 <td>
                                                 <h5 class="text-center">Work with human or things/data</h5>
-                                                <div class="range-wrap" style="width: 95%;padding-top:70px;">
-                                                  <input class="border-0 slider111" type="range" min="-10" max="10" />
-                                                    <span class="font-weight-bold text-primary ml-2 mt-1 valueSpana" name="workwithhumansdata" ></span>
+                                                <div class="slider-container" style="padding-top:70px;">
+                                                  <input type="range" min="1" max="5" class="slider" style="width: 120%" name = "humanorthings" value="">
+                                                </div>
+
+                                                <div class="label-container" style="width: 95%">
+                                                  <div class="label-slider">0/100</div>
+                                                  <div class="label-slider">25/75</div>
+                                                  <div class="label-slider">50/50</div>
+                                                  <div class="label-slider">75/25</div>
+                                                  <div class="label-slider">100/0</div>
+
                                                 </div>
                                                 
                                                
@@ -2441,9 +2376,17 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                 </td>
                                                 <td>
                                                 <h5 class="text-center">Personal vs Virtual Communication</h5>
-                                                <div class="range-wrap" style="width: 95%;padding-top:70px;">
-                                                  <input class="border-0 slider112" type="range" min="-10" max="10" />
-                                                    <span class="font-weight-bold text-primary ml-2 mt-1 valueSpanb"></span>
+                                                <div class="slider-container" style="padding-top:70px;">
+                                                  <input type="range" min="1" max="5" class="slider" style="width: 120%" name = "PersonalvsVirtual"  value="">
+                                                </div>
+
+                                                <div class="label-container" style="width: 95%">
+                                                  <div class="label-slider">0/100</div>
+                                                  <div class="label-slider">25/75</div>
+                                                  <div class="label-slider">50/50</div>
+                                                  <div class="label-slider">75/25</div>
+                                                  <div class="label-slider">100/0</div>
+
                                                 </div>
                                                 
                                                
@@ -2479,9 +2422,17 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                 </td>
                                                 <td>
                                                 <h5 class="text-center">Communication work vs concentration work</h5>
-                                                <div class="range-wrap" style="width: 95%;padding-top:70px;">
-                                                  <input class="border-0 slider113" type="range" min="-10" max="10" />
-                                                    <span class="font-weight-bold text-primary ml-2 mt-1 valueSpanc"></span>
+                                                <div class="slider-container" style="padding-top:70px;">
+                                                  <input type="range" min="1" max="5" class="slider" style="width: 120%" name = "Communication"  value="">
+                                                </div>
+
+                                                <div class="label-container" style="width: 95%">
+                                                  <div class="label-slider">0/100</div>
+                                                  <div class="label-slider">25/75</div>
+                                                  <div class="label-slider">50/50</div>
+                                                  <div class="label-slider">75/25</div>
+                                                  <div class="label-slider">100/0</div>
+
                                                 </div>
                                                 
                                                
@@ -2517,9 +2468,17 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                 </td>
                                                 <td>
                                                 <h5 class="text-center">Working task are organised vs improvised</h5>
-                                                <div class="range-wrap" style="width: 95%;padding-top:70px;">
-                                                  <input class="border-0 slider114" type="range" min="-10" max="10" />
-                                                    <span class="font-weight-bold text-primary ml-2 mt-1 valueSpand"></span>
+                                                <div class="slider-container" style="padding-top:70px;">
+                                                  <input type="range" min="1" max="5" class="slider" style="width: 120%" name = "organised"  value="">
+                                                </div>
+
+                                                <div class="label-container" style="width: 95%">
+                                                  <div class="label-slider">0/100</div>
+                                                  <div class="label-slider">25/75</div>
+                                                  <div class="label-slider">50/50</div>
+                                                  <div class="label-slider">75/25</div>
+                                                  <div class="label-slider">100/0</div>
+
                                                 </div>
                                                 
                                                
@@ -2555,9 +2514,17 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                 </td>
                                                 <td>
                                                 <h5 class="text-center">Work is based on routine vs new</h5>
-                                                <div class="range-wrap" style="width: 95%;padding-top:70px;">
-                                                  <input class="border-0 slider115" type="range" min="-10" max="10" />
-                                                    <span class="font-weight-bold text-primary ml-2 mt-1 valueSpane"></span>
+                                                <div class="slider-container" style="padding-top:70px;">
+                                                  <input type="range" min="1" max="5" class="slider" style="width: 120%" name = "routine"  value="">
+                                                </div>
+
+                                                <div class="label-container" style="width: 95%">
+                                                  <div class="label-slider">0/100</div>
+                                                  <div class="label-slider">25/75</div>
+                                                  <div class="label-slider">50/50</div>
+                                                  <div class="label-slider">75/25</div>
+                                                  <div class="label-slider">100/0</div>
+
                                                 </div>
                                                 
                                                
@@ -2593,9 +2560,17 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                 </td>
                                                 <td>
                                                 <h5 class="text-center">Individual work vs teamwork</h5>
-                                                <div class="range-wrap" style="width: 95%;padding-top:70px;">
-                                                  <input class="border-0 slider116" type="range" min="-10" max="10" />
-                                                    <span class="font-weight-bold text-primary ml-2 mt-1 valueSpanf"></span>
+                                                <div class="slider-container" style="padding-top:70px;">
+                                                  <input type="range" min="1" max="5" class="slider" style="width: 120%" name = "Individual"  value="">
+                                                </div>
+
+                                                <div class="label-container" style="width: 95%">
+                                                  <div class="label-slider">0/100</div>
+                                                  <div class="label-slider">25/75</div>
+                                                  <div class="label-slider">50/50</div>
+                                                  <div class="label-slider">75/25</div>
+                                                  <div class="label-slider">100/0</div>
+
                                                 </div>
                                                 
                                                
@@ -2631,9 +2606,17 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                 </td>
                                                 <td>
                                                 <h5 class="text-center">Analog working evironment vs digital working environment</h5>
-                                                <div class="range-wrap" style="width: 95%;padding-top:70px;">
-                                                  <input class="border-0 slider117" type="range" min="-10" max="10" />
-                                                    <span class="font-weight-bold text-primary ml-2 mt-1 valueSpang"></span>
+                                                <div class="slider-container" style="padding-top:70px;">
+                                                  <input type="range" min="1" max="5" class="slider" style="width: 120%" name = "Analog"  value="">
+                                                </div>
+
+                                                <div class="label-container" style="width: 95%">
+                                                  <div class="label-slider">0/100</div>
+                                                  <div class="label-slider">25/75</div>
+                                                  <div class="label-slider">50/50</div>
+                                                  <div class="label-slider">75/25</div>
+                                                  <div class="label-slider">100/0</div>
+
                                                 </div>
                                                 
                                                
@@ -2660,7 +2643,7 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                     <img class="card-img-top" src="assets/img/monitor.png" alt="Card image" style="width:90%" width="150" height="150">
                                                     <div class="card-body"> <br>
 
-                                                      <p class="card-text" style ="text-align: center">Fixed workplace</p>
+                                                      <p class="card-text" style ="text-align: center">Fixed workspace</p>
 
                                                     </div>
                                                 </div>
@@ -2668,10 +2651,18 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                   
                                                 </td>
                                                 <td>
-                                                <h5 class="text-center">Fixed workplace vs multiple workplaces</h5>
-                                                <div class="range-wrap" style="width: 95%;padding-top:70px;">
-                                                  <input class="border-0 slider118" type="range" min="-10" max="10" />
-                                                    <span class="font-weight-bold text-primary ml-2 mt-1 valueSpanh"></span>
+                                                <h5 class="text-center">Fixed workspace vs Flexible workspace</h5>
+                                                <div class="slider-container" style="padding-top:70px;">
+                                                  <input type="range" min="1" max="5" class="slider" style="width: 120%" name = "multiplea"  value="">
+                                                </div>
+
+                                                <div class="label-container" style="width: 95%">
+                                                  <div class="label-slider">0/100</div>
+                                                  <div class="label-slider">25/75</div>
+                                                  <div class="label-slider">50/50</div>
+                                                  <div class="label-slider">75/25</div>
+                                                  <div class="label-slider">100/0</div>
+
                                                 </div>
                                                 
                                                
@@ -2682,7 +2673,7 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                     <img class="card-img-top" src="assets/img/multiwork.png" alt="Card image" style="width:90%" width="150" height="150">
                                                     <div class="card-body"><br>
 
-                                                      <p class="card-text" style ="text-align: center">Multiple workplaces</p>
+                                                      <p class="card-text" style ="text-align: center">Flexible workspace</p>
 
                                                     </div>
                                                 </div>
@@ -2718,13 +2709,21 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                     <img class="card-img-top" src="assets/img/skyscraper.png" alt="Card image" style="width:80%" width="150" height="150">
                                                     <div class="card-body"> <br>
 
-                                                      <p class="card-text" style ="text-align: center">Sky Scrapper</p>
+                                                      <p class="card-text" style ="text-align: center">Office</p>
                                                       
                                                     </div>
                                                 </div>
-                                                <div class="range-wrap" style="width: 80%;padding-top:70px;">
-                                                  <input class="border-0 slider11a" type="range" min="0" max="10" />
-                                                    <span class="font-weight-bold text-primary ml-2 mt-1 valueSpani"></span>
+                                                <div class="slider-container" style="padding-top:70px;">
+                                                  <input type="range" min="1" max="5" class="slider" style="width: 120%" name = "test1"  value="">
+                                                </div>
+
+                                                <div class="label-container" style="width: 95%">
+                                                  <div class="label-slider">0/100</div>
+                                                  <div class="label-slider">25/75</div>
+                                                  <div class="label-slider">50/50</div>
+                                                  <div class="label-slider">75/25</div>
+                                                  <div class="label-slider">100/0</div>
+
                                                 </div>
                                                   
                                                 </td>
@@ -2738,10 +2737,18 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
 
                                                     </div>
                                                 </div>
-                                                 <div class="range-wrap" style="width: 80%;padding-top:70px;">
-                                                  <input class="border-0 slider11b" type="range" min="0" max="10" />
-                                                    <span class="font-weight-bold text-primary ml-2 mt-1 valueSpank"></span>
-                                                </div> 
+                                                <div class="slider-container" style="padding-top:70px;">
+                                                  <input type="range" min="1" max="5" class="slider" style="width: 120%" name = "test2"  value="">
+                                                </div>
+
+                                                <div class="label-container" style="width: 95%">
+                                                  <div class="label-slider">0/100</div>
+                                                  <div class="label-slider">25/75</div>
+                                                  <div class="label-slider">50/50</div>
+                                                  <div class="label-slider">75/25</div>
+                                                  <div class="label-slider">100/0</div>
+
+                                                </div>
                                                   
                                                 </td>
                                       <td>
@@ -2750,45 +2757,31 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                     <img class="card-img-top" src="assets/img/internet-of-things.png" alt="Card image" style="width:80%" width="150" height="150">
                                                     <div class="card-body"> <br>
 
-                                                      <p class="card-text" style ="text-align: center">Fixed workplace</p>
+                                                      <p class="card-text" style ="text-align: center">Mobile Office</p>
 
                                                     </div>
                                                 </div>
-                                                <div class="range-wrap" style="width: 80%;padding-top:70px;">
-                                                  <input class="border-0 slider11c" type="range" min="0" max="10" />
-                                                    <span class="font-weight-bold text-primary ml-2 mt-1 valueSpanl"></span>
-                                                </div>  
-                                                  
-                                                </td>
-                                      <td>
-                                                
-                                                <div class="card" style="width:200px;float: left"><br><br>
-                                                    <img class="card-img-top" src="assets/img/factory.png" alt="Card image" style="width:80%" width="150" height="150">
-                                                    <div class="card-body"> <br>
-
-                                                      <p class="card-text" style ="text-align: center">Fixed workplace</p>
-
-                                                    </div>
+                                                <div class="slider-container" style="padding-top:70px;">
+                                                  <input type="range" min="1" max="5" class="slider" style="width: 120%" name = "test3"  value="">
                                                 </div>
-                                                <div class="range-wrap" style="width: 80%;padding-top:70px;">
-                                                  <input class="border-0 slider11d" type="range" min="0" max="10" />
-                                                    <span class="font-weight-bold text-primary ml-2 mt-1 valueSpanm"></span>
+
+                                                <div class="label-container" style="width: 95%">
+                                                  <div class="label-slider">0/100</div>
+                                                  <div class="label-slider">25/75</div>
+                                                  <div class="label-slider">50/50</div>
+                                                  <div class="label-slider">75/25</div>
+                                                  <div class="label-slider">100/0</div>
+
                                                 </div> 
                                                   
                                                 </td>
+                                      
                                       
                                   </tr>
                                   
                                 </tbody>
                               </table>
-                                        <input type="hidden" class="form-control" id="humanorthings"  name = "humanorthings"  value="0" readonly>
-                                        <input type="hidden" class="form-control" id="PersonalvsVirtual"  name = "PersonalvsVirtual"  value="0" readonly>
-                                        <input type="hidden" class="form-control" id="Communication"  name = "Communication"  value="0" readonly>
-                                        <input type="hidden" class="form-control" id="organised"  name = "organised"  value="0" readonly>
-                                        <input type="hidden" class="form-control" id="routine"  name = "routine"  value="0" readonly>
-                                        <input type="hidden" class="form-control" id="Individual"  name = "Individual"  value="0" readonly>
-                                        <input type="hidden" class="form-control" id="Analog"  name = "Analog"  value="0" readonly>
-                                        <input type="hidden" class="form-control" id="multiplea"  name = "multiplea"  value="0" readonly>
+                                        
                                      
                                         <input type="hidden" class="form-control" id="last1"  name = "last1"  value="0" readonly>
                                         <input type="hidden" class="form-control" id="last2"  name = "last2"  value="0" readonly>
@@ -2868,189 +2861,7 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
              } 
                 
         }
-        $(document).ready(function() {
-
-  const $valueSpan = $('.valueSpan');
-  const $value = $('.slider11');
-  $valueSpan.html($value.val());
-  $value.on('input change', () => {
-
-    $valueSpan.html($value.val());
-  });
-});
-$(document).ready(function() {
-
-  const $valueSpana = $('.valueSpana');
-  const $valuea = $('.slider111');
-  
-  $valueSpana.html($valueSpana.val());
-  $valuea.on('input change', () => {
-    if($valuea.val() > 0){
         
-        $valueSpana.html("Work With Data :"+ $valuea.val()* 10 +"%");
-        $("#humanorthings").val("Work With Data :"+ $valuea.val()* 10 +"%");
-    }
-        
-        
-    else{
-        $valueSpana.html("Work With human :"+ $valuea.val()* -10 + "%");
-        $("#humanorthings").val("Work With human :"+ $valuea.val()* -10 + "%");
-    }
-        
-  });
-  
-  const $valueSpanb = $('.valueSpanb');
-  const $valueb = $('.slider112');
-  $valueSpanb.html($valueSpanb.val());
-  $valueb.on('input change', () => {
-    if($valueb.val() > 0){
-        $valueSpanb.html("Virtual Communication :"+ $valueb.val()* 10 +"%");
-        $("#PersonalvsVirtual").val("Virtual Communication :"+ $valueb.val()* 10 +"%");
-    }
-        
-    else{
-         $valueSpanb.html("Personal Communication  :"+ $valueb.val()* -10 +"%");
-         $("#PersonalvsVirtual").val("Personal Communication  :"+ $valueb.val()* -10 +"%");
-    }
-        
-  });
-    
-  const $valueSpanc = $('.valueSpanc');
-  const $valuec = $('.slider113');
-  $valueSpanc.html($valueSpanc.val());
-  $valuec.on('input change', () => {
-    if($valuec.val() > 0){
-         $valueSpanc.html("Concentration work :"+ $valuec.val()* 10 +"%");
-         $("#Communication").val("Concentration work :"+ $valuec.val()* 10 +"%");
-    }
-        
-    else{
-         $valueSpanc.html("Communication work :"+ $valuec.val()* -10 +"%");
-         $("#Communication").val("Communication work :"+ $valuec.val()* -10 +"%");
-    }
-        
-  });
-  const $valueSpand = $('.valueSpand');
-  const $valued = $('.slider114');
-  $valueSpand.html($valueSpand.val());
-  $valued.on('input change', () => {
-    if($valued.val() > 0){
-         $valueSpand.html("Working task are improvised :"+ $valued.val()* 10 +"%");
-         $("#organised").val("Working task are improvised :"+ $valued.val()* 10 +"%");
-    }
-        
-    else{
-         $valueSpand.html("Working task are organised :"+ $valued.val()* -10 +"%");
-         $("#organised").val("Working task are organised :"+ $valued.val()* -10 +"%");
-    }
-        
-  });
- 
-  const $valueSpane = $('.valueSpane');
-  const $valuee = $('.slider115');
-  $valueSpane.html($valueSpane.val());
-  $valuee.on('input change', () => {
-    if($valuee.val() > 0){
-         $valueSpane.html("Work is based on new :"+ $valuee.val()* 10 +"%");
-         $("#routine").val("Work is based on new :"+ $valuee.val()* 10 +"%");
-    }
-        
-    else{
-         $valueSpane.html("Work is based on routine :"+ $valuee.val()* -10 +"%");
-         $("#routine").val("Work is based on routine :"+ $valuee.val()* -10 +"%");
-    }
-        
-  });
-  
-  const $valueSpanf = $('.valueSpanf');
-  const $valuef = $('.slider116');
-  $valueSpanf.html($valueSpanf.val());
-  $valuef.on('input change', () => {
-    if($valuef.val() > 0){
-         $valueSpanf.html("Teamwork :"+ $valuef.val()* 10 +"%");
-         $("#Individual").val("Teamwork :"+ $valuef.val()* 10 +"%");
-    }
-        
-    else{
-         $valueSpanf.html("Individual work :"+ $valuef.val()* -10 +"%");
-         $("#Individual").val("Individual work :"+ $valuef.val()* -10 +"%");
-    }
-        
-  });
-  
-  const $valueSpang = $('.valueSpang');
-  const $valueg = $('.slider117');
-  $valueSpang.html($valueSpang.val());
-  $valueg.on('input change', () => {
-    if($valueg.val() > 0){
-         $valueSpang.html("Digital working environment :"+ $valueg.val()* 10 +"%");
-         $("#Analog").val("Digital working environment :"+ $valueg.val()* 10 +"%");
-    }
-        
-    else{
-         $valueSpang.html("Analog working evironment :"+ $valueg.val()* -10 +"%");
-         $("#Analog").val("Analog working evironment :"+ $valueg.val()* -10 +"%");
-    }
-        
-  });
-  
-  const $valueSpanh = $('.valueSpanh');
-  const $valueh = $('.slider118');
-  $valueSpanh.html($valueSpanh.val());
-  $valueh.on('input change', () => {
-    if($valueh.val() > 0){
-         $valueSpanh.html("Multiple workplaces :"+ $valueh.val()* 10 +"%");
-         $("#multiplea").val("Multiple workplaces :"+ $valueh.val()* 10 +"%");
-    }
-        
-    else{
-         $valueSpanh.html("Fixed workplace :"+ $valueh.val()* -10 +"%");
-         $("#multiplea").val("Fixed workplace :"+ $valueh.val()* -10 +"%");
-    }
-        
-  });
-    
-  const $valueSpani = $('.valueSpani');
-  const $valuei = $('.slider11a');
-  $valueSpani.html($valueSpani.val());
-  $valuei.on('input change', () => {
-    
-        $valueSpani.html($valuei.val()* 10 +"%");
-        $("#last1").val($valuei.val()* 10 +"%");
-    
-  });
-  const $valueSpanm = $('.valueSpanm');
-  const $valuem = $('.slider11d');
-  $valueSpanm.html($valueSpanm.val());
-  $valuem.on('input change', () => {
-    
-        $valueSpanm.html($valuem.val()* 10 +"%");
-        $("#last2").val($valuej.val()* 10 +"%");
-    
-  });
-  const $valueSpank = $('.valueSpank');
-  const $valuek = $('.slider11b');
-  $valueSpank.html($valueSpank.val());
-  $valuek.on('input change', () => {
-    
-        $valueSpank.html($valuek.val()* 10 +"%");
-        $("#last3").val($valuek.val()* 10 +"%");
-    
-  });
-  const $valueSpanl = $('.valueSpanl');
-  const $valuel = $('.slider11c');
-  $valueSpanl.html($valueSpanl.val());
-  $valuel.on('input change', () => {
-    
-        $valueSpanl.html($valuel.val()* 10 +"%");
-        $("#last4").val($valuel.val()* 10 +"%");
-       
-    
-  });
-    
-
-    
-});
          $(".neuroticism").click(function() {
           var totala = 0;
           $(".neuroticism:checked").each(function() { totala += +this.value/3; });
