@@ -4,6 +4,7 @@ input[type="password"],
 input[type="radio"], 
 textarea,
 select,
+
 textarea.form-control {
 	height: 35px;
     margin: 0;

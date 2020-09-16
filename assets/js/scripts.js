@@ -179,12 +179,12 @@ jQuery(document).ready(function() {
     });
     
     // submit
-    $('.f1').on('submit', function(e) {
+    $('.f1').on('submit', function(f) {
     	
     	// fields validation
-    	$(this).find('input[type="text"], input[type="password"],input[type="radio"], select').each(function() {
-    		if( $(this).val() == "" ) {
-    			e.preventDefault();
+    	$(this).find('select').each(function() {
+    		if($(this).val() == 0) {
+    			f.preventDefault();
     			$(this).addClass('input-error');
     		}
     		else {
@@ -192,15 +192,8 @@ jQuery(document).ready(function() {
     		}
     	});
     	// fields validation
-         if ($("#workdistribution :selected").val() == 0) {
-                e.preventDefault();
-                $("#workdistribution").addClass("input-error");
-                
-            }
-        else {
-    			$("#workdistribution").removeClass('input-error');
-    		}
-     
+        
+        
        
 					
         
