@@ -64,16 +64,8 @@ jQuery(document).ready(function() {
          var perosnalityerror = document.getElementById("perosnalityerror");
         
         
-        var texttotaltime = document.getElementById("texttotaltime");
-        var totaltime = document.getElementById("totaltime").value;
+        
 
-          // If x is Not a Number or less than one or greater than 10
-          if (isNaN(totaltime) || totaltime < 100 || totaltime > 100) {
-            texttotaltime.style.display = "block";
-            next_step = false;
-          } else {
-            texttotaltime.style.display = "none";
-          }
         var textgender = document.getElementById("textgender");
        
         if(($("input[name='usersex']:checked").length === 0)  ){
