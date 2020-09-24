@@ -49,23 +49,33 @@ jQuery(document).ready(function() {
     	// navigation steps / progress steps
     	var current_active_step = $(this).parents('.f1').find('.f1-step.active');
     	var progress_line = $(this).parents('.f1').find('.f1-progress-line');
-    	
+    	var texerrage = document.getElementById("texerrage");
     	// fields validation
     	parent_fieldset.find('input[type="text"]').each(function() {
     		if( $(this).val() == "" ) {
     			$(this).addClass('input-error');
+                texerrage.style.display = "block";
     			next_step = false;
     		}
     		else {
     			$(this).removeClass('input-error');
+                texerrage.style.display = "none";
     		}
     	});
         
-         var perosnalityerror = document.getElementById("perosnalityerror");
+         /*var perosnalityerror = document.getElementById("perosnalityerror");
         
         
-        
+        var texttotaltime = document.getElementById("texttotaltime");
+        var totaltime = document.getElementById("totaltime").value;
 
+          // If x is Not a Number or less than one or greater than 10
+          if (isNaN(totaltime) || totaltime < 100 || totaltime > 100) {
+            texttotaltime.style.display = "block";
+            next_step = false;
+          } else {
+            texttotaltime.style.display = "none";
+          }*/
         var textgender = document.getElementById("textgender");
        
         if(($("input[name='usersex']:checked").length === 0)  ){
@@ -94,47 +104,128 @@ jQuery(document).ready(function() {
         });
        
        
-       
+       var texerra = document.getElementById("texerra");
        if ($("#religion :selected").val() == 0) {
                 $("#religion").addClass("input-error");
+                texerra.style.display = "block";
                 next_step = false;
             }
         else {
     			$("#religion").removeClass('input-error');
+                texerra.style.display = "none";
     		}
-        
+        var texerrb = document.getElementById("texerrb");
         if ($("#country :selected").val() == 0) {
                 $("#country").addClass("input-error");
+                texerrb.style.display = "block";
                 next_step = false;
             }
         else {
     			$("#country").removeClass('input-error');
+                texerrb.style.display = "none";
     		}
+        var texerrc = document.getElementById("texerrc");
         if ($("#workarea :selected").val() == 0) {
                 $("#workarea").addClass("input-error");
+                texerrc.style.display = "block";
                 next_step = false;
             }
         else {
     			$("#workarea").removeClass('input-error');
+                texerrc.style.display = "none";
     		}
+        var texerrd = document.getElementById("texerrd");
         if ($("#offficetype :selected").val() == 0) {
                 $("#offficetype").addClass("input-error");
+                texerrd.style.display = "block";
                 next_step = false;
             }
         else {
     			$("#offficetype").removeClass('input-error');
+                texerrd.style.display = "none";
     		}
+        var texerre = document.getElementById("texerre");
         if ($("#Worktypology :selected").val() == 0) {
                 $("#Worktypology").addClass("input-error");
+                texerre.style.display = "block";
                 next_step = false;
             }
         else {
     			$("#Worktypology").removeClass('input-error');
+                texerre.style.display = "none";
+    		}
+        var texerrf = document.getElementById("texerrf");
+        if ($("#wkhourmodel :selected").val() == 0) {
+                $("#wkhourmodel").addClass("input-error");
+                texerrf.style.display = "block";
+                next_step = false;
+            }
+        else {
+    			$("#wkhourmodel").removeClass('input-error');
+                texerrf.style.display = "none";
     		}
         
         
+        
+        
     	// fields validation
-    	
+    	var preference = document.getElementById("preference");
+        var textpreference = document.getElementById("textpreference");
+        var substra = ['optradiocol1','optradiocol2', 'optradiocol3', 'optradiocol4','optradiocol5','optradiocol6', 'optradiocol12', 'optradiocol7','optradiocol8','optradiocol9', 'optradiocol19', 'optradiocol10','optradiocol18','optradiocol13', 'optradiocol20','optradiocol16','optradiocol21'];
+        $.each(substra , function(index, val) { 
+                        if(($("input[name="+val+"]:checked").length === 0) && preference.style.display === "block"){
+                        next_step = false;
+						textpreference.style.display = "block";
+                        }
+                else {
+            
+                textpreference.style.display = "none";
+            }
+        });
+        
+        var preference = document.getElementById("preference");
+        var texerrg = document.getElementById("texerrg");
+        if ($("#workdistributiona :selected").val() == 0 && preference.style.display === "block") {
+                $("#workdistributiona").addClass("input-error");
+                texerrg.style.display = "block";
+                next_step = false;
+            }
+        else {
+    			$("#workdistributiona").removeClass('input-error');
+                texerrg.style.display = "none";
+    		}
+        
+        var texerrh = document.getElementById("texerrh");
+        if ($("#productivitywork :selected").val() == 0 && preference.style.display === "block") {
+                $("#productivitywork").addClass("input-error");
+                texerrh.style.display = "block";
+                next_step = false;
+            }
+        else {
+    			$("#productivitywork").removeClass('input-error');
+                texerrh.style.display = "none";
+    		}
+        
+        var texerri = document.getElementById("texerri");
+        if ($("#whereworkplaceprefer :selected").val() == 0 && preference.style.display === "block") {
+                $("#whereworkplaceprefer").addClass("input-error");
+                texerri.style.display = "block";
+                next_step = false;
+            }
+        else {
+    			$("#whereworkplaceprefer").removeClass('input-error');
+                texerri.style.display = "none";
+    		}
+        var texerrj = document.getElementById("texerrj");
+        if ($("#hourmodel :selected").val() == 0 && preference.style.display === "block") {
+                $("#hourmodel").addClass("input-error");
+                texerrj.style.display = "block";
+                next_step = false;
+            }
+        else {
+    			$("#hourmodel").removeClass('input-error');
+                texerrj.style.display = "none";
+    		}
        
     	if( next_step ) {
     		parent_fieldset.fadeOut(400, function() {
@@ -171,26 +262,24 @@ jQuery(document).ready(function() {
     });
     
     // submit
-    $('.f1').on('submit', function(f) {
+  
+      $('.f1').on('submit', function(e) {
+    	const scriptURL = 'https://script.google.com/macros/s/AKfycbzVvOLnf_CcPYMvtjKUKoG4nT5pNwT5IqhiI_iYS89EvqUFYcQ/exec'
+        const form = document.forms['google-sheet']
+    	// fields validation
     	
-    	// fields validation
-    	$(this).find('select').each(function() {
-    		if($(this).val() == 0) {
-    			f.preventDefault();
-    			$(this).addClass('input-error');
-    		}
-    		else {
-    			$(this).removeClass('input-error');
-    		}
-    	});
+    			
+                e.preventDefault()
+                fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response =>  location.replace("thankyou.html"))
+                .catch(error => console.error('Error!', error.message))
+    		
     	// fields validation
         
-        
-       
+           
 					
         
     	
     });
-    
-    
+
 });

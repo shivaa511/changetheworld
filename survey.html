@@ -102,7 +102,9 @@
     margin-bottom: 10px
 }
         
-        
+ li.selected {
+    background-color: coral;
+}       
 
     </style>
 
@@ -128,11 +130,11 @@
                     	<form role="form"  method="post" class="f1" name="google-sheet" id ="surveyform" >
                     		<div class="f1-steps">
                     			<div class="f1-progress">
-                    			    <div class="f1-progress-line" data-now-value="16.66" data-number-of-steps="3" style="width: 16.66%;"></div>
+                    			    <div class="f1-progress-line" data-now-value="12.5" data-number-of-steps="4" style="width: 12.5%;"></div>
                     			</div>
                     			<div class="f1-step active">
                     				<div class="f1-step-icon"><i class="fa fa-user"></i></div>
-                    				<p>Current workspace of User</p>
+                    				<p>Current workspace</p>
                     			</div>
                     			<div class="f1-step">
                     				<div class="f1-step-icon"><i class="fa fa-university"></i></div>
@@ -143,14 +145,20 @@
                                 
                     		    <div class="f1-step">
                     				<div class="f1-step-icon"><i class="fa fa-building-o"></i></div>
-                    				<p>His/her workspace preference</p>
+                    				<p>Workspace preferences</p>
                     			</div>
+                                
+                                <div class="f1-step">
+                                <div class="f1-step-icon"><i class="fa fa-twitter"></i></div>
+                                <p>social</p>
+                            </div>
                     		</div>
                     		
                     		<fieldset>
                     		 
                     			<div class="form-group">
-                                        <h5>1. What is your Gender?</h5>
+                                        <h5 style="display: inline;">1.Please indicate your gender</h5><span> <p  style=";color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following options</p></span>
+                                    <p id="textgender" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> This question is mandatory</p>
                                         
                                         <div class="form-check form-check-inline">
                                           <input class="form-check-input" type="radio" name="usersex" id="inlineRadio1" value="1">
@@ -164,27 +172,26 @@
                                           <input class="form-check-input" type="radio" name="usersex" id="inlineRadio3" value="3" >
                                           <label class="form-check-label" for="inlineRadio3">Others</label>
                                         </div>
-                                       <p id="textgender" style="display:none;color: red">Please select one of the above option !!</p>
-                                       <div class="result"></div>
+                                       
+                                       
                                 </div>
                                 <div class="form-group">
-                                        <h5>2. What is your Age?</h5>
+                                        <h5 style="display: inline;">2. Please indicate your age</h5><span>  <p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Only numbers may be entered in this field</p></span><p id="texerrage" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> This question is mandatory</p>
                                         
-                                        <input type="text" class="form-control"  name="Age" placeholder="Value" >
+                                    <input type="text" class="form-control"  name="Age" placeholder="Value"> 
                                 </div>
                                 <div class="form-group"  >
-                                    <h5>3. What is your Religion?</h5>
+                                    <h5 style="display: inline;">3. Please indicate your religion</h5><span> <p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following answers</p></span>
+                                    <p id="texerra" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> This question is mandatory</p>
                                     <select class="form-control" id="religion" name="religion" class="required">
-                                        <option value="" selected="selected" disabled="disabled">-- select one --</option>
-                                        <option value="African Traditional &amp; Diasporic">African Traditional &amp; Diasporic</option>
+                                        <option value="" selected="selected" disabled="disabled">-- select your religion --</option>
                                         <option value="Buddhism">Buddhism</option>-
-                                        <option value="Chinese traditional religion">Chinese traditional religion</option>
                                         <option value="Christianity">Christianity</option>
                                         <option value="Hinduism">Hinduism</option>
                                         <option value="Islam">Islam</option>
                                         <option value="Judaism">Judaism</option>
-                                        <option value="Other">Other</option>
-                                        <option value="Other">No Religion</option>
+                                        <option value="Others">Others</option>
+                                        <option value="Other">Not religious</option>
                                       </select>
                                       
                                     
@@ -192,7 +199,7 @@
                                     
                                 </div>
                                 <div class="form-group">
-                                    <h5>4. Where are you from?</h5>
+                                    <h5 style="display: inline;">4. Where are you from?</h5><span><p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following answers</p></span><p id="texerrb" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> This question is mandatory</p>
                                        <select class="form-control" id ="country" name="Country" >
                                            
                                            <option value="" selected="selected" disabled="disabled">-- select your country --</option>
@@ -446,11 +453,11 @@
                                 </div>
                                 
                                 <div class="form-group"  >
-                                    <h5>5. What is your profession? (Area of work/studies)</h5>
+                                    <h5 style="display: inline;">5. Please choose the option which describes your profession best</h5><span> <p  style="color: green;display: inline;font-size: 14px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following answers</p></span><p id="texerrc" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> This question is mandatory</p>
                                     <select class="form-control" id ="workarea" name="workarea">
                                         <option value="" selected="selected" disabled="disabled">-- select your profession --</option>
                                         <option>Public institutions, government agencies, associations</option>
-                                        <option>consulting communication</option>
+                                        <option>Consulting communication</option>
                                         <option>Banks, insurance companies, financial services</option>
                                         <option>Telecommunications, information technology</option>
                                         
@@ -472,66 +479,11 @@
                                         <option>Medical technology</option>
                                     </select>
                                 </div>
-                                <!--
-                                <div class="form-group"  >
-                                    <h5>6. How is your weekly working time allocated (Total of 100% in One Week)</h5>
-                                    
-                                    <table class="table table-bordered">
-                                            <thead>
-                                                <tr>
-                                                  
-                                                
-                                                </tr>
-                                              </thead>
-                                              <tbody>
-                                                <tr>
-                                                  <td scope="row">Concentration, silent work at the workstation</td>
-                                                  <td><input type="text" class="form-control time1"  name="workstaiona" placeholder="0" value =""></td>
-                                                  
-                                                </tr>
-                                                <tr>
-                                                  <td scope="row">Speaking at the workstation (e. g. phonecalls, videoconferences, personal talks at workstation)</td>
-                                                  <td><input type="text" class="form-control time1"  name="workstaionb" placeholder="0" value ="0"></td>
-                                                  
-                                                </tr>
-                                                  <tr>
-                                                  <td scope="row">In conference rooms</td>
-                                                  <td><input type="text" class="form-control time1"  name="workstaionc" placeholder="0" value ="0"></td>
-                                                  
-                                                </tr>
-                                                  <tr>
-                                                  <td scope="row">Making phone calls at the workstation</td>
-                                                  <td><input type="text" class="form-control time1"  name="workstaiond" placeholder="0" value ="0"></td>
-                                                  
-                                                </tr>
-                                                  <tr>
-                                                  <td scope="row">Informal meeting places</td>
-                                                  <td><input type="text" class="form-control time1"  name="workstaione" placeholder="0" value ="0"></td>
-                                                  
-                                                </tr>
-                                                  <tr>
-                                                  <td scope="row">Working with objects at the workstation</td>
-                                                  <td><input type="text" class="form-control time1"  name="workstaionf" placeholder="0" value ="0"></td>
-                                                  
-                                                </tr>
-                                                  <tr>
-                                                  <td scope="row">Workshops/laboratory (e. g. examing samples, drafting plans)</td>
-                                                  <td><input type="text" class="form-control time1"  name="workstaiong" placeholder="0" value ="0"></td>
-                                                  
-                                                </tr>
-                                                  <tr>
-                                                  <th scope="row">Total</th>
-                                                  <td><input type="text" id="totaltime" class="form-control total"  name="total" placeholder="Total" value ="" readonly><p id="texttotaltime" style="display:none;color: red">Please do not exceed 100!!</p></td>
-                                                  
-                                                  
-                                                </tr>
-                                              </tbody>
-                                        </table>
-                                    
-                                </div>-->
+                               
                                  <div class="form-group"  >
-                                    <h5>6. How is your weekly working time allocated Arrange the follwing according to your order</h5>
+                                    <h5 style="display: inline;">6. Please sort the following options regarding your personal weekly working time allocation </h5><span>  <p  style="color: green;display: inline;font-size: 14px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Sort the following options in descending order</p></span>
                                      <table class="table table-bordered"><tr><td> 
+                                         <div id="menua">
                                         <ul id="image-list1" class="sortable-list list-group">
                                       <li id="pos1"  class="list-group-item" style="margin: 5px 0;">Concentration, silent work at the workstation</li>
                                       <li id="pos2"  class="list-group-item" style="margin: 5px 0;">Speaking at the workstation (e. g. phonecalls, videoconferences, personal talks at workstation)</li>
@@ -540,23 +492,22 @@
                                       <li id="pos5"  class="list-group-item" style="margin: 5px 0;">Informal meeting places</li>
                                       <li id="pos6"  class="list-group-item" style="margin: 5px 0;">Working with objects at the workstation</li>
                                       <li id="pos7"  class="list-group-item" style="margin: 5px 0;">Workshops/laboratory (e. g. examing samples, drafting plans)</li>
-                                    </ul></td> </tr>
+                                    </ul></div></td> </tr>
                                      </table>
                                 
                                     
                                     
                                 </div>
                                 <div class="form-group"  >
-                                    <h5>7.In what kind of office type are you working?</h5>
+                                    <h5 style="display: inline;">7. Please indicate the office type in which you are currently working?</h5><span>  <p  style="color: green;display: inline;font-size: 14px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following answers</p></span><p id="texerrd" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> This question is mandatory</p>
                                     <select class="form-control" id ="offficetype" name="offficetype">
                                         <option value="" selected="selected" disabled="disabled">-- select your office type --</option>
                                         <option>Individual office (enclosed office, one workstation for one person)</option>
-                                        <option>Combination office (Special form of individual office with glass walls on the the side, with the door and an additonal multi-functional zone (e.g. meeting point,printer zone)</option>
-                                        <option>Two-person office (enclosed office, two workstations for two persons)</option>
-                                        <option>Multi-person office (enclosed office, 3-5 workstations)</option>
+                                        <option>Combination office (Combination of 1-5 person offices and open plan with assigned workstations and open zones with different functions e. g. concentration, communication)</option>
+                                        <option>Multi-person office (enclosed office, 2-5 workstations)</option>
                                         <option>Group office (6-20 workstations in one room)</option>
-                                        <option>Open-plan office (> 20 workstations in one room</option>
-                                        <option>Multi-space (flexible workstation/ location concepts, variety of opportunities for meetings, concentration, breaks, etc.)</option>
+                                        <option>Open-plan office (> 20 workstations in one room)</option>
+                                        <option>Multi-space office (no personal workstation => desk-sharing, freely chose of workstations with different functions e. g. concentration, communication, etc.)</option>
                                         
                                       
                                     </select>
@@ -566,30 +517,43 @@
                                 </div>
                                 
                                 <div class="form-group"  >
-                                    <h5>8.How does your Worktypology look like? </h5>
+                                    <h5 style="display: inline;">8. Please indicate the worktypology which you are currently working with? </h5><span>  <p  style="color: green;display: inline;font-size: 14px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following answers</p></span><p id="texerre" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> This question is mandatory</p>
                                     <select class="form-control" id="Worktypology" name="Worktypology">
-                                        <option value="" selected="selected" disabled="disabled">-- select your Worktypology  --</option>
-                                        <option>Stationary (usage of same workspace)</option>
-                                        <option>Variable (usage of different workspaces)</option>
-                                        <option>Mobile, variable (home-office and usage of different workspaces at the office)</option>
+                                        <option value="" selected="selected" disabled="disabled">-- select your worktypology  --</option>
+                                        <option>Stationary (usage of same workspace) at the office</option>
+                                        <option>Variable (usage of different workspaces) at the office</option>
+                                        <option>Mobile, flexible (freely chose between different workspaces at the office, home-office and other locations)</option>
                                         
                                         
                                       
                                     </select>
                             
                                 </div>
+                                
                                 <div class="form-group"  >
-                                    <h5>9. Are you satisfied with your current working conditions? Rate from Worst 1 to 5 Best</h5>
+                                    <h5 style="display: inline;">9. Please indicate the working hour model you are currently having?</h5><span>  <p  style="color: green;display: inline;font-size: 14px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following answers</p></span><p id="texerrf" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> This question is mandatory</p>
+                                    <select class="form-control wkhourmodel" name="wkhourmodel" id="wkhourmodel">
+                                        <option value="" selected="selected" disabled="disabled">-- select your working hour model  --</option>
+                                        <option value="1">Fixed working time</option>
+                                        <option value="2">Flexible working time (with core time) </option>
+                                        <option value="3">Flexible working time (without core time)</option>
+                                        <option value="4">Trust based working time (with core time) </option>
+                                        <option value="5">Trust based working time (without core time)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group"  >
+                                    <h5 style="display: inline;">10. Please indicate how satisfied you are with your current working conditions? </h5><span>  <p  style="color: green;display: inline;font-size: 14px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Use the scale to rate your level of satisfaction</p></span>
                                      <div class="slider-container">
-                                          <input type="range" min="0" max="4" class="slider">
+                                          <input type="range" min="1" max="5" class="slider">
                                         </div>
 
                                         <div class="label-container">
-                                          <div class="label-slider">1</div>
-                                          <div class="label-slider">2</div>
-                                          <div class="label-slider">3</div>
-                                          <div class="label-slider">4</div>
-                                          <div class="label-slider">5</div>
+                                          <div class="label-slider" style="padding-left: 0px;">Very dissatisfied</div>
+                                          <div class="label-slider" style="padding-left: 5px;">Dissatisfied</div>
+                                          <div class="label-slider" style="padding-left: 59px;">Neutral</div>
+                                          <div class="label-slider" style="padding-left: 89px;">Satisfied</div>
+                                          <div class="label-slider" style="padding-left: 32px;">Very satisfied</div>
                                         </div>
                                 
                                 </div>
@@ -601,11 +565,11 @@
 
                             <fieldset id="peronalitytrait">
                               
-                                <div class="form-group">
-                                        <h4>Discover your personality - Please rank the importance of the following characteristics on a
-scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
-                                    <p id="textpersonality" style="display:none;color: red">Please select one of the above option !!</p>
-                                       <div class="result"></div><div class="table-responsive">
+                                <div class="form-group"><p  style="color: green;display: inline;font-size: 14px;"><i class="fa fa-info-circle"></i>Please select all the fields  </p>
+                                        <h5>Discover your personality - Please rank the importance of the following characteristics on a
+scale from (1) “disagree strongly” to (7) “agree strongly”</h5>  
+                                    <p id="textpersonality" style="display:none;color: red;font-size: 12px;"><i class="fa fa-info-circle"></i> This question is mandatory, Please compleate all the parts</p>
+                                       <div class="table-responsive">
                                         <table class="table">
                                               <thead>
                                                 <tr>
@@ -780,7 +744,7 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                   </td>
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">talkative</th>
+                                                  <th scope="row">Talkative</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -833,7 +797,7 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                   </td>
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row"> outgoing,sociable</th>
+                                                  <th scope="row"> outgoing, sociable</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -886,7 +850,7 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                   </td>
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">reserved</th>
+                                                  <th scope="row">Reserved</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -939,7 +903,7 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                   </td>
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">original,come up with new ideas</th>
+                                                  <th scope="row">Original, come up with new ideas</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -1434,16 +1398,16 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                             </fieldset>
 
                             <fieldset  id="preference">
-                                <p id="textpreference" style="display:none;color: red">Please select one of the above option !!</p>
+                                <p  style="color: green;display: inline;font-size: 12px;"><i class="fa fa-info-circle"></i> Please select all the fields  </p>
                                 <div class="form-group">
-                                        <h5>Discover your working preferences -  Please rank the following factors for your well-being at work on a scale from &quot;not important at all&quot; (1) to &quot; veryimportant &quot; (5).</h5>
-                                        <p id="textworkpref" style="display:none;color: red">Please select one of the above option !!</p>
+                                        <h5>Discover your working preferences -  Please rank the importance of the following factors for your well-being at work on a scale from (1) &quot; very unimportant&quot; to (5) &quot; very important&quot;</h5>
+                                        <p id="textpreference" style="display:none;color: red;font-size: 12px;"><i class="fa fa-info-circle"></i> This question is mandatory, Please compleate all the parts</p>
                                         <div class="table-responsive"> <table class="table">
                                               <thead>
                                                 <tr>
-                                                <th scope="col">Score</th>
-                                                  <th scope="col">Not important at all</th>
-                                                  <th scope="col">Not important</th>
+                                                <th scope="col">Well-being factors</th>
+                                                  <th scope="col">Very unimportant</th>
+                                                  <th scope="col">Unimportant</th>
                                                   <th scope="col">Neutral</th>
                                                   <th scope="col">Important</th>
                                                   <th scope="col">Very important</th>
@@ -1452,7 +1416,7 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                               </thead>
                                               <tbody>
                                                 <tr>
-                                                  <th scope="row">Climate comfort</th>
+                                                  <th scope="row">1. Climate comfort (temperature, air distribution, etc. according to personal preferences )</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -1491,7 +1455,7 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                   
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">Visual comfort (daylight-factor, light-conditions, view from the window, etc.)</th>
+                                                  <th scope="row">2. Visual comfort (daylight-factor, light-conditions, view from the window, etc.)</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -1530,7 +1494,7 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                   
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">Acoustic comfort</th>
+                                                  <th scope="row">3. Acoustic comfort</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -1569,7 +1533,7 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                   
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">Control over climate comfort</th>
+                                                  <th scope="row">4. Control over climate (manual control of temperature, air distribution, etc.)</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -1608,7 +1572,8 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                   
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">Cleanliness and safetiness</th>
+                                                  <th scope="row">5. Cleanliness and safetiness (regular cleaning, security system, etc.)
+</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -1647,7 +1612,7 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                   
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">Technology (equipment, software, access to wifi, etc.)</th>
+                                                  <th scope="row">6. Technology (equipment, software, access to wifi, etc.)</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -1685,8 +1650,48 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                   </td>
                                                   
                                                 </tr>
+                                                
                                                 <tr>
-                                                  <th scope="row">Concentration (facilities for concentration work)</th>
+                                                  <th scope="row">7. Healthy workstations (ergonomic furniture, screens, etc.)</th>
+                                                  <td>
+                                                      <div class="form-check">
+                                                        <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input" name="optradiocol12"  value = "1"  >
+                                                        </label>
+                                                      </div>
+                                                  </td>
+                                                  <td>
+                                                      <div class="form-check">
+                                                        <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input " name="optradiocol12" value = "2" >
+                                                        </label>
+                                                      </div>
+                                                  </td>
+                                                  <td>
+                                                      <div class="form-check">
+                                                        <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input " name="optradiocol12" value = "3" >
+                                                        </label>
+                                                      </div>
+                                                  </td>
+                                                  <td>
+                                                      <div class="form-check">
+                                                        <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input " name="optradiocol12" value = "4" >
+                                                        </label>
+                                                      </div>
+                                                  </td>
+                                                  <td>
+                                                      <div class="form-check">
+                                                        <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input " name="optradiocol12" value = "5" >
+                                                        </label>
+                                                      </div>
+                                                  </td>
+                                                  
+                                                </tr>
+                                                <tr>
+                                                  <th scope="row">8. Concentration (facilities for concentration work, etc.)</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -1725,7 +1730,7 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                   
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">Communication (facilities for teamwork, groupmeetings etc.)</th>
+                                                  <th scope="row">9. Communication (facilities for teamwork, groupmeetings, etc.)</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -1763,402 +1768,9 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                   </td>
                                                   
                                                 </tr>
-                                                <tr>
-                                                  <th scope="row">Proximity of co-workers</th>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input" name="optradiocol9"  value = "1"  >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol9" value = "2" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol9" value = "3" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol9" value = "4" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol9" value = "5" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  
-                                                </tr>
-                                                <tr>
-                                                  <th scope="row">Workspace - size</th>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input" name="optradiocol10"  value = "1"  >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol10" value = "2" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol10" value = "3" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol10" value = "4" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol10" value = "5" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  
-                                                </tr>
-                                                <tr>
-                                                  <th scope="row">Storage Space</th>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input" name="optradiocol11"  value = "1"  >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol11" value = "2" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol11" value = "3" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol11" value = "4" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol11" value = "5" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  
-                                                </tr>
-                                                <tr>
-                                                  <th scope="row">Ergonomics (furniture)</th>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input" name="optradiocol12"  value = "1"  >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol12" value = "2" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol12" value = "3" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol12" value = "4" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol12" value = "5" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  
-                                                </tr>
-
                                                 
                                                 <tr>
-                                                  <th scope="row">Privacy</th>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input" name="optradiocol13"  value = "1"  >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol13" value = "2" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol13" value = "3" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol13" value = "4" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol13" value = "5" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  
-                                                </tr>
-                                                <tr>
-                                                  <th scope="row">Social interaction (informal interaction)</th>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input" name="optradiocol14"  value = "1"  >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol14" value = "2" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol14" value = "3" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol14" value = "4" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol14" value = "5" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  
-                                                </tr>
-                                                <tr>
-                                                  <th scope="row">Territoriality & personalization (individual design possibilities)</th>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input" name="optradiocol15"  value = "1"  >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol15" value = "2" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol15" value = "3" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol15" value = "4" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol15" value = "5" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  
-                                                </tr>
-                                                <tr>
-                                                  <th scope="row">Status expression (Money, Hierarchic organisation, Image etc.)</th>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input" name="optradiocol16"  value = "1"  >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol16" value = "2" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol16" value = "3" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol16" value = "4" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol16" value = "5" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  
-                                                </tr>
-                                                <tr>
-                                                  <th scope="row">Autonomy (variable and flexible working-time, workplace concepts, etc.)</th>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input" name="optradiocol17"  value = "1"  >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol17" value = "2" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol17" value = "3" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol17" value = "4" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol17" value = "5" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  
-                                                </tr>
-                                                <tr>
-                                                  <th scope="row">Aesthetics (workspace layout, furniture, colors, design, decoration, etc.)</th>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input" name="optradiocol18"  value = "1"  >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol18" value = "2" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol18" value = "3" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol18" value = "4" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  <td>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input " name="optradiocol18" value = "5" >
-                                                        </label>
-                                                      </div>
-                                                  </td>
-                                                  
-                                                </tr>
-
-                                                
-                                                <tr>
-                                                  <th scope="row">Relaxation (facilities for relaxing, sports and leasure, etc.)</th>
+                                                  <th scope="row">10. Relaxation (facilities for relaxing, sports and leasure, etc.)</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -2197,7 +1809,167 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                   
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">Office location (transport connectivity, backyard, image, etc.)</th>
+                                                  <th scope="row">11. Proximity of co-workers (for social interaction, brainstorming, formal &amp; informal exchange, etc.)</th>
+                                                  <td>
+                                                      <div class="form-check">
+                                                        <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input" name="optradiocol9"  value = "1"  >
+                                                        </label>
+                                                      </div>
+                                                  </td>
+                                                  <td>
+                                                      <div class="form-check">
+                                                        <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input " name="optradiocol9" value = "2" >
+                                                        </label>
+                                                      </div>
+                                                  </td>
+                                                  <td>
+                                                      <div class="form-check">
+                                                        <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input " name="optradiocol9" value = "3" >
+                                                        </label>
+                                                      </div>
+                                                  </td>
+                                                  <td>
+                                                      <div class="form-check">
+                                                        <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input " name="optradiocol9" value = "4" >
+                                                        </label>
+                                                      </div>
+                                                  </td>
+                                                  <td>
+                                                      <div class="form-check">
+                                                        <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input " name="optradiocol9" value = "5" >
+                                                        </label>
+                                                      </div>
+                                                  </td>
+                                                  
+                                                </tr>
+                                                <tr>
+                                                  <th scope="row">12. Workspace size (sufficient space, generous interior layout)</th>
+                                                  <td>
+                                                      <div class="form-check">
+                                                        <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input" name="optradiocol10"  value = "1"  >
+                                                        </label>
+                                                      </div>
+                                                  </td>
+                                                  <td>
+                                                      <div class="form-check">
+                                                        <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input " name="optradiocol10" value = "2" >
+                                                        </label>
+                                                      </div>
+                                                  </td>
+                                                  <td>
+                                                      <div class="form-check">
+                                                        <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input " name="optradiocol10" value = "3" >
+                                                        </label>
+                                                      </div>
+                                                  </td>
+                                                  <td>
+                                                      <div class="form-check">
+                                                        <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input " name="optradiocol10" value = "4" >
+                                                        </label>
+                                                      </div>
+                                                  </td>
+                                                  <td>
+                                                      <div class="form-check">
+                                                        <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input " name="optradiocol10" value = "5" >
+                                                        </label>
+                                                      </div>
+                                                  </td>
+                                                  
+                                                </tr>
+                                                <tr>
+                                                  <th scope="row">13. Aesthetics (office layout, furniture, colors, design, decoration, etc.)</th>
+                                                  <td>
+                                                      <div class="form-check">
+                                                        <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input" name="optradiocol18"  value = "1"  >
+                                                        </label>
+                                                      </div>
+                                                  </td>
+                                                  <td>
+                                                      <div class="form-check">
+                                                        <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input " name="optradiocol18" value = "2" >
+                                                        </label>
+                                                      </div>
+                                                  </td>
+                                                  <td>
+                                                      <div class="form-check">
+                                                        <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input " name="optradiocol18" value = "3" >
+                                                        </label>
+                                                      </div>
+                                                  </td>
+                                                  <td>
+                                                      <div class="form-check">
+                                                        <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input " name="optradiocol18" value = "4" >
+                                                        </label>
+                                                      </div>
+                                                  </td>
+                                                  <td>
+                                                      <div class="form-check">
+                                                        <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input " name="optradiocol18" value = "5" >
+                                                        </label>
+                                                      </div>
+                                                  </td>
+                                                  
+                                                </tr>
+                                                
+
+                                                
+                                                <tr>
+                                                  <th scope="row">14. Privacy &amp; personalization (private space, indiviual design possibilities, etc.)</th>
+                                                  <td>
+                                                      <div class="form-check">
+                                                        <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input" name="optradiocol13"  value = "1"  >
+                                                        </label>
+                                                      </div>
+                                                  </td>
+                                                  <td>
+                                                      <div class="form-check">
+                                                        <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input " name="optradiocol13" value = "2" >
+                                                        </label>
+                                                      </div>
+                                                  </td>
+                                                  <td>
+                                                      <div class="form-check">
+                                                        <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input " name="optradiocol13" value = "3" >
+                                                        </label>
+                                                      </div>
+                                                  </td>
+                                                  <td>
+                                                      <div class="form-check">
+                                                        <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input " name="optradiocol13" value = "4" >
+                                                        </label>
+                                                      </div>
+                                                  </td>
+                                                  <td>
+                                                      <div class="form-check">
+                                                        <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input " name="optradiocol13" value = "5" >
+                                                        </label>
+                                                      </div>
+                                                  </td>
+                                                  
+                                                </tr>
+                                                
+                                                <tr>
+                                                  <th scope="row">15. Office location (transport connection, neighborhood image, etc.)</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -2236,7 +2008,48 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                   
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">Services (Child-care, pick-up service, etc.)</th>
+                                                  <th scope="row">16. Status expression salary, hierarchical structure, company image, etc.)</th>
+                                                  <td>
+                                                      <div class="form-check">
+                                                        <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input" name="optradiocol16"  value = "1"  >
+                                                        </label>
+                                                      </div>
+                                                  </td>
+                                                  <td>
+                                                      <div class="form-check">
+                                                        <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input " name="optradiocol16" value = "2" >
+                                                        </label>
+                                                      </div>
+                                                  </td>
+                                                  <td>
+                                                      <div class="form-check">
+                                                        <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input " name="optradiocol16" value = "3" >
+                                                        </label>
+                                                      </div>
+                                                  </td>
+                                                  <td>
+                                                      <div class="form-check">
+                                                        <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input " name="optradiocol16" value = "4" >
+                                                        </label>
+                                                      </div>
+                                                  </td>
+                                                  <td>
+                                                      <div class="form-check">
+                                                        <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input " name="optradiocol16" value = "5" >
+                                                        </label>
+                                                      </div>
+                                                  </td>
+                                                  
+                                                </tr>
+
+                                                
+                                                <tr>
+                                                  <th scope="row">17. Office services (child care, pet care, postal, pick-up, etc.)</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -2282,37 +2095,36 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                 </div>
                                 
                                 <div class="form-group"  >
-                                    <h5>2. What kind of workstation type or distribution would you prefer?</h5>
-                                    <select class="form-control workdistributiona" id ="workdistributionb" name="workdistributionc">
-                                        <option value="" selected="selected" disabled="disabled">-- select your workstation type --</option>
+                                    <h5 style="display: inline;">2. What kind of office type or distribution would you prefer?</h5><span>  <p  style="color: green;display: inline;font-size: 14px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following answers</p></span><p id="texerrg" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> This question is mandatory</p> 
+                                    <select class="form-control" id ="workdistributiona" name="workdistributiona">
+                                        <option value="" selected="selected" disabled="disabled">-- select your office type --</option>
                                         <option value="1">Individual office (enclosed office, one workstation for one person)</option>
-                                        <option value="2">Two-person office (enclosed office, two workstations for two persons) </option>
-                                        <option value="3">Combination office (Special form of individual office with glass walls on side, with the door and an additonal multi-functional zone (e.g. meeting point, printer zone) </option>
-                                       
+                                        <option value="2">Combination office (Combination of 1-5 person offices and open plan with assigned workstations and open zones with different functions e. g. concentration, communication)</option>
+                                        <option value="3">Multi-person office (enclosed office, 2-5 workstations)</option>
                                         <option value="4">Group office (6-20 workstations in one room)</option>
-                                        <option value="5">Open-plan office (> 20 workstations in one room</option>
-                                        <option value="6">Multi-space (flexible workstation/ location concepts, variety of opportunities for meetings, concentration, breaks, etc.)</option>
+                                        <option value="5">Open-plan office (> 20 workstations in one room)</option>
+                                        <option value="6">Multi-space office (no personal workstation => desk-sharing, freely chose of workstations with different functions e. g. concentration, communication, etc.)</option>
                                     </select>
                                 </div>
                                 
                                 <div class="form-group"  >
-                                    <h5>3. I am most productive, when working...</h5>
-                                    <select class="form-control" name="productivitywork">
+                                    <h5 style="display: inline;">3. I am most productive, when working...</h5><span>  <p  style="color: green;display: inline;font-size: 14px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following answers</p></span><p id="texerrh" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> This question is mandatory</p>
+                                    <select class="form-control" name="productivitywork" id ="productivitywork" >
                                         <option value="" selected="selected" disabled="disabled">-- select your workstation type --</option>
-                                        <option>away from my desk</option>
-                                        <option>from home</option>
-                                        <option>on my own</option>
-                                        <option>in a stimulating office</option>
-                                        <option>imongst creative people</option>
-                                        <option>in a buzzy environment </option>
-                                        <option>under time pressure</option>
+                                        <option value="1">away from my desk</option>
+                                        <option value="2">from home</option>
+                                        <option value="3">on my own</option>
+                                        <option value="4">in a stimulating office</option>
+                                        <option value="5">imongst creative people</option>
+                                        <option value="6">in a buzzy environment </option>
+                                        <option value="7">under time pressure</option>
                                     </select>
                                 </div>
                                 
-                                <div class="form-group"  >
-                                    <h5>4. Which Worktypology you would prefer?</h5>
-                                    <select class="form-control whereworkplaceprefera" name="whereworkplaceprefer">
-                                        <option value="" selected="selected" disabled="disabled">-- select your Worktypology  --</option>
+                                <div class="form-group">
+                                    <h5 style="display: inline;">4. Which worktypology you would prefer?</h5><span>  <p  style="color: green;display: inline;font-size: 14px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following answers</p></span><p id="texerri" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> This question is mandatory</p>
+                                    <select class="form-control whereworkplaceprefera" id ="whereworkplaceprefer" name="whereworkplaceprefer">
+                                        <option value="" selected="selected" disabled="disabled">-- select your worktypology  --</option>
                                         <option value="1">Stationary (usage of same workspace)</option>
                                         <option value="2">Variable (usage of different workspaces) </option>
                                         <option value="3">Mobile, variable (home-office and usage of different workspaces at the office)</option>
@@ -2320,8 +2132,8 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                 </div>
                                 
                                 <div class="form-group"  >
-                                    <h5>5. Which working hour model would you prefer?</h5>
-                                    <select class="form-control hourmodela" name="hourmodel">
+                                    <h5 style="display: inline;">5. Which working hour model would you prefer?</h5><span>  <p  style="color: green;display: inline;font-size: 14px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following answers</p></span><p id="texerrj" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> This question is mandatory</p>
+                                    <select class="form-control" name="hourmodel" id="hourmodel">
                                         <option value="" selected="selected" disabled="disabled">-- select your working hour model  --</option>
                                         <option value="1">Fixed working time</option>
                                         <option value="2">Flexible working time (with core time) </option>
@@ -2330,8 +2142,19 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                         <option value="5">Trust based working time (without core time)</option>
                                     </select>
                                 </div>
-                                <div class="form-group">
-                                <h5>6. What ratio of the following pairs of workfactors would you like?</h5>
+                              
+                         
+                                
+                                <div class="f1-buttons">
+                                    <button type="button" class="btn btn-previous">Previous</button>
+                                    <button type="button" class="btn btn-next">Next</button>
+                                </div>
+                                
+                            </fieldset>
+                    	     <fieldset>
+      
+          <div class="form-group">
+                                <h5 style="display: inline;">1. What ratios of the following pairs of work factors would you prefer?</h5><span>  <p  style="color: green;display: inline;font-size: 14px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Use the scale to mark your preferred ratio</p></span>
                                 <div class="table-responsive">
                                 <table class="table">
                                             
@@ -2352,7 +2175,7 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                   
                                                 </td>
                                                 <td>
-                                                <h5 class="text-center">Work with human or things/data</h5>
+                                                <h5 class="text-center">Work with human or vs. work with things or data</h5>
                                                 <div class="slider-container" style="padding-top:70px;">
                                                   <input type="range" min="1" max="5" class="slider" style="width: 120%" name = "humanorthings" id="humanorthings" value=""  onchange="updateSlidera(this.value)">
                                                 </div>
@@ -2374,7 +2197,7 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                     <img class="card-img-top" src="assets/img/presentation.png" alt="Card image" style="width:90%" width="150" height="150">
                                                     <div class="card-body"><br>
 
-                                                      <p class="card-text" style ="text-align: center">Work with things/data</p>
+                                                      <p class="card-text" style ="text-align: center">Work with things or data</p>
 
                                                     </div>
                                                 </div>
@@ -2382,52 +2205,7 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                   
                                                 </td>
                                               </tr>
-                                              <tr>
-                                                
-                                                <td>
-                                                
-                                                <div class="card" style="width:200px;float: right"><br><br>
-                                                    <img class="card-img-top" src="assets/img/interview.png" alt="Card image" style="width:90%" width="150" height="150">
-                                                    <div class="card-body"> <br>
-
-                                                      <p class="card-text" style ="text-align: center">Personal</p>
-
-                                                    </div>
-                                                </div>
-                                                  
-                                                  
-                                                </td>
-                                                <td>
-                                                <h5 class="text-center">Personal vs Virtual Communication</h5>
-                                                <div class="slider-container" style="padding-top:70px;">
-                                                  <input type="range" min="1" max="5" class="slider" style="width: 120%" name = "PersonalvsVirtual"  value="">
-                                                </div>
-
-                                                <div class="label-container" style="width: 95%">
-                                                  <div class="label-slider">100/0</div>
-                                                  <div class="label-slider">75/25</div>
-                                                  <div class="label-slider">50/50</div>
-                                                  <div class="label-slider">25/75</div>
-                                                  <div class="label-slider">0/100</div>
-
-                                                </div>
-                                                
-                                               
-                                                 
-                                                </td>
-                                                <td>
-                                                  <div class="card" style="width:200px;float: left"><br><br>
-                                                    <img class="card-img-top" src="assets/img/meeting.png" alt="Card image" style="width:90%" width="150" height="150">
-                                                    <div class="card-body"><br>
-
-                                                      <p class="card-text" style ="text-align: center">Virtual</p>
-
-                                                    </div>
-                                                </div>
-                                        
-                                                  
-                                                </td>
-                                              </tr>
+                                              
                                               <tr>
                                                 
                                                 <td>
@@ -2466,99 +2244,7 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                     <img class="card-img-top" src="assets/img/focus.png" alt="Card image" style="width:90%" width="150" height="150">
                                                     <div class="card-body"><br>
 
-                                                      <p class="card-text" style ="text-align: center">concentration</p>
-
-                                                    </div>
-                                                </div>
-                                        
-                                                  
-                                                </td>
-                                              </tr>
-                                              <tr>
-                                                
-                                                <td>
-                                                
-                                                <div class="card" style="width:200px;float: right"><br><br>
-                                                    <img class="card-img-top" src="assets/img/organization.png" alt="Card image" style="width:90%" width="150" height="150">
-                                                    <div class="card-body"> <br>
-
-                                                      <p class="card-text" style ="text-align: center">organised</p>
-
-                                                    </div>
-                                                </div>
-                                                  
-                                                  
-                                                </td>
-                                                <td>
-                                                <h5 class="text-center">Working task are organised vs improvised</h5>
-                                                <div class="slider-container" style="padding-top:70px;">
-                                                  <input type="range" min="1" max="5" class="slider" style="width: 120%" name = "organised"  value="">
-                                                </div>
-
-                                                <div class="label-container" style="width: 95%">
-                                                  <div class="label-slider">100/0</div>
-                                                  <div class="label-slider">75/25</div>
-                                                  <div class="label-slider">50/50</div>
-                                                  <div class="label-slider">25/75</div>
-                                                  <div class="label-slider">0/100</div>
-
-                                                </div>
-                                                
-                                               
-                                                 
-                                                </td>
-                                                <td>
-                                                  <div class="card" style="width:200px;float: left"><br><br>
-                                                    <img class="card-img-top" src="assets/img/idea.png" alt="Card image" style="width:90%" width="150" height="150">
-                                                    <div class="card-body"><br>
-
-                                                      <p class="card-text" style ="text-align: center">improvised</p>
-
-                                                    </div>
-                                                </div>
-                                        
-                                                  
-                                                </td>
-                                              </tr>
-                                              <tr>
-                                                
-                                                <td>
-                                                
-                                                <div class="card" style="width:200px;float: right"><br><br>
-                                                    <img class="card-img-top" src="assets/img/work.png" alt="Card image" style="width:90%" width="150" height="150">
-                                                    <div class="card-body"> <br>
-
-                                                      <p class="card-text" style ="text-align: center">routine</p>
-
-                                                    </div>
-                                                </div>
-                                                  
-                                                  
-                                                </td>
-                                                <td>
-                                                <h5 class="text-center">Work is based on routine vs new</h5>
-                                                <div class="slider-container" style="padding-top:70px;">
-                                                  <input type="range" min="1" max="5" class="slider" style="width: 120%" name = "routine"  value="" >
-                                                </div>
-
-                                                <div class="label-container" style="width: 95%">
-                                                  <div class="label-slider">100/0</div>
-                                                  <div class="label-slider">75/25</div>
-                                                  <div class="label-slider">50/50</div>
-                                                  <div class="label-slider">25/75</div>
-                                                  <div class="label-slider">0/100</div>
-
-                                                </div>
-                                                
-                                               
-                                                 
-                                                </td>
-                                                <td>
-                                                  <div class="card" style="width:200px;float: left"><br><br>
-                                                    <img class="card-img-top" src="assets/img/newwork.png" alt="Card image" style="width:90%" width="150" height="150">
-                                                    <div class="card-body"><br>
-
-                                                      <p class="card-text" style ="text-align: center">new</p>
+                                                      <p class="card-text" style ="text-align: center">Concentration</p>
 
                                                     </div>
                                                 </div>
@@ -2617,6 +2303,52 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                 <td>
                                                 
                                                 <div class="card" style="width:200px;float: right"><br><br>
+                                                    <img class="card-img-top" src="assets/img/interview.png" alt="Card image" style="width:90%" width="150" height="150">
+                                                    <div class="card-body"> <br>
+
+                                                      <p class="card-text" style ="text-align: center">Personal</p>
+
+                                                    </div>
+                                                </div>
+                                                  
+                                                  
+                                                </td>
+                                                <td>
+                                                <h5 class="text-center">Personal vs virtual Communication</h5>
+                                                <div class="slider-container" style="padding-top:70px;">
+                                                  <input type="range" min="1" max="5" class="slider" style="width: 120%" name = "PersonalvsVirtual"  value="">
+                                                </div>
+
+                                                <div class="label-container" style="width: 95%">
+                                                  <div class="label-slider">100/0</div>
+                                                  <div class="label-slider">75/25</div>
+                                                  <div class="label-slider">50/50</div>
+                                                  <div class="label-slider">25/75</div>
+                                                  <div class="label-slider">0/100</div>
+
+                                                </div>
+                                                
+                                               
+                                                 
+                                                </td>
+                                                <td>
+                                                  <div class="card" style="width:200px;float: left"><br><br>
+                                                    <img class="card-img-top" src="assets/img/meeting.png" alt="Card image" style="width:90%" width="150" height="150">
+                                                    <div class="card-body"><br>
+
+                                                      <p class="card-text" style ="text-align: center">Virtual</p>
+
+                                                    </div>
+                                                </div>
+                                        
+                                                  
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                
+                                                <td>
+                                                
+                                                <div class="card" style="width:200px;float: right"><br><br>
                                                     <img class="card-img-top" src="assets/img/planning.png" alt="Card image" style="width:90%" width="150" height="150">
                                                     <div class="card-body"> <br>
 
@@ -2650,7 +2382,54 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                     <img class="card-img-top" src="assets/img/laptop.png" alt="Card image" style="width:90%" width="150" height="150">
                                                     <div class="card-body"><br>
 
-                                                      <p class="card-text" style ="text-align: center">Digital working environmen</p>
+                                                      <p class="card-text" style ="text-align: center">Digital working environment</p>
+
+                                                    </div>
+                                                </div>
+                                        
+                                                  
+                                                </td>
+                                              </tr>
+                                              
+                                              <tr>
+                                                
+                                                <td>
+                                                
+                                                <div class="card" style="width:200px;float: right"><br><br>
+                                                    <img class="card-img-top" src="assets/img/work.png" alt="Card image" style="width:90%" width="150" height="150">
+                                                    <div class="card-body"> <br>
+
+                                                      <p class="card-text" style ="text-align: center">Routine</p>
+
+                                                    </div>
+                                                </div>
+                                                  
+                                                  
+                                                </td>
+                                                <td>
+                                                <h5 class="text-center">Routine vs. new work tasks</h5>
+                                                <div class="slider-container" style="padding-top:70px;">
+                                                  <input type="range" min="1" max="5" class="slider" style="width: 120%" name = "routine"  value="" >
+                                                </div>
+
+                                                <div class="label-container" style="width: 95%">
+                                                  <div class="label-slider">100/0</div>
+                                                  <div class="label-slider">75/25</div>
+                                                  <div class="label-slider">50/50</div>
+                                                  <div class="label-slider">25/75</div>
+                                                  <div class="label-slider">0/100</div>
+
+                                                </div>
+                                                
+                                               
+                                                 
+                                                </td>
+                                                <td>
+                                                  <div class="card" style="width:200px;float: left"><br><br>
+                                                    <img class="card-img-top" src="assets/img/newwork.png" alt="Card image" style="width:90%" width="150" height="150">
+                                                    <div class="card-body"><br>
+
+                                                      <p class="card-text" style ="text-align: center">New work tasks</p>
 
                                                     </div>
                                                 </div>
@@ -2674,7 +2453,7 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                   
                                                 </td>
                                                 <td>
-                                                <h5 class="text-center">Fixed workspace vs Flexible workspace</h5>
+                                                <h5 class="text-center">Fixed workspace vs flexible workspace</h5>
                                                 <div class="slider-container" style="padding-top:70px;">
                                                   <input type="range" min="1" max="5" class="slider" style="width: 120%" name = "multiplea"  value=""  onchange="updateSliderh(this.value)">
                                                 </div>
@@ -2720,7 +2499,7 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                 
                                     </div>
                                  <div class="form-group">
-                                     <h5>7. What part of your working time would you like to spend where?</h5>
+                                     <h5>7. What percentage of your weekly working time (100%) would you like to spend where?</h5>
                                      
                                       <div class="row">
                                       <div class="col-sm-4" >
@@ -2737,11 +2516,11 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                 </div>
 
                                                 <div class="label-container" style="width: 95%">
-                                                  <div class="label-slider">0</div>
-                                                  <div class="label-slider">25</div>
-                                                  <div class="label-slider">50</div>
-                                                  <div class="label-slider">75</div>
-                                                  <div class="label-slider">100</div>
+                                                  <div class="label-slider" style="padding-left: 0px;">0%</div>
+                                                  <div class="label-slider" style="padding-left: 60px;">25%</div>
+                                                  <div class="label-slider" style="padding-left: 51px;">50%</div>
+                                                  <div class="label-slider" style="padding-left: 52px;">75%</div>
+                                                  <div class="label-slider" style="padding-left: 32px;">100%</div>
 
                                                 </div>
                                         </div>
@@ -2759,11 +2538,11 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                 </div>
 
                                                 <div class="label-container" style="width: 95%">
-                                                  <div class="label-slider">0</div>
-                                                  <div class="label-slider">25</div>
-                                                  <div class="label-slider">50</div>
-                                                  <div class="label-slider">755</div>
-                                                  <div class="label-slider">100</div>
+                                                  <div class="label-slider" style="padding-left: 0px;">0%</div>
+                                                  <div class="label-slider" style="padding-left: 60px;">25%</div>
+                                                  <div class="label-slider" style="padding-left: 51px;">50%</div>
+                                                  <div class="label-slider" style="padding-left: 52px;">75%</div>
+                                                  <div class="label-slider" style="padding-left: 32px;">100%</div>
 
                                                 </div>
                                           
@@ -2784,11 +2563,11 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                                 </div>
 
                                                 <div class="label-container" style="width: 95%">
-                                                  <div class="label-slider">0</div>
-                                                  <div class="label-slider">25</div>
-                                                  <div class="label-slider">50</div>
-                                                  <div class="label-slider">75</div>
-                                                  <div class="label-slider">100</div>
+                                                  <div class="label-slider" style="padding-left: 0px;">0%</div>
+                                                  <div class="label-slider" style="padding-left: 60px;">25%</div>
+                                                  <div class="label-slider" style="padding-left: 51px;">50%</div>
+                                                  <div class="label-slider" style="padding-left: 52px;">75%</div>
+                                                  <div class="label-slider" style="padding-left: 32px;">100%</div>
 
                                                 </div>
                                           
@@ -2804,15 +2583,11 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
                                         
                                 
                                 </div>
-                         
-                                
-                                <div class="f1-buttons">
-                                    <button type="button" class="btn btn-previous">Previous</button>
-                                    <button type="submit" class="btn btn-submit">Submit</button>
-                                </div>
-                                
-                            </fieldset>
-                    	
+        <div class="f1-buttons">
+            <button type="button" class="btn btn-previous">Previous</button>
+            <button type="submit" class="btn btn-submit">Submit</button>
+        </div>
+    </fieldset>
                     	</form>
                     </div>
                 </div>
@@ -2833,29 +2608,23 @@ scale from 1 “disagree strongly” to 7 “agree strongly”</h4>
         <script src="assets/js/scripts.js"></script>
      
         <script>
-        
+        var $li = $('#menua li').click(function() {
+    $li.removeClass('selected');
+    $(this).addClass('selected');
+});
             
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbzVvOLnf_CcPYMvtjKUKoG4nT5pNwT5IqhiI_iYS89EvqUFYcQ/exec'
-            const form = document.forms['google-sheet']
-          
-            form.addEventListener('submit', e => {
             
-                
-              e.preventDefault()
-              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response =>  location.replace("thankyou.html"))
-                .catch(error => console.error('Error!', error.message))
-            })
             
       
            
         $('.sortable-list').sortable({
+            
   connectWith: '.sortable-list',
   update: function(event, ui) {
     var changedList = this.id;
     var order = $(this).sortable('toArray');
     var positions = order.join(';');
-
+    
     console.log({
       id: changedList,
       positions: positions
