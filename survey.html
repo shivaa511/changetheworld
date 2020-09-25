@@ -127,7 +127,7 @@
                 
                 <div class="row">
                     <div>
-                    	<form role="form"  method="post" class="f1" name="google-sheet" id ="surveyform" >
+                    	<form role="form"  method="post" class="f1" name="google-sheet" id ="surveyform" autocomplete="off" >
                     		<div class="f1-steps">
                     			<div class="f1-progress">
                     			    <div class="f1-progress-line" data-now-value="12.5" data-number-of-steps="4" style="width: 12.5%;"></div>
@@ -176,9 +176,9 @@
                                        
                                 </div>
                                 <div class="form-group">
-                                        <h5 style="display: inline;">2. Please indicate your age</h5><span>  <p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Only numbers may be entered in this field</p></span><p id="texerrage" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> This question is mandatory</p>
+                                        <h5 style="display: inline;">2. Please indicate your age</h5><span>  <p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please enter number in this field</p></span><p id="texerrage" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> This question is mandatory</p>
                                         
-                                    <input type="text" class="form-control"  name="Age" placeholder="Value"> 
+                                    <input type="text" class="form-control"  name="age" placeholder="Value"> 
                                 </div>
                                 <div class="form-group"  >
                                     <h5 style="display: inline;">3. Please indicate your religion</h5><span> <p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following answers</p></span>
@@ -200,7 +200,7 @@
                                 </div>
                                 <div class="form-group">
                                     <h5 style="display: inline;">4. Where are you from?</h5><span><p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following answers</p></span><p id="texerrb" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> This question is mandatory</p>
-                                       <select class="form-control" id ="country" name="Country" >
+                                       <select class="form-control" id ="country" name="country" >
                                            
                                            <option value="" selected="selected" disabled="disabled">-- select your country --</option>
                                            <option value="Afganistan">Afghanistan</option>
@@ -485,19 +485,23 @@
                                      <table class="table table-bordered"><tr><td> 
                                          <div id="menua">
                                         <ul id="image-list1" class="sortable-list list-group">
-                                      <li id="pos1"  class="list-group-item" style="margin: 5px 0;">Concentration, silent work at the workstation</li>
-                                      <li id="pos2"  class="list-group-item" style="margin: 5px 0;">Speaking at the workstation (e. g. phonecalls, videoconferences, personal talks at workstation)</li>
-                                      <li id="pos3"  class="list-group-item" style="margin: 5px 0;">In conference rooms</li>
-                                      <li id="pos4"  class="list-group-item" style="margin: 5px 0;">Making phone calls at the workstation</li>
-                                      <li id="pos5"  class="list-group-item" style="margin: 5px 0;">Informal meeting places</li>
-                                      <li id="pos6"  class="list-group-item" style="margin: 5px 0;">Working with objects at the workstation</li>
-                                      <li id="pos7"  class="list-group-item" style="margin: 5px 0;">Workshops/laboratory (e. g. examing samples, drafting plans)</li>
+                                      <li id="pos1"  class="list-group-item" style="margin: 5px 0;background-color: #ffeee6;"><i class="fa fa-arrow-right" aria-hidden="true"></i> Concentration, silent work at the workstation</li>
+                                      <li id="pos2"  class="list-group-item" style="margin: 5px 0;background-color: #ffeee6;"><i class="fa fa-arrow-right" aria-hidden="true"></i> Speaking at the workstation (e. g. phonecalls, videoconferences, personal talks at workstation)</li>
+                                      <li id="pos3"  class="list-group-item" style="margin: 5px 0;background-color: #ffeee6;"><i class="fa fa-arrow-right" aria-hidden="true"></i> In conference rooms</li>
+                                      <li id="pos4"  class="list-group-item" style="margin: 5px 0;background-color: #ffeee6;"><i class="fa fa-arrow-right" aria-hidden="true"></i> Making phone calls at the workstation</li>
+                                      <li id="pos5"  class="list-group-item" style="margin: 5px 0;background-color: #ffeee6;"><i class="fa fa-arrow-right" aria-hidden="true"></i> Informal meeting places</li>
+                                      <li id="pos6"  class="list-group-item" style="margin: 5px 0;background-color: #ffeee6;"><i class="fa fa-arrow-right" aria-hidden="true"></i> Working with objects at the workstation</li>
+                                      <li id="pos7"  class="list-group-item" style="margin: 5px 0;background-color: #ffeee6;"><i class="fa fa-arrow-right" aria-hidden="true"></i> Workshops/laboratory (e. g. examing samples, drafting plans)</li>
                                     </ul></div></td> </tr>
+                                         
+                                    <input type="hidden" class="form-control" id="sorteditems" name="sorteditems" value="">
                                      </table>
                                 
                                     
                                     
                                 </div>
+                                
+                               
                                 <div class="form-group"  >
                                     <h5 style="display: inline;">7. Please indicate the office type in which you are currently working?</h5><span>  <p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following answers</p></span><p id="texerrd" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> This question is mandatory</p>
                                     <select class="form-control" id ="offficetype" name="offficetype">
@@ -545,7 +549,7 @@
                                 <div class="form-group"  >
                                     <h5 style="display: inline;">10. Please indicate how satisfied you are with your current working conditions? </h5><span>  <p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Use the scale to rate your level of satisfaction</p></span>
                                      <div class="slider-container">
-                                          <input type="range" min="1" max="5" class="slider" id="range1">
+                                          <input type="range" min="1" max="5" class="slider" id="range1" name="satisfiedwork">
                                         </div>
 
                                         <div class="label-container">
@@ -589,7 +593,7 @@ scale from (1) “disagree strongly” to (7) “agree strongly”</h5>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input shiva" name="optradio11"  value = "1"  >
+                                                        <input type="radio" class="form-check-input neuroticism" name="optradio11"  value = "1"  >
                                                         </label>
                                                       </div>
                                                   </td>
@@ -1416,7 +1420,7 @@ scale from (1) “disagree strongly” to (7) “agree strongly”</h5>
                                               </thead>
                                               <tbody>
                                                 <tr>
-                                                  <th scope="row">1. Climate comfort (temperature, air distribution, etc. according to personal preferences )</th>
+                                                  <th scope="row">Climate comfort (temperature, air distribution, etc. according to personal preferences )</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -1455,7 +1459,7 @@ scale from (1) “disagree strongly” to (7) “agree strongly”</h5>
                                                   
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">2. Visual comfort (daylight-factor, light-conditions, view from the window, etc.)</th>
+                                                  <th scope="row">Visual comfort (daylight-factor, light-conditions, view from the window, etc.)</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -1494,7 +1498,7 @@ scale from (1) “disagree strongly” to (7) “agree strongly”</h5>
                                                   
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">3. Acoustic comfort</th>
+                                                  <th scope="row">Acoustic comfort</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -1533,7 +1537,7 @@ scale from (1) “disagree strongly” to (7) “agree strongly”</h5>
                                                   
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">4. Control over climate (manual control of temperature, air distribution, etc.)</th>
+                                                  <th scope="row">Control over climate (manual control of temperature, air distribution, etc.)</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -1572,7 +1576,7 @@ scale from (1) “disagree strongly” to (7) “agree strongly”</h5>
                                                   
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">5. Cleanliness and safetiness (regular cleaning, security system, etc.)
+                                                  <th scope="row">Cleanliness and safetiness (regular cleaning, security system, etc.)
 </th>
                                                   <td>
                                                       <div class="form-check">
@@ -1612,7 +1616,7 @@ scale from (1) “disagree strongly” to (7) “agree strongly”</h5>
                                                   
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">6. Technology (equipment, software, access to wifi, etc.)</th>
+                                                  <th scope="row">Technology (equipment, software, access to wifi, etc.)</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -1652,7 +1656,7 @@ scale from (1) “disagree strongly” to (7) “agree strongly”</h5>
                                                 </tr>
                                                 
                                                 <tr>
-                                                  <th scope="row">7. Healthy workstations (ergonomic furniture, screens, etc.)</th>
+                                                  <th scope="row">Healthy workstations (ergonomic furniture, screens, etc.)</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -1691,7 +1695,7 @@ scale from (1) “disagree strongly” to (7) “agree strongly”</h5>
                                                   
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">8. Concentration (facilities for concentration work, etc.)</th>
+                                                  <th scope="row">Concentration (facilities for concentration work, etc.)</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -1730,7 +1734,7 @@ scale from (1) “disagree strongly” to (7) “agree strongly”</h5>
                                                   
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">9. Communication (facilities for teamwork, groupmeetings, etc.)</th>
+                                                  <th scope="row">Communication (facilities for teamwork, groupmeetings, etc.)</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -1770,7 +1774,7 @@ scale from (1) “disagree strongly” to (7) “agree strongly”</h5>
                                                 </tr>
                                                 
                                                 <tr>
-                                                  <th scope="row">10. Relaxation (facilities for relaxing, sports and leasure, etc.)</th>
+                                                  <th scope="row">Relaxation (facilities for relaxing, sports and leasure, etc.)</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -1809,7 +1813,7 @@ scale from (1) “disagree strongly” to (7) “agree strongly”</h5>
                                                   
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">11. Proximity of co-workers (for social interaction, brainstorming, formal &amp; informal exchange, etc.)</th>
+                                                  <th scope="row">Proximity of co-workers (for social interaction, brainstorming, formal &amp; informal exchange, etc.)</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -1848,7 +1852,7 @@ scale from (1) “disagree strongly” to (7) “agree strongly”</h5>
                                                   
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">12. Workspace size (sufficient space, generous interior layout)</th>
+                                                  <th scope="row">Workspace size (sufficient space, generous interior layout)</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -1887,7 +1891,7 @@ scale from (1) “disagree strongly” to (7) “agree strongly”</h5>
                                                   
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">13. Aesthetics (office layout, furniture, colors, design, decoration, etc.)</th>
+                                                  <th scope="row">Aesthetics (office layout, furniture, colors, design, decoration, etc.)</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -1929,7 +1933,7 @@ scale from (1) “disagree strongly” to (7) “agree strongly”</h5>
 
                                                 
                                                 <tr>
-                                                  <th scope="row">14. Privacy &amp; personalization (private space, indiviual design possibilities, etc.)</th>
+                                                  <th scope="row">Privacy &amp; personalization (private space, indiviual design possibilities, etc.)</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -1969,7 +1973,7 @@ scale from (1) “disagree strongly” to (7) “agree strongly”</h5>
                                                 </tr>
                                                 
                                                 <tr>
-                                                  <th scope="row">15. Office location (transport connection, neighborhood image, etc.)</th>
+                                                  <th scope="row">Office location (transport connection, neighborhood image, etc.)</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -2008,7 +2012,7 @@ scale from (1) “disagree strongly” to (7) “agree strongly”</h5>
                                                   
                                                 </tr>
                                                 <tr>
-                                                  <th scope="row">16. Status expression salary, hierarchical structure, company image, etc.)</th>
+                                                  <th scope="row">Status expression (salary, hierarchical structure, company image, etc.)</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -2049,7 +2053,7 @@ scale from (1) “disagree strongly” to (7) “agree strongly”</h5>
 
                                                 
                                                 <tr>
-                                                  <th scope="row">17. Office services (child care, pet care, postal, pick-up, etc.)</th>
+                                                  <th scope="row">Office services (child care, pet care, postal, pick-up, etc.)</th>
                                                   <td>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
@@ -2096,7 +2100,7 @@ scale from (1) “disagree strongly” to (7) “agree strongly”</h5>
                                 
                                 <div class="form-group"  >
                                     <h5 style="display: inline;">2. What kind of office type or distribution would you prefer?</h5><span>  <p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following answers</p></span><p id="texerrg" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> This question is mandatory</p> 
-                                    <select class="form-control" id ="workdistributiona" name="workdistributiona">
+                                    <select class="form-control workdistributiona" id ="workdistributiona" name="workdistributiona">
                                         <option value="" selected="selected" disabled="disabled">-- select your office type --</option>
                                         <option value="1">Individual office (enclosed office, one workstation for one person)</option>
                                         <option value="2">Combination office (Combination of 1-5 person offices and open plan with assigned workstations and open zones with different functions e. g. concentration, communication)</option>
@@ -2512,7 +2516,9 @@ scale from (1) “disagree strongly” to (7) “agree strongly”</h5>
                                                     </div>
                                                 </div>
                                                 <div class="slider-container" style="padding-top:70px;">
-                                                  <input type="range" min="1" max="5" class="slider" style="width: 120%" name = "test1"  value="">
+                                                  <input type="range" min="1" max="5" class="slider" style="width: 120%" name = "officepercentage"  value="" >
+                                                  
+                                                  
                                                 </div>
 
                                                 <div class="label-container" style="width: 95%">
@@ -2534,7 +2540,7 @@ scale from (1) “disagree strongly” to (7) “agree strongly”</h5>
                                                     </div>
                                                 </div>
                                                 <div class="slider-container" style="padding-top:70px;">
-                                                  <input type="range" min="1" max="5" class="slider" style="width: 120%" name = "test2"  value="">
+                                                  <input type="range" min="1" max="5" class="slider" style="width: 120%" name = "homepercentage"  value="" >
                                                 </div>
 
                                                 <div class="label-container" style="width: 95%">
@@ -2559,7 +2565,7 @@ scale from (1) “disagree strongly” to (7) “agree strongly”</h5>
                                                     </div>
                                                 </div>
                                                 <div class="slider-container" style="padding-top:70px;">
-                                                  <input type="range" min="1" max="5" class="slider" style="width: 120%" name = "test3"  value="">
+                                                  <input type="range" min="1" max="5" class="slider" style="width: 120%" name = "mobilepercentage"  value="" >
                                                 </div>
 
                                                 <div class="label-container" style="width: 95%">
@@ -2576,10 +2582,10 @@ scale from (1) “disagree strongly” to (7) “agree strongly”</h5>
                                 
                                         
                                      
-                                        <input type="hidden" class="form-control" id="last1"  name = "last1"  value="0" readonly>
-                                        <input type="hidden" class="form-control" id="last2"  name = "last2"  value="0" readonly>
-                                        <input type="hidden" class="form-control" id="last3"  name = "last3"  value="0" readonly>
-                                        <input type="hidden" class="form-control" id="last4"  name = "last4"  value="0" readonly>
+                                        <input type="hidden" class="form-control" id="lastres1"  name = "last1"  value="0" readonly>
+                                        <input type="hidden" class="form-control" id="lastres2"  name = "last2"  value="0" readonly>
+                                        <input type="hidden" class="form-control" id="lastres3"  name = "last3"  value="0" readonly>
+                                        <input type="hidden" class="form-control" id="lastres4"  name = "last4"  value="0" readonly>
                                         
                                 
                                 </div>
@@ -2624,7 +2630,7 @@ scale from (1) “disagree strongly” to (7) “agree strongly”</h5>
     var changedList = this.id;
     var order = $(this).sortable('toArray');
     var positions = order.join(';');
-    
+    document.getElementById("sorteditems").value = positions;
     console.log({
       id: changedList,
       positions: positions
@@ -2664,6 +2670,7 @@ scale from (1) “disagree strongly” to (7) “agree strongly”</h5>
          $(".neuroticism").click(function() {
           var totala = 0;
           $(".neuroticism:checked").each(function() { totala += +this.value/3; });
+             console.log(totala);
           $("#result1").val(totala);
           sessionStorage.setItem("result1", totala);
         });
@@ -2714,7 +2721,7 @@ $(document).ready(function(){
         var shina = $(this).children("option:selected").val();
         sessionStorage.setItem("resele2",shina); 
     });
-    $("select.hourmodela").change(function(){
+    $("select.wkhourmodel").change(function(){
         var shinb = $(this).children("option:selected").val();
         sessionStorage.setItem("resele3",shinb); 
     });

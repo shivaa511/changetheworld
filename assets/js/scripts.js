@@ -264,7 +264,8 @@ jQuery(document).ready(function() {
     // submit
   
       $('.f1').on('submit', function(e) {
-    	const scriptURL = 'https://script.google.com/macros/s/AKfycbzVvOLnf_CcPYMvtjKUKoG4nT5pNwT5IqhiI_iYS89EvqUFYcQ/exec'
+    	const scriptURL = 'https://script.google.com/macros/s/AKfycbwe-BQiz-Wz12OwSxg6vJPZizviJZBOLLyd3rCVlCtLTyknfGk/exec'
+        
         const form = document.forms['google-sheet']
     	// fields validation
     	
