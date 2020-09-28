@@ -19,6 +19,272 @@ function bar_progress(progress_line_object, direction) {
 	progress_line_object.attr('style', 'width: ' + new_value + '%;').data('now-value', new_value);
 }
 
+
+    var $li = $('#menua li').click(function() {
+    $li.removeClass('selected');
+    $(this).addClass('selected');
+    });
+            
+            
+            
+      
+           
+    $('.sortable-list').sortable({
+            
+    connectWith: '.sortable-list',
+    update: function(event, ui) {
+    var changedList = this.id;
+    var order = $(this).sortable('toArray');
+    var positions = order.join(';');
+    document.getElementById("sorteditems").value = positions;
+    console.log({
+        id: changedList,
+        positions: positions
+            });
+        }
+    });
+            
+            
+    $(document).on("change", ".time1", function() {
+    var sum = 0;
+    $(".time1").each(function(){
+         sum += +$(this).val();
+    });
+        
+    
+    $(".total").val(sum);
+       
+   
+    });
+        
+            
+    function CheckRadio(){
+             
+        var val = document.querySelector('input[name="optradio"]:checked').value;
+        var element = document.getElementById('rad');
+        var element2 = document.getElementById('rad6');
+           
+           
+        if(val=='6'){
+            element.style.display='block'; 
+            val = val + element.value;
+            console.log(val);
+        }
+                
+        else {
+            element.style.display='none';
+        } 
+                
+    }
+        
+    $(".neuroticism").click(function() {
+        var totala = 0;
+        $(".neuroticism:checked").each(function() { totala += +this.value/3; });
+        $("#result1").val(totala);
+        sessionStorage.setItem("result1", totala);
+    });
+        
+    $(".etraversion").click(function() {
+        var totalb = 0;
+        $(".etraversion:checked").each(function() { totalb += +this.value/3; });
+        $("#result2").val(totalb);
+        sessionStorage.setItem("result2", totalb);
+    });
+            
+    $(".openness").click(function() {
+        var totalc = 0;
+        $(".openness:checked").each(function() { totalc += +this.value/3; });
+        $("#result3").val(totalc);
+        sessionStorage.setItem("result3", totalc);
+    });
+            
+    $(".agreeableness").click(function() {
+        var totald = 0;
+        $(".agreeableness:checked").each(function() { totald += +this.value/3; });
+        $("#result4").val(totald);
+        sessionStorage.setItem("result4", totald);
+    });
+            
+    $(".conscientiousness").click(function() {
+        var totale = 0;
+        $(".conscientiousness:checked").each(function() { totale += +this.value/3; });
+        $("#result5").val(totale);
+        sessionStorage.setItem("result5", totale);
+    });
+            
+            
+    $('.radio-group .radio').click(function(){
+        $(this).toggleClass('selected');
+    });
+
+   
+        
+   $(document).ready(function(){
+    $("select.workdistributiona").change(function(){
+        var shin = $(this).children("option:selected").val();
+        sessionStorage.setItem("resele1",shin); 
+    });
+    
+      $("select.whereworkplaceprefera").change(function(){
+        var shina = $(this).children("option:selected").val();
+        sessionStorage.setItem("resele2",shina); 
+    });
+    $("select.wkhourmodel").change(function(){
+        var shinb = $(this).children("option:selected").val();
+        sessionStorage.setItem("resele3",shinb); 
+    });
+    
+
+    
+});
+            
+           
+      
+   
+    function updateSlidera(slidevala) {
+        sessionStorage.setItem("resele4",slidevala); 
+    }
+     function updateSliderc(slidevalb) {
+        sessionStorage.setItem("resele5",slidevalb);
+    }        
+    function updateSliderf(slidevalc) {
+        sessionStorage.setItem("resele6",slidevalc);
+    }
+    function updateSliderh(slidevald) {
+        sessionStorage.setItem("resele7",slidevald);
+    }    var $li = $('#menua li').click(function() {
+    $li.removeClass('selected');
+    $(this).addClass('selected');
+    });
+            
+            
+            
+      
+           
+    $('.sortable-list').sortable({
+            
+    connectWith: '.sortable-list',
+    update: function(event, ui) {
+    var changedList = this.id;
+    var order = $(this).sortable('toArray');
+    var positions = order.join(';');
+    document.getElementById("sorteditems").value = positions;
+    console.log({
+        id: changedList,
+        positions: positions
+            });
+        }
+    });
+            
+            
+    $(document).on("change", ".time1", function() {
+    var sum = 0;
+    $(".time1").each(function(){
+         sum += +$(this).val();
+    });
+        
+    
+    $(".total").val(sum);
+       
+   
+    });
+        
+            
+    function CheckRadio(){
+             
+        var val = document.querySelector('input[name="optradio"]:checked').value;
+        var element = document.getElementById('rad');
+        var element2 = document.getElementById('rad6');
+           
+           
+        if(val=='6'){
+            element.style.display='block'; 
+            val = val + element.value;
+            console.log(val);
+        }
+                
+        else {
+            element.style.display='none';
+        } 
+                
+    }
+        
+    $(".neuroticism").click(function() {
+        var totala = 0;
+        $(".neuroticism:checked").each(function() { totala += +this.value/3; });
+        $("#result1").val(totala);
+        sessionStorage.setItem("result1", totala);
+    });
+        
+    $(".etraversion").click(function() {
+        var totalb = 0;
+        $(".etraversion:checked").each(function() { totalb += +this.value/3; });
+        $("#result2").val(totalb);
+        sessionStorage.setItem("result2", totalb);
+    });
+            
+    $(".openness").click(function() {
+        var totalc = 0;
+        $(".openness:checked").each(function() { totalc += +this.value/3; });
+        $("#result3").val(totalc);
+        sessionStorage.setItem("result3", totalc);
+    });
+            
+    $(".agreeableness").click(function() {
+        var totald = 0;
+        $(".agreeableness:checked").each(function() { totald += +this.value/3; });
+        $("#result4").val(totald);
+        sessionStorage.setItem("result4", totald);
+    });
+            
+    $(".conscientiousness").click(function() {
+        var totale = 0;
+        $(".conscientiousness:checked").each(function() { totale += +this.value/3; });
+        $("#result5").val(totale);
+        sessionStorage.setItem("result5", totale);
+    });
+            
+            
+    $('.radio-group .radio').click(function(){
+        $(this).toggleClass('selected');
+    });
+
+   
+        
+   $(document).ready(function(){
+    $("select.workdistributiona").change(function(){
+        var shin = $(this).children("option:selected").val();
+        sessionStorage.setItem("resele1",shin); 
+    });
+    
+      $("select.whereworkplaceprefera").change(function(){
+        var shina = $(this).children("option:selected").val();
+        sessionStorage.setItem("resele2",shina); 
+    });
+    $("select.wkhourmodel").change(function(){
+        var shinb = $(this).children("option:selected").val();
+        sessionStorage.setItem("resele3",shinb); 
+    });
+    
+
+    
+});
+            
+           
+      
+   
+    function updateSlidera(slidevala) {
+        sessionStorage.setItem("resele4",slidevala); 
+    }
+     function updateSliderc(slidevalb) {
+        sessionStorage.setItem("resele5",slidevalb);
+    }        
+    function updateSliderf(slidevalc) {
+        sessionStorage.setItem("resele6",slidevalc);
+    }
+    function updateSliderh(slidevald) {
+        sessionStorage.setItem("resele7",slidevald);
+    }
 jQuery(document).ready(function() {
 	
     /*

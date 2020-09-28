@@ -300,3 +300,77 @@ only screen and (                min-resolution: 2dppx) {
     }
 	
 }
+#slider label {
+    position: absolute;
+    width: 20px;
+    margin-left: -10px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+        
+/* below is not necessary, just for style */
+#slider {
+    width: 50%;
+    margin: 2em auto;
+}
+        
+        .radio {
+    display: inline-block;
+    border-radius: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    color: #BDBDBD;
+    font-weight: 500;
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    filter: grayscale(100%)
+}
+
+.radio:hover {
+    box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1)
+}
+
+.radio.selected {
+    border: 1px solid #F9A825;
+    box-shadow: 0px 8px 16px 0px #EEEEEE;
+    color: #29B6F6 !important;
+    -webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
+    -o-filter: grayscale(0%);
+    -ms-filter: grayscale(0%);
+    filter: grayscale(0%)
+}
+
+.card-block {
+    border: 1px solid #CFD8DC;
+    width: 25%;
+    margin: 2.5%;
+    padding: 20px 25px 15px 25px
+}
+
+@media screen and (max-width: 768px) {
+    .card-block {
+        padding: 20px 20px 0px 20px;
+        height: 250px
+    }
+}
+
+.icon {
+    width: 45px;
+    height: 50px
+}
+
+.image-icon {
+    width: 45px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px
+}
+        
+ li.selected {
+    background-color: coral;
+}       
