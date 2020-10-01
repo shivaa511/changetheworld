@@ -565,7 +565,7 @@ jQuery(document).ready(function() {
     	// fields validation
     	         var texerrk = document.getElementById("texerrk");
                 
-                if (sumres > 100) {
+                if (sumres != 100) {
                     e.preventDefault();
                     
                     texerrk.style.display = "block";
