@@ -371,6 +371,8 @@
                                             <option>Medical technology</option>
                                         </select>
                                 </div>
+                               
+                               
                                 
                                 <div class="form-group"  >
                                         <h5 style="display: inline;">6. Please sort the following options regarding your personal weekly working time allocation </h5><span>  <p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Sort the following options in descending order</p></span>
@@ -434,7 +436,8 @@
                                         <option value="5">Trust based working time (without core time)</option>
                                     </select>
                                 </div>
-                                <div class="form-group"  >
+                                <div class="form-group">
+                                    <div class="row">
                                     <h5 style="display: inline;">10. Please indicate how satisfied you are with your current working conditions? </h5><span>  <p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Use the scale to rate your level of satisfaction</p></span>
                                      <div class="slider-container">
                                           <input type="range" min="1" max="5" class="slider" id="range1" name="satisfiedwork">
@@ -446,7 +449,9 @@
                                         <div class="label-slider" style="padding-left: 89px;">Satisfied</div>
                                         <div class="label-slider" style="padding-left: 32px;">Very satisfied</div>
                                     </div>
+                                    </div>
                                 </div>
+                                
                                 <div class="f1-buttons">
                                     <button id ="firstn"  type="button" class="btn btn-next">Next</button>
                                 </div>
@@ -2268,7 +2273,7 @@
                                     
                             </div>
                             <div class="form-group">
-                                    <h5>7. What percentage of your weekly working time (100%) would you like to spend where?</h5><span><p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Use the scale to choose your preferred percentage of each workplace option – the sum of all should not exceed 100 %</p></span>
+                                    <h5>7. What percentage of your weekly working time (100%) would you like to spend where?</h5><span><p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Use the scale to choose your preferred percentage of each workplace option – the sum of all should not exceed 100 %</p></span><p id="texerrk" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> Please do not exceed more than 100%</p>
                                      
                                     <div class="row">
                                     <div class="col-sm-4" >
@@ -2279,7 +2284,7 @@
                                                 </div>
                                         </div>
                                         <div class="slider-container" style="padding-top:70px;">
-                                                  <input type="range" min="1" max="5" class="slider" style="width: 120%" name = "officepercentage"  value="" >
+                                                  <input type="range" min="0" max="100" value="0" step="25" class="slider slidera" style="width: 120%" name = "officepercentage" id="officepercentage" >
                                         </div>
 
                                         <div class="label-container" style="width: 95%">
@@ -2299,7 +2304,7 @@
                                                 </div>
                                         </div>
                                         <div class="slider-container" style="padding-top:70px;">
-                                                <input type="range" min="1" max="5" class="slider" style="width: 120%" name = "homepercentage"  value="" >
+                                                <input type="range" min="0" max="100" value="0" step="25" class="slider slidera" style="width: 120%" name = "homepercentage"  id="homepercentage"  >
                                         </div>
 
                                         <div class="label-container" style="width: 95%">
@@ -2323,7 +2328,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="slider-container" style="padding-top:70px;">
-                                                  <input type="range" min="1" max="5" class="slider" style="width: 120%" name = "mobilepercentage"  value="" >
+                                                  <input type="range" min="0" max="100" value="0" step="25" class="slider slidera" style="width: 120%" name = "mobilepercentage" id="mobilepercentage">
                                                 </div>
 
                                                 <div class="label-container" style="width: 95%">
@@ -2338,8 +2343,10 @@
                                         </div>
                                     </div>
                                 
-                                        
                                      
+                                        
+
+  
                                         <input type="hidden" class="form-control" id="lastres1"  name = "last1"  value="0" readonly>
                                         <input type="hidden" class="form-control" id="lastres2"  name = "last2"  value="0" readonly>
                                         <input type="hidden" class="form-control" id="lastres3"  name = "last3"  value="0" readonly>
@@ -2347,6 +2354,17 @@
                                         
                                 
                                 </div>
+                                <div class="row">
+                                    <div class="col-lg-4 col-lg-offset-4">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control endresult" value="0" id="endresult" readonly>
+
+                                        </div>
+                                        <!-- /input-group -->
+                                    </div>
+                                    <!-- /.col-lg-6 -->
+                                </div>
+                                
                             <div class="f1-buttons">
                                 <button type="button" class="btn btn-previous">Previous</button>
                                 <button type="submit" class="btn btn-submit">Submit</button>
@@ -2371,7 +2389,7 @@
             <script src="assets/js/placeholder.js"></script>
         <![endif]-->
 
-  
+    
     </body>
 
 </html>

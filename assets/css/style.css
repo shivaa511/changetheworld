@@ -379,3 +379,7 @@ th {
     font-weight: 500;
     font-size: smaller;
 }
+
+.borderless td, .borderless th {
+    border: none;
+}

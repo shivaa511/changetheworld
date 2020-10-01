@@ -285,6 +285,18 @@ function bar_progress(progress_line_object, direction) {
     function updateSliderh(slidevald) {
         sessionStorage.setItem("resele7",slidevald);
     }
+var sumres = 0;
+   $(".slidera").on("change", function() {
+        var officepercentage = parseInt($("#officepercentage").val(), 10);
+        var homepercentage = parseInt($("#homepercentage").val(), 10);
+        var mobilepercentage = parseInt($("#mobilepercentage").val(), 10);
+        sumres = officepercentage + homepercentage + mobilepercentage;
+       $('#endresult').val(sumres + "%");
+});
+
+
+
+
 jQuery(document).ready(function() {
 	
     /*
@@ -545,17 +557,30 @@ jQuery(document).ready(function() {
     // submit
   
       $('.f1').on('submit', function(e) {
+        
+        
     	const scriptURL = 'https://script.google.com/macros/s/AKfycbwe-BQiz-Wz12OwSxg6vJPZizviJZBOLLyd3rCVlCtLTyknfGk/exec'
         
         const form = document.forms['google-sheet']
     	// fields validation
-    	
-    			
-                e.preventDefault()
+    	         var texerrk = document.getElementById("texerrk");
+                
+                if (sumres > 100) {
+                    e.preventDefault();
+                    
+                    texerrk.style.display = "block";
+                    
+                }
+            else {
+                
+    			e.preventDefault()
                 fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                 .then(response =>  location.replace("thankyou.html"))
                 .catch(error => console.error('Error!', error.message))
     		
+    		  }
+    			
+                
     	// fields validation
         
            
