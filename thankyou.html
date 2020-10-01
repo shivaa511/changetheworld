@@ -9,7 +9,7 @@
         <title>Survey to change the World</title>
 
         <!-- CSS -->
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" href="assets/css/form-elements.css">
@@ -22,8 +22,8 @@
     </head>
 
     <body>
-    <div class="jumbotron text-center" style="width: 774px;">
-          <h1 class="display-3">Thank You for filling out the form!</h1>
+    <div class="jumbotron text-center">
+          <h1 class="display-3">Thank you very much for taking the time to fill in this survey!</h1>
           
           <hr>
           <h3><strong>Here are your results</strong></h3>
@@ -42,7 +42,7 @@
               
            </div>
             <div style="background-color:white;padding:20px;height: 240px;width: 774px;">
-                    <p style ="float:left"><strong>Your Results are below :</strong></p><br>
+                    <p style ="float:left"><strong>Your personality shows a high correlation with the following traits:</strong></p>
                     <p style ="float:left" id ='final'></p>
                 
             </div> 
@@ -50,13 +50,13 @@
         <div class="col-md-6">
           <div  id ="sdfa" class="card" style="background-color:white;padding:20px;height: 420px;margin-left: 1em;width: 774px;" >
               
-              <h4 style="float: left;line-height:0px;">Your office type</h4><br>
+              <h4 style="float: left;line-height:0px;">Your office type:</h4><br>
               <p id="result1a" style="margin-top: -6px;text-align: justify;" > Your Results </p>
               
-              <h4 style="float: left;line-height:0px;">Your worktypology </h4> <br>
+              <h4 style="float: left;line-height:0px;">Your worktypology:</h4> <br>
               <p id="result1b"  style="margin-top: -6px;text-align: justify;"> Your Results </p>
               
-              <h4 style="float: left;line-height:0px;">Your working hour model</h4>
+              <h4 style="float: left;line-height:0px;">Your working hour model:</h4>
               <div  style="width:200px;float: left"><br>
                     <img class="card-img-top" id ="" src="assets/img/clock.png" alt="Card image" style="width:80%" width="150" height="150">
                         <div class="card-body"> <br>
@@ -68,7 +68,7 @@
         <div  id ="sdfb" class="card" style="background-color:white;padding:20px;height: 620px;margin-left: 1em;width: 774px;" >
               
               <h4 style="float: left;line-height:0px;">Overall, we assume that your well-being at work is highest when: 
-              </h4><br><br><br>
+              </h4><br>
               <p id="totalresa" style="margin-top: -6px;text-align: justify;" > Your Results </p>
           
         </div>
@@ -233,12 +233,12 @@
             
         finalstring = [resultstring1, resultstring2, resultstring3, resultstring4, resultstring5].filter(Boolean).join(", ");
         
-        if(finalstring === ""){
+        if(finalstring === "Error Occured   "){
             document.getElementById("final").innerHTML = ("You have not achieved a good score");
         }
         
         else{
-            document.getElementById("final").innerHTML = "Your personality shows a high correlation with the following traits" + finalstring;
+            document.getElementById("final").innerHTML = "<br/>" + finalstring;
         }
         
         

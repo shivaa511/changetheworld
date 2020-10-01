@@ -374,3 +374,8 @@ only screen and (                min-resolution: 2dppx) {
  li.selected {
     background-color: coral;
 }       
+
+th {
+    font-weight: 500;
+    font-size: smaller;
+}

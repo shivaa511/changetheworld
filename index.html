@@ -30,7 +30,7 @@
     line-height: 1.375em;
     color: #303030;
     font-weight: 400;
-    margin-bottom: 30px;
+    
   }  
   .jumbotron {
     background-image: url("https://sound-zero.com/wp-content/uploads/2019/07/bussiness-meeting-office-acoustics-1.jpg");
@@ -39,7 +39,7 @@
     font-family: Montserrat, sans-serif;
   }
   .container-fluid {
-    padding: 60px 50px;
+    padding: 1px 50px;
   }
   .bg-grey {
     background-color: #f6f6f6;
@@ -169,6 +169,10 @@
       font-size: 150px;
     }
   }
+.responsiveimg {
+  width: 100%;
+  height: auto;
+}
   </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -176,8 +180,8 @@
 
 
 <div class="jumbotron text-center">
-  <h1 style="color:white">Welcome to </h1> 
-  <p style="color: white"><strong>Survey to change the World</strong></p> 
+  <h1 style="color: white;text-shadow: 1px 3px 5px orange;">Welcome to </h1> 
+  <p style="color: white;text-shadow: 1px 3px 5px orange;"><strong>Survey for equality and international workplace environments</strong></p> 
   
 </div>
 
@@ -185,16 +189,15 @@
 <div id="about" class="container-fluid">
 
   <div class="row">
-      <h4>Take a test and find answers to the following questions:</h4>     
+      
     <div class="col-sm-8">
+        <h4>Take a test and find answers to the following questions:</h4>     
        <ul>
-          <li>How well equipped is your working environment?</li>
+          <li>How well suits your office your needs?</li>
           <li>What (working) type are you?</li>
           <li>How can your working environment be improved to enhance your well-being,
-motivation and performance?</li>
-      </ul>  
-      
-    <div>
+              motivation and performance?</li>
+        </ul>  
       <h4>Background information:</h4>        
       <p style="text-align:justify;">The internationalisation in many companies and projects requires a better understanding of
             working conditions in different cultures to enable an enhanced integration of employees in
@@ -210,22 +213,35 @@ motivation and performance?</li>
             interdependencies and make an important contribution to create equal working conditions
             for employees from all cultural backgrounds.</p>
       <p style="text-align:justify;">Thank you for taking the time to do this – your responses are really invaluable.</p>
-    </div>
+   
       <p  style="text-align:justify;"> Please read following terms and conditions to take this survey.</p>
-      <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" src="terms.html"></iframe>
-    </div>
         
+      
+      <div class="embed-responsive embed-responsive-16by9">
+          
+       <h4>Privacy statement (General Data Protection Regulation (GDPR)/ AVG)</h4>      
+      <p  style="text-align:justify;">Your data will naturally be collected <strong>anonymoulsy</strong> and treated absoloutly <strong>confidential.</strong></p>
+      <p  style="text-align:justify;">I declare that I am participating voluntarily in this study and that I am aware that at any
+point in time I have the right to quit the survey or withdraw my data without the need of any
+motivation. The purpose and aim of the study is made clear to me. My retrieved data will be
+aggregated to group level, evaluated and published for scientific and educational purposes
+and will not be shared with third parties under any circumstances. When the research
+process is completed, my individual records will be deleted by the research team. If the data
+will be made public in anyway, all personal information will be completely anonymized.</p>
       <div class="form-check">
         <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
         <label class="form-check-label" for="exampleCheck1">&nbsp;&nbsp;I have read and understand the above text and agree to participate in this study.</label>
          <p id="text" style="display:none;color: red"><i class="fa fa-info-circle"></i> Please accepet terms and conditions !</p>
         <br><button class="btn btn-default btn-lg" onclick="checkboxval();" >Start the survey</button>
       </div>
+        
+    </div>
+        
+      
       
     </div>
     <div class="col-sm-4">
-      <img src="results.gif" style="width:541px;height:370px;" alt="results">
+      <img src="results.gif" class="responsiveimg" alt="results" width="541" height="370"> 
     </div>
   </div>
 </div>
