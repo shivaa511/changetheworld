@@ -383,3 +383,5 @@ th {
 .borderless td, .borderless th {
     border: none;
 }
+
+.endresult { text-align:center; }

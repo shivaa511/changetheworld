@@ -218,20 +218,11 @@
         
       
       <div>
-          
-       <h4>Privacy statement (General Data Protection Regulation (GDPR)/ AVG)</h4>      
-      <p  style="text-align:justify;">Your data will naturally be collected <strong>anonymoulsy</strong> and treated absoloutly <strong>confidential.</strong></p>
-      <p  style="text-align:justify;">I declare that I am participating voluntarily in this study and that I am aware that at any
-point in time I have the right to quit the survey or withdraw my data without the need of any
-motivation. The purpose and aim of the study is made clear to me. My retrieved data will be
-aggregated to group level, evaluated and published for scientific and educational purposes
-and will not be shared with third parties under any circumstances. When the research
-process is completed, my individual records will be deleted by the research team. If the data
-will be made public in anyway, all personal information will be completely anonymized.</p>
+    
       <div class="form-check">
         <input type="checkbox" class="form-check-input" style="display:inline" id="exampleCheck1" required>
-        <label class="form-check-label" style="display:inline" for="exampleCheck1">&nbsp;&nbsp;I have read and understand the above text and agree to participate in this study.</label>
-         <p id="text" style="display:none;color: red"><i class="fa fa-info-circle"></i> Please accepet terms and conditions !</p>
+        <label class="form-check-label" style="display:inline" for="exampleCheck1">&nbsp;&nbsp;I have read and understand the above <a onclick='return popWindow()'>text and agree</a> to participate in this study.</label>
+         <p id="text" style="display:none;color: red"><i class="fa fa-info-circle"></i> Please accepet  terms and conditions! </p>
         <br><button class="btn btn-default btn-lg" onclick="checkboxval();" >Start the survey</button>
       </div>
         
@@ -267,6 +258,10 @@ will be made public in anyway, all personal information will be completely anony
     text.style.display = "block";
   }
 }
+
+    function popWindow() {
+		var newWindow = window.open("terms.html", "Terms", "width=1110, height=200");
+	}
 </script>
 
 </body>
