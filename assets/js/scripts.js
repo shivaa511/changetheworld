@@ -575,7 +575,7 @@ jQuery(document).ready(function() {
                 
     			e.preventDefault()
                 fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response =>  location.replace("thankyou.html"))
+                .then(response =>  location.replace("thanks1.html"))
                 .catch(error => console.error('Error!', error.message))
     		
     		  }

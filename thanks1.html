@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+  <head>
+  	
+   	<title>Thank you!!</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1">
+ 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700,800' rel='stylesheet' type='text/css'> 
+
+    
+      
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+   <link rel="stylesheet" href="assets/css/form-elements.css">
+	<link rel="stylesheet" href="assets/css/templatemo_style.css">
+
+    
+   	<!-- JavaScripts -->   
+    <script src="js/jquery-1.11.1.min.js"></script>  <!-- lightbox -->
+	
+
+    	<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+</head>
+  <body>
+  
+        <!-- menu end -->
+    <div id="menu-container">  
+    <div class="content homepage" id="menu-1">  
+  	<div class="container">
+   
+        <div class="row">
+                 <h1 class="display-3" style="font-size: 40px;">Thank you very much for taking the time to fill in this survey!</h1>
+            <div class="text-center">
+            <img src="images/done1.png"  class="mx-auto d-block" style="width: 100px;height: 100px;" alt="done">
+          </div> 
+                  
+          <hr><h3 class="display-3" style="text-align: center" >Here are Your Results</h3>
+          
+        <div class="templatemo_homewrapper shadow">
+        	<div class="templatemo_hometop_bg">
+            	<div class="col-md-6">
+            		<div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
+            </div>
+            <div class="col-md-6">
+            	
+                <div class="templatemo_hometop_subtitle">Descriptive adjectives of the traits</div>
+                 <ul>
+                    <li style ="float: left"><strong>Openness:</strong> Adventurous, Creative, Curious, Acceptance of new ideas.</li>
+                    <li style ="float: left"><strong>Conscientiousness:</strong>  Self-disciplined, Task orientation, Rule abiding.</li>
+                    <li style ="float: left"><strong>Extraversion:</strong> Sociable, Enthusiastic, Experience positive emotions.</li>
+                    <li style ="float: left"><strong>Agreeableness:</strong> Social harmony, Value others opinion, Altruistic behaviour.</li>
+                    <li style ="float: left"><strong>Neuroticism:</strong> High level of stress tolerance, Emotionally stable, Cheerful.</li> 
+                    
+                </ul>
+                <div>
+                 <p style ="float:left"><strong>Your personality shows a high correlation with the following traits:</strong></p>
+                    <p style ="float:left" id ='final'></p></div>
+            </div>
+            <div class="clear"></div>
+            </div>       		
+        </div>
+        </div>
+        <div class="clear"></div>
+        <div class="row">
+        	<div class="templatemo_home_mid shadow">
+        	<div class="col-md-4 templatemo_box gradient">
+            	<div class="boxsub1" style=" height: 354px;">
+                	<div class="boxsub2">
+                        <img src="images/templatemo_icon_searchb.png" alt="templatemo search">
+                        
+	             <div class="templatemo_home_midheader">Your office type:</div>
+                 <div class="templatemo_home_midtext"><p id ="result1a"  style ="text-align: center">Mobile Office</p> </div>
+                 
+               	  </div>
+                </div>
+            </div>
+           	<div class="col-md-4 templatemo_box gradient">
+            	<div class="boxsub1" style=" height: 354px;">
+                	<div class="boxsub2">
+                    <img src="images/templatemo_icon_bay.png" alt="templatemo bay">
+                     <div class="templatemo_home_midheader">Your worktypology:</div>
+                     <div class="templatemo_home_midtext"><p id ="result1b"  style ="text-align: center">Mobile Office</p> </div>
+                     
+                  </div>
+                 </div>
+            </div>
+            <div class="col-md-4 templatemo_box_last gradient">
+            	<div class="boxsub1" style=" height: 354px;">
+                <div class="boxsub2">
+            	 <img src="images/templatemo_icon_watch.png" alt="templatemo watch">
+	             <div class="templatemo_home_midheader">Your working hour model:</div>
+                 <div class="templatemo_home_midtext"><p id ="result1c"  style ="text-align: center">Mobile Office</p> </div>
+                 
+                 </div>
+                 </div>
+            </div>
+        </div>
+        </div>
+        
+        <div class="row">
+        	<div class="templatemo_home_bot shadow">
+            	<div class="col-md-12 gradient padd-top20">
+                <div class="col-md-12 text-center">
+                	<img src="images/templatemo_home_img1.png" style="width: 300px;height: 300px" alt="templatemo home image">
+                    
+                
+               
+                </div>
+                <div class="col-md-12 ">
+                    <h3>Overall, we assume that your well-being at work is highest when you are working in a:</h3>
+                 <p id="totalresa" style="margin-top: 3px;text-align: center;font-size: 25px" > Your Results </p>
+				</div>
+                
+            </div>
+        </div>
+        <!-- home end -->
+   </div>
+   </div>
+     </div>         
+<script>
+    
+        
+        var val1 = parseFloat(sessionStorage.getItem("result1"));
+        var val2 = parseFloat(sessionStorage.getItem("result2"));
+        var val3 = parseFloat(sessionStorage.getItem("result3"));
+        var val4 = parseFloat(sessionStorage.getItem("result4"));
+        var val5 = parseFloat(sessionStorage.getItem("result5"));
+        var val6 = parseInt(sessionStorage.getItem("resele1"));
+        var val7 = parseInt(sessionStorage.getItem("resele2"));
+        var val8 = parseInt(sessionStorage.getItem("resele3"));
+        var val9 = parseInt(sessionStorage.getItem("resele4"));
+        var val10 = parseInt(sessionStorage.getItem("resele5"));
+        var val11 = parseInt(sessionStorage.getItem("resele6"));
+        var val12 = parseInt(sessionStorage.getItem("resele7"));
+       
+        
+        
+        
+
+        switch (val6) {
+          case 1:
+            valtext6 = "Individual office (enclosed office, one workstation for one person)";
+            
+            break;
+          case 2:
+            valtext6 = "Two-person office (enclosed office, two workstations for two persons)";
+            
+            break;
+          case 3:
+            valtext6 = "Combination office (Special form of individual office with glass walls on side, with the door and an additonal multi-functional zone (e.g. meeting point, printer zone)";
+            
+            break;
+          case 4:
+            valtext6 = "Group office (6-20 workstations in one room)";
+            
+            break;
+          case 5:
+            valtext6 = "Open-plan office (> 20 workstations in one room";
+            break;
+          case 6:
+            valtext6 = "Multi-space (flexible workstation/ location concepts, variety of opportunities for meetings, concentration, breaks, etc.)";
+            break;
+                
+          default:
+            valtext6 = "Error Occured";
+        }
+
+        document.getElementById("result1a").innerHTML = valtext6;
+        
+        switch (val7) {
+          case 1:
+            valtext7 = "Stationary (usage of same workspace)";
+            break;
+          case 2:
+            valtext7 = "Variable (usage of different workspaces)";
+            break;
+          case 3:
+            valtext7 = "Mobile, variable (home-office and usage of different workspaces at the office)";
+            break;
+         
+                
+          default:
+            valtext7 = "Error Occured";
+        }
+       
+        document.getElementById("result1b").innerHTML = valtext7;
+        
+        switch (val8) {
+          case 1:
+            valtext8 = "Fixed working time";
+            break;
+          case 2:
+            valtext8 = "Flexible working time (with core time)";
+            break;
+          case 3:
+            valtext8 = "Flexible working time (without core time)";
+            break;
+          case 4:
+            valtext8 = "Trust based working time (with core time)";
+            break;
+          case 5:
+            valtext8 = "Trust based working time (without core time)";
+            break;
+         
+                
+          default:
+            valtext8 = "Error Occured";
+        }
+        document.getElementById("result1c").innerHTML = valtext8;
+        
+        temptotalres = (val9 + val10 + val11)/3; 
+        totalres = Math.ceil(temptotalres);
+        
+        switch (totalres) {
+          case 1:
+            valtextres = "Individual office";
+            break;
+          case 2:
+            valtextres = "Combination office";
+            break;
+          case 3:
+            valtextres = "Group office";
+            break;
+          case 4:
+            valtextres = "Open-plan office";
+            break;
+          case 5:
+            valtextres = "Multi-space";
+            break;
+         
+                
+          default:
+            valtextres = "Group office";
+        }
+        document.getElementById("totalresa").innerHTML = valtextres;
+        
+        console.log(val6);
+        if(val1 > 3){
+            var resultstring1 = "Openness "
+        }
+        else{
+            var resultstring1;
+        }
+        
+         if(val2 > 3){
+            var resultstring2 = "Conscientiousness "
+        }
+        else{
+            var resultstring2;
+        }
+        
+         if(val3 > 3){
+            var resultstring3 = "Extraversion "
+        }
+        else{
+            var resultstring3;
+        }
+        
+         if(val4 > 4){
+            var resultstring4 = "Agreeableness "
+        }
+        else{
+            var resultstring4;
+        }
+        
+         if(val5 < 3){
+            var resultstring5 = "Neuroticism"
+        }
+        else{
+            var resultstring5 = "Error Occured";
+        }
+            
+        finalstring = [resultstring1, resultstring2, resultstring3, resultstring4, resultstring5].filter(Boolean).join(", ");
+        
+        if(finalstring === "Error Occured   "){
+            document.getElementById("final").innerHTML = ("You have not achieved a good score");
+        }
+        
+        else{
+            document.getElementById("final").innerHTML = "<br/>" + finalstring;
+        }
+        
+        
+           
+        
+        
+        
+        
+        data = [{
+              type: 'scatterpolar',
+              r: [1, 2, 3, 4, 5],
+              theta: ['Neuroticism','Extroversion','Openness', 'Agreeableness', 'Conscientiousness'],
+              fill: 'toself'
+            }]
+
+            layout = {
+              polar: {
+                radialaxis: {
+                  visible: true,
+                  range: [0, 7]
+                }
+              },
+              showlegend: false
+            }
+            var config = {responsive: true}
+
+            Plotly.newPlot('myDiv', data, layout, config );
+            
+
+  
+
+        </script>             
+        
+        <!-- footer end -->
+  </body>
+</html>
