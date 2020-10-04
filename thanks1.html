@@ -55,7 +55,7 @@
                 </ul>
                 <div>
                  <p style ="float:left"><strong>Your personality shows a high correlation with the following traits:</strong></p>
-                    <p style ="float:left" id ='final'></p></div>
+                    <p style ="float:left;margin-top: -20px" id ='final'></p></div>
             </div>
             <div class="clear"></div>
             </div>       		
@@ -108,7 +108,7 @@
                
                 </div>
                 <div class="col-md-12 ">
-                    <h3>Overall, we assume that your well-being at work is highest when you are working in a:</h3>
+                    <h3 style="margin-top:-60px">Overall, we assume that your well-being at work is highest when you are working in a:</h3>
                  <p id="totalresa" style="margin-top: 3px;text-align: center;font-size: 25px" > Your Results </p>
 				</div>
                 
@@ -236,21 +236,21 @@
         document.getElementById("totalresa").innerHTML = valtextres;
         
         console.log(val6);
-        if(val1 > 3){
+        if(val1 > 4){
             var resultstring1 = "Openness "
         }
         else{
             var resultstring1;
         }
         
-         if(val2 > 3){
+         if(val2 > 4){
             var resultstring2 = "Conscientiousness "
         }
         else{
             var resultstring2;
         }
         
-         if(val3 > 3){
+         if(val3 > 4){
             var resultstring3 = "Extraversion "
         }
         else{
@@ -264,7 +264,7 @@
             var resultstring4;
         }
         
-         if(val5 < 3){
+         if(val5 < 4){
             var resultstring5 = "Neuroticism"
         }
         else{
@@ -273,7 +273,7 @@
             
         finalstring = [resultstring1, resultstring2, resultstring3, resultstring4, resultstring5].filter(Boolean).join(", ");
         
-        if(finalstring === "Error Occured   "){
+        if(finalstring === "Error Occured"){
             document.getElementById("final").innerHTML = ("You have not achieved a good score");
         }
         
