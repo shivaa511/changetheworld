@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
   <head>
   	
    	<title>Thank you!!</title>
@@ -117,7 +118,7 @@
         <!-- home end -->
    </div>
    </div>
-     </div>         
+     </div>     </div>        
 <script>
     
         
@@ -268,7 +269,7 @@
             var resultstring5 = "Neuroticism"
         }
         else{
-            var resultstring5 = "Error Occured";
+            var resultstring5;
         }
             
         finalstring = [resultstring1, resultstring2, resultstring3, resultstring4, resultstring5].filter(Boolean).join(", ");
@@ -289,7 +290,7 @@
         
         data = [{
               type: 'scatterpolar',
-              r: [1, 2, 3, 4, 5],
+              r: [val1, val2, val3, val4, val5],
               theta: ['Neuroticism','Extroversion','Openness', 'Agreeableness', 'Conscientiousness'],
               fill: 'toself'
             }]
