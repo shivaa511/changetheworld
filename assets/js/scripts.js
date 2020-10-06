@@ -354,19 +354,7 @@ jQuery(document).ready(function() {
           } else {
             texttotaltime.style.display = "none";
           }*/
-        var textsort = document.getElementById("textsort");
-       
-        if(($("input[name='checkboxsort']:checked").length === 0)  ){
-                        next_step = false;
-						textsort.style.display = "block";
-            
-            
-                        }
-        else {
-            
-            textsort.style.display = "none";
-        }
-        
+      
         
         var textgender = document.getElementById("textgender");
        
