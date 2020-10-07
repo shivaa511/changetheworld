@@ -16,7 +16,11 @@
         <link rel="stylesheet" href="assets/css/style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     </head>
-
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popoverr"]').popover();   
+});
+</script>
     <body>
 
 		<!-- Top menu -->
@@ -58,7 +62,7 @@
                     		</div>
                     		<fieldset>
                     			<div class="form-group">
-                                        <h5 style="display: inline;">1.Please indicate your gender</h5><span> <p  style=";color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following options</p></span><p id="textgender" style="display:none;color: red;font-size: 12px;" ><i class="fa fa-info-circle"></i> This question is mandatory</p>
+                                        <h5 style="display: inline;">1.Please indicate your gender</h5><span> <p  style=";color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following options</p></span><p id="textgender" style="display:none;color: red;font-size: 12px;" ><i class="fa fa-info-circle"></i> Please compleate all the parts</p>
                                         
                                         <div class="form-check form-check-inline">
                                           <input class="form-check-input" type="radio" name="usersex" id="inlineRadio1" value="1">
@@ -74,12 +78,12 @@
                                         </div>  
                                 </div>
                                 <div class="form-group">
-                                        <h5 style="display: inline;">2. Please indicate your age</h5><span>  <p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please enter number in this field</p></span><p id="texerrage" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> This question is mandatory</p>
+                                        <h5 style="display: inline;">2. Please indicate your age</h5><span>  <p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please enter number in this field</p></span><p id="texerrage" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> Please compleate all the parts</p>
                                         <input type="text" class="form-control"  name="age" placeholder="Value"> 
                                 </div>
                                 <div class="form-group"  >
                                         <h5 style="display: inline;">3. Please indicate your religion</h5><span> <p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following answers</p></span>
-                                        <p id="texerra" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> This question is mandatory</p>
+                                        <p id="texerra" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> Please compleate all the parts</p>
                                         <select class="form-control" id="religion" name="religion" class="required">
                                             <option value="" selected="selected" disabled="disabled">-- select your religion --</option>
                                             <option value="Buddhism">Buddhism</option>-
@@ -92,7 +96,7 @@
                                           </select>
                                 </div>
                                 <div class="form-group">
-                                        <h5 style="display: inline;">4. Where are you from?</h5><span><p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following answers</p></span><p id="texerrb" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> This question is mandatory</p>
+                                        <h5 style="display: inline;">4. Where are you from?</h5><span><p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following answers</p></span><p id="texerrb" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> Please compleate all the parts</p>
                                         <select class="form-control" id ="country" name="country" >
 
                                                <option value="" selected="selected" disabled="disabled">-- select your country --</option>
@@ -345,7 +349,7 @@
                                         </select>
                                 </div>
                                 <div class="form-group"  >
-                                        <h5 style="display: inline;">5. Please choose the option which describes your profession best</h5><span> <p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following answers</p></span><p id="texerrc" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> This question is mandatory</p>
+                                        <h5 style="display: inline;">5. Please choose the option which describes your profession best</h5><span> <p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following answers</p></span><p id="texerrc" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> Please compleate all the parts</p>
                                         <select class="form-control" id ="workarea" name="workarea">
                                             <option value="" selected="selected" disabled="disabled">-- select your profession --</option>
                                             <option>Public institutions, government agencies, associations</option>
@@ -375,18 +379,23 @@
                                
                                 
                                 <div class="form-group"  >
-                                        <h5 style="display: inline;">6. Please sort the following options regarding your personal weekly working time allocation </h5><span>  <p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Sort the following options in descending order</p></span>
-                                         
+                                        <h5 style="display: inline;">6. Please indicate in which work environments your weekly work takes place?  
+ </h5><span>  <p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i> Please use the scale to mark the working time you are spending in the following options</p></span> <p id="texterrtime" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> Please compleate all the parts</p>
+                                        
                                         <div class="table-responsive">
                                         <table class="table">
                                             <thead>
                                               <tr>
                                                 <th></th>
-                                                <th style="font-weight: 600;">Strongly Disagree</th>
-                                                <th style="font-weight: 600;">Disagree</th>
-                                                <th style="font-weight: 600;">Undecided</th>
-                                                <th style="font-weight: 600;">Agree</th>
-                                                <th style="font-weight: 600;">Strongly Agree</th>
+                                                  <th style="font-weight: 600;text-align: center;">Never</th>
+                                                  <th style="font-weight: 600;text-align: center;">Rarely</th>
+                                                  <th style="font-weight: 600;text-align: center;">Sometimes</th>
+                                                  <th style="font-weight: 600;text-align: center;">Often</th>
+                                                <th style="font-weight: 600;text-align: center;">Always</th>
+                                                
+                                                
+                                                
+                                                
                                                 
                                               </tr>
                                             </thead>
@@ -647,28 +656,74 @@
                                 
                                 </div>
                                 <div class="form-group">
-                                        <h5 style="display: inline;">7. Please indicate the office type in which you are currently working?</h5><span>  <p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following answers</p></span><p id="texerrd" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> This question is mandatory</p>
+                                        <h5 style="display: inline;">7. Please indicate the office type in which you are currently working?</h5><span>  <p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following answers</p></span><span style ="padding-left: 15px;color: orange;cursor: grab;" class="glyphicon glyphicon-question-sign" data-toggle="modal" data-target="#offtog" aria-hidden="true"></span><p id="texerrd" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> Please compleate all the parts</p>
+                                        <div class="modal fade" id="offtog" tabindex="-1" role="dialog" aria-labelledby="offModalLabel" aria-hidden="true">
+                                              <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                  <div class="modal-header">
+                                                    <p class="modal-title" id="offModalLabel"><strong>Explanation of options:</strong></p>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                      <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                    <p></p>
+                                                      <ul>
+                                                          <li><strong>Individual office:</strong> Closed office room with one workspace for one person</li>
+                                                          <li><strong>Combination office:</strong> Special type of individual office with glass walls on the door side and additional multifunctional zones (e. g. Meeting-points, printer zone, team storage)</li>
+                                                          <li><strong>Multi-person office:</strong> Closed office room with 2 – 5 workspaces</li>
+                                                          <li><strong>Group office:</strong> 6 – 20 workspaces distributed in one room</li>
+                                                          <li><strong>Open-plan office:</strong> More than 20 workspaces distributed in one room</li>
+                                                          <li><strong>Multi-space office:</strong> Office structure, which can not be clearly assigned to one office type: Flexible workplace concepts (e. g. Desk-sharing) with a broad range of meeting-, concentration- and recreation spaces</li>
+                                                     </ul>  
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
                                         <select class="form-control" id ="offficetype" name="offficetype">
                                             <option value="" selected="selected" disabled="disabled">-- select your office type --</option>
                                             <option>Individual office (enclosed office, one workstation for one person)</option>
-                                            <option>Combination office (Combination of 1-5 person offices and open plan with assigned workstations and open zones with different functions e. g. concentration, communication)</option>
+                                            <option>Combination office (enclosed office,  1-5 workstations with glass walls and multifunctional work zones)</option>
                                             <option>Multi-person office (enclosed office, 2-5 workstations)</option>
                                             <option>Group office (6-20 workstations in one room)</option>
                                             <option>Open-plan office (> 20 workstations in one room)</option>
-                                            <option>Multi-space office (no personal workstation => desk-sharing, freely chose of workstations with different functions e. g. concentration, communication, etc.)</option>
+                                            <option>Multi-space office (flexible workspace concepts with multifunctional work zones)</option>
                                         </select>
                                 </div>
                                 <div class="form-group"  >
-                                        <h5 style="display: inline;">8. Please indicate the worktypology which you are currently working with? </h5><span>  <p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following answers</p></span><p id="texerre" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> This question is mandatory</p>
+                                        <h5 style="display: inline;">8. Please indicate the worktypology which you are currently working with? </h5><span>  <p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following answers</p></span><p id="texerre" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> Please compleate all the parts</p>
                                         <select class="form-control" id="Worktypology" name="Worktypology">
                                             <option value="" selected="selected" disabled="disabled">-- select your worktypology  --</option>
                                             <option>Stationary (usage of same workspace at the office)</option>
                                             <option>Variable (usage of different workspaces at the office)</option>
-                                            <option>Mobile, flexible (freely chose between different workspaces at the office, home-office and and outside of the office)</option>
+                                            <option>Mobile, flexible (freely choose between different workspaces at the office, home-office and other locations outside of the office)</option>
                                         </select>
                                 </div> 
                                 <div class="form-group"  >
-                                    <h5 style="display: inline;">9. Please indicate the working hour model you are currently having?</h5><span>  <p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following answers</p></span><p id="texerrf" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> This question is mandatory</p>
+                                    <h5 style="display: inline;">9. Please indicate the working hour model you are currently having?</h5><span>  <p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following answers</p></span><span style ="padding-left: 15px;color: orange;cursor: grab;" class="glyphicon glyphicon-question-sign" data-toggle="modal" data-target="#hrtog" aria-hidden="true"></span><p id="texerrd" style="display:none;color: red;font-size: 12px;" ><p id="texerrf" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> Please compleate all the parts</p>
+                                    <div class="modal fade" id="hrtog" tabindex="-1" role="dialog" aria-labelledby="hrModalLabel" aria-hidden="true">
+                                              <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                  <div class="modal-header">
+                                                    <p class="modal-title" id="hrModalLabel"><strong>Explanation of options:</strong></p>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                      <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                    <p></p>
+                                                      <ul>
+                                                          <li><strong>Fixed working time: </strong> Fixed working time with central data acquisition of working hours</li>
+                                                          <li><strong>Flexible working time (with core time): </strong> Flexible working time with core time (e. g. office opening hours from 6 am - 6 pm and a core time with a obligation to appear at office from 9 am – 3 pm) and central data acquisition of working hours</li>
+                                                          <li><strong>Flexible working time (without core time) : </strong> Flexible working time without core time (e. g. office opening hours from 6 am – 6 pm) and central data acquisition of working hours</li>
+                                                          <li><strong>Trust based working time (with core time): </strong> Trust based working time with core time (e. g. office opening hours from 6 am - 6 pm and a core time with a obligation to appear at office from 9 am – 3 pm) and without or individual data acquisition of working hours</li>
+                                                          <li><strong>Trust based working time (without core time): </strong> Trust based working time without core time and without or individual data acquisition of working hours</li>
+                                                          
+                                                     </ul>  
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
                                     <select class="form-control wkhourmodel" name="wkhourmodel" id="wkhourmodel">
                                         <option value="" selected="selected" disabled="disabled">-- select your working hour model  --</option>
                                         <option value="1">Fixed working time</option>
@@ -689,11 +744,11 @@
                                           <input type="range" min="1" max="5" class="slider" id="range1" name="satisfiedwork">
                                      </div>
                                     <div class="col label-container">
-                                        <div class="label-slider">Very dissatisfied</div>
+                                        <div class="label-slider">Verydissatisfied</div>
                                         <div class="label-slider">Dissatisfied</div>
                                         <div class="label-slider">Neutral</div>
                                         <div class="label-slider">Satisfied</div>
-                                        <div class="label-slider">Very satisfied</div>
+                                        <div class="label-slider">Verysatisfied</div>
                                     </div>
                                    </div>
 
@@ -710,7 +765,7 @@
                               
                                 <div class="form-group"><p  style="color: green;display: inline;font-size: 12px;"><i class="fa fa-info-circle"></i> Please select all the fields  </p>
                                         <h5>Discover your personality - Please rank the importance of the following characteristics on a scale from (1) “disagree strongly” to (7) “agree strongly”</h5>  
-                                        <p id="textpersonality" style="display:none;color: red;font-size: 12px;"><i class="fa fa-info-circle"></i> This question is mandatory, Please compleate all the parts</p>
+                                        <p id="textpersonality" style="display:none;color: red;font-size: 12px;"><i class="fa fa-info-circle"></i>Please compleate all the parts</p>
                                         <div class="table-responsive">
                                         <table class="table">
                                               <thead>
@@ -1539,8 +1594,8 @@
                             <fieldset  id="preference">
                                 <p  style="color: green;display: inline;font-size: 12px;"><i class="fa fa-info-circle"></i> Please select all the fields  </p>
                                 <div class="form-group">
-                                        <h5>Discover your working preferences -  Please rank the importance of the following factors for your well-being at work on a scale from (1) &quot; very unimportant&quot; to (5) &quot; very important&quot;</h5>
-                                        <p id="textpreference" style="display:none;color: red;font-size: 12px;"><i class="fa fa-info-circle"></i> This question is mandatory, Please compleate all the parts</p>
+                                        <h5>Discover your working preferences -  Please rank the importance of the following factors for your well-being at work on a scale from (1) &quot;very unimportant&quot; to (5) &quot;very important&quot;</h5>
+                                        <p id="textpreference" style="display:none;color: red;font-size: 12px;"><i class="fa fa-info-circle"></i> Please compleate all the parts</p>
                                         <div class="table-responsive"> <table class="table">
                                               <thead>
                                                 <tr>
@@ -2234,7 +2289,31 @@
                                 </div>
                                 
                                 <div class="form-group"  >
-                                    <h5 style="display: inline;">2. What kind of office type or distribution would you prefer?</h5><span>  <p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following answers</p></span><p id="texerrg" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> This question is mandatory</p> 
+                                    <h5 style="display: inline;">2. What kind of office type or distribution would you prefer?</h5><span>  <p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following answers</p></span><span style ="padding-left: 15px;color: orange;cursor: grab;" class="glyphicon glyphicon-question-sign" data-toggle="modal" data-target="#offtoga" aria-hidden="true"></span><p id="texerrd" style="display:none;color: red;font-size: 12px;" ><p id="texerrg" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> Please compleate all the parts</p> 
+                                    
+                                        <div class="modal fade" id="offtoga" tabindex="-1" role="dialog" aria-labelledby="offModalLabela" aria-hidden="true">
+                                              <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                  <div class="modal-header">
+                                                    <p class="modal-title" id="offModalLabela"><strong>Explanation of options:</strong></p>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                      <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                    <p></p>
+                                                      <ul>
+                                                          <li><strong>Individual office:</strong> Closed office room with one workspace for one person</li>
+                                                          <li><strong>Combination office:</strong> Special type of individual office with glass walls on the door side and additional multifunctional zones (e. g. Meeting-points, printer zone, team storage)</li>
+                                                          <li><strong>Multi-person office:</strong> Closed office room with 2 – 5 workspaces</li>
+                                                          <li><strong>Group office:</strong> 6 – 20 workspaces distributed in one room</li>
+                                                          <li><strong>Open-plan office:</strong> More than 20 workspaces distributed in one room</li>
+                                                          <li><strong>Multi-space office:</strong> Office structure, which can not be clearly assigned to one office type: Flexible workplace concepts (e. g. Desk-sharing) with a broad range of meeting-, concentration- and recreation spaces</li>
+                                                     </ul>  
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
                                     <select class="form-control workdistributiona" id ="workdistributiona" name="workdistributiona">
                                         <option value="" selected="selected" disabled="disabled">-- select your office type --</option>
                                         <option value="1">Individual office (enclosed office, one workstation for one person)</option>
@@ -2247,7 +2326,7 @@
                                 </div>
                                 
                                 <div class="form-group"  >
-                                    <h5 style="display: inline;">3. I am most productive, when working...</h5><span>  <p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following answers</p></span><p id="texerrh" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> This question is mandatory</p>
+                                    <h5 style="display: inline;">3. I am most productive, when working...</h5><span>  <p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following answers</p></span><p id="texerrh" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> Please compleate all the parts</p>
                                     <select class="form-control" name="productivitywork" id ="productivitywork" >
                                         <option value="" selected="selected" disabled="disabled">-- select your workstation type --</option>
                                         <option value="1">Away from my desk</option>
@@ -2261,17 +2340,40 @@
                                 </div>
                                 
                                 <div class="form-group">
-                                    <h5 style="display: inline;">4. Which worktypology you would prefer?</h5><span>  <p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following answers</p></span><p id="texerri" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> This question is mandatory</p>
+                                    <h5 style="display: inline;">4. Which worktypology you would prefer?</h5><span>  <p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following answers</p></span><p id="texerri" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> Please compleate all the parts</p>
                                     <select class="form-control whereworkplaceprefera" id ="whereworkplaceprefer" name="whereworkplaceprefer">
                                         <option value="" selected="selected" disabled="disabled">-- select your worktypology  --</option>
                                         <option value="1">Stationary (usage of same workspace at the office)</option>
                                         <option value="2">Variable (usage of different workspaces at the office) </option>
-                                        <option value="3">Mobile, variable (home-office and usage of different workspaces at the office and outside of the office)</option>
+                                        <option value="3">Mobile, flexible (freely choose between different workspaces at the office, home-office and other locations outside of the office)</option>
                                     </select>
                                 </div>
                                 
                                 <div class="form-group"  >
-                                    <h5 style="display: inline;">5. Which working hour model would you prefer?</h5><span>  <p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following answers</p></span><p id="texerrj" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> This question is mandatory</p>
+                                    <h5 style="display: inline;">5. Which working hour model would you prefer?</h5><span>  <p  style="color: green;display: inline;font-size: 12px;margin-left: 20px"><i class="fa fa-info-circle"></i>  Please choose one of the following answers</p></span><span style ="padding-left: 15px;color: orange;cursor: grab;" class="glyphicon glyphicon-question-sign" data-toggle="modal" data-target="#hrtoga" aria-hidden="true"></span><p id="texerrj" style="display:none;color: red;font-size: 12px;" > <i class="fa fa-info-circle"></i> Please compleate all the parts</p>
+                                    <div class="modal fade" id="hrtoga" tabindex="-1" role="dialog" aria-labelledby="hrModalLabela" aria-hidden="true">
+                                              <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                  <div class="modal-header">
+                                                    <p class="modal-title" id="hrModalLabela"><strong>Explanation of options:</strong></p>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                      <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                    <p></p>
+                                                      <ul>
+                                                          <li><strong>Fixed working time: </strong> Fixed working time with central data acquisition of working hours</li>
+                                                          <li><strong>Flexible working time (with core time): </strong> Flexible working time with core time (e. g. office opening hours from 6 am - 6 pm and a core time with a obligation to appear at office from 9 am – 3 pm) and central data acquisition of working hours</li>
+                                                          <li><strong>Flexible working time (without core time) : </strong> Flexible working time without core time (e. g. office opening hours from 6 am – 6 pm) and central data acquisition of working hours</li>
+                                                          <li><strong>Trust based working time (with core time): </strong> Trust based working time with core time (e. g. office opening hours from 6 am - 6 pm and a core time with a obligation to appear at office from 9 am – 3 pm) and without or individual data acquisition of working hours</li>
+                                                          <li><strong>Trust based working time (without core time): </strong> Trust based working time without core time and without or individual data acquisition of working hours</li>
+                                                          
+                                                     </ul>  
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
                                     <select class="form-control" name="hourmodel" id="hourmodel">
                                         <option value="" selected="selected" disabled="disabled">-- select your working hour model  --</option>
                                         <option value="1">Fixed working time</option>
