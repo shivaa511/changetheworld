@@ -237,35 +237,35 @@
         document.getElementById("totalresa").innerHTML = valtextres;
         
         console.log(val6);
-        if(val1 > 3){
+        if(val1 >= 4){
             var resultstring1 = "Openness "
         }
         else{
             var resultstring1;
         }
         
-         if(val2 > 3){
+         if(val2 >= 4){
             var resultstring2 = "Conscientiousness "
         }
         else{
             var resultstring2;
         }
         
-         if(val3 > 3){
+         if(val3 >= 4){
             var resultstring3 = "Extraversion "
         }
         else{
             var resultstring3;
         }
         
-         if(val4 > 3){
+         if(val4 >= 4){
             var resultstring4 = "Agreeableness "
         }
         else{
             var resultstring4;
         }
         
-         if(val5 < 3){
+         if(val5 <= 4){
             var resultstring5 = "Neuroticism"
         }
         else{
@@ -291,7 +291,7 @@
         data = [{
               type: 'scatterpolar',
               r: [val1, val2, val3, val4, val5],
-              theta: ['Neuroticism','Extroversion','Openness', 'Agreeableness', 'Conscientiousness'],
+              theta: ['Openness','Conscientiousness','Extroversion', 'Agreeableness', 'Neuroticism'],
               fill: 'toself'
             }]
 
