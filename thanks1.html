@@ -237,35 +237,35 @@
         document.getElementById("totalresa").innerHTML = valtextres;
         
         console.log(val6);
-        if(val1 > 4){
+        if(val1 > 3){
             var resultstring1 = "Openness "
         }
         else{
             var resultstring1;
         }
         
-         if(val2 > 4){
+         if(val2 > 3){
             var resultstring2 = "Conscientiousness "
         }
         else{
             var resultstring2;
         }
         
-         if(val3 > 4){
+         if(val3 > 3){
             var resultstring3 = "Extraversion "
         }
         else{
             var resultstring3;
         }
         
-         if(val4 > 4){
+         if(val4 > 3){
             var resultstring4 = "Agreeableness "
         }
         else{
             var resultstring4;
         }
         
-         if(val5 < 4){
+         if(val5 < 3){
             var resultstring5 = "Neuroticism"
         }
         else{
@@ -274,7 +274,7 @@
             
         finalstring = [resultstring1, resultstring2, resultstring3, resultstring4, resultstring5].filter(Boolean).join(", ");
         
-        if(finalstring === "Error Occured"){
+        if(finalstring === ""){
             document.getElementById("final").innerHTML = ("You have not achieved a good score");
         }
         
