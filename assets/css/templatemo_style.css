@@ -11,7 +11,7 @@ body {
     -webkit-font-smoothing: antialiased;
  /* Fix for webkit rendering */
     -webkit-text-size-adjust: 100%;
-    background: url(../assests/img/templatemo_pagebg.jpg) no-repeat #ffffff top center;
+
 }
 
 html {
@@ -71,55 +71,10 @@ h1 {
     box-shadow: 0px 0px 7px #011933;
 }
 
-.gradient {
-	/* IE10+ */
-    background-image: -ms-radial-gradient(center, ellipse closest-corner, #ffffff 30%, #9fbed1 100%);
-	/* Mozilla Firefox */
-    background-image: -moz-radial-gradient(center, ellipse closest-corner, #ffffff 30%, #9fbed1 100%);
-	/* Opera */
-    background-image: -o-radial-gradient(center, ellipse closest-corner, #ffffff 30%, #9fbed1 100%);
-	/* Webkit (Safari/Chrome 10) */
-    background-image: -webkit-gradient(radial, center center, 0, center center, 286, color-stop(30, #ffffff), color-stop(100, #9fbed1));
-	/* Webkit (Chrome 11+) */
-    background-image: -webkit-radial-gradient(center, ellipse closest-corner, #ffffff 30%, #9fbed1 100%);
-	/* W3C Markup */
-    background-image: radial-gradient(ellipse closest-corner at center, #ffffff 30%, #9fbed1 100%);
-}
 
-.blue {
-    background-color: #14649b;
-    background-repeat: repeat-x;
-	/* Safari 4-5, Chrome 1-9 */
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0485d3), to(#0177bf));
-	/* Safari 5.1, Chrome 10+ */
-    background: -webkit-linear-gradient(top, #0485d3, #0177bf);
-	/* Firefox 3.6+ */
-    background: -moz-linear-gradient(top, #0485d3, #0177bf);
-	/* IE 10 */
-    background: -ms-linear-gradient(top, #0485d3, #0177bf);
-	/* Opera 11.10+ */
-    background: -o-linear-gradient(top, #0485d3, #0177bf);
-    padding: 5px 13px;
-    color: #ffffff;
-    outline: 1px solid #026cbe;
-    border: 1px solid #35a7eb;
-}
 
-.bluetext {
-    color: #0074ba;
-}
 
-.redtext {
-    color: #CC0000;
-}
 
-.greentext {
-    color: #009900;
-}
-
-.blue:hover {
-    background: #088dde;
-}
 
 .menu {
     position: absolute;
@@ -205,13 +160,6 @@ h1 {
     line-height: 25px;
 }
 
-.templatemo_hometop_more {
-    float: left;
-    text-shadow: 1px 1px #4b4b4b;
-    font-weight: 600;
-    font-size: 15px;
-    margin: 20px 0px 10px 0px;
-}
 
 .templatemo_home_mid, .templatemo_home_bot {
     margin-top: 30px;
@@ -251,79 +199,9 @@ h1 {
     margin: 0px 50px;
 }
 
-.templatemo_readmore {
-    width: 120px;
-    margin: 60px auto;
-    border: 1px solid #ffffff;
-    outline: 1px solid #82b4d4;
-    text-align: center;
-    line-height: 30px;
-    color: #0a71b3;
-    font-size: 14px;
-    font-weight: 600;
-}
 
-.templatemo_readmore a {
-    color: #0a71b3;
-}
 
-.templatemo_box:hover, .templatemo_box_last:hover {
-    background: #217eb9;
-    border-top: 1px solid #217eb9;
-    border-left: 1px solid #519dcd;
-    border-bottom: 1px solid #519dcd;
-    color: #ffffff;
-}
 
-.templatemo_box:hover div.templatemo_readmore a, .templatemo_box_last:hover div.templatemo_readmore a {
-    color: #ffffff;
-}
-
-.templatemo_box_last:hover {
-    border-right: 1px solid #519dcd;
-}
-
-.templatemo_box:hover div.boxsub1, .templatemo_box_last:hover div.boxsub1 {
-    background: rgba(16,88,130,1);
-    background: -moz-linear-gradient(-45deg, rgba(16,88,130,1) 0%, rgba(18,95,139,0) 28%, rgba(23,112,163,0) 100%);
-    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(16,88,130,1)), color-stop(28%, rgba(18,95,139,0)), color-stop(100%, rgba(23,112,163,0)));
-    background: -webkit-linear-gradient(-45deg, rgba(16,88,130,1) 0%, rgba(18,95,139,0) 28%, rgba(23,112,163,0) 100%);
-    background: -o-linear-gradient(-45deg, rgba(16,88,130,1) 0%, rgba(18,95,139,0) 28%, rgba(23,112,163,0) 100%);
-    background: -ms-linear-gradient(-45deg, rgba(16,88,130,1) 0%, rgba(18,95,139,0) 28%, rgba(23,112,163,0) 100%);
-    background: linear-gradient(135deg, rgba(16,88,130,1) 0%, rgba(18,95,139,0) 28%, rgba(23,112,163,0) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#105882', endColorstr='#1770a3', GradientType=1 );
-    margin: 0px -2px;
-   
-}
-
-.templatemo_box:hover div.boxsub2, .templatemo_box_last:hover div.boxsub2 {
-    background: rgba(23,112,163,0);
-    background: -moz-linear-gradient(45deg, rgba(23,112,163,0) 0%, rgba(18,95,139,0) 72%, rgba(16,88,130,1) 100%);
-    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(23,112,163,0)), color-stop(72%, rgba(18,95,139,0)), color-stop(100%, rgba(16,88,130,1)));
-    background: -webkit-linear-gradient(45deg, rgba(23,112,163,0) 0%, rgba(18,95,139,0) 72%, rgba(16,88,130,1) 100%);
-    background: -o-linear-gradient(45deg, rgba(23,112,163,0) 0%, rgba(18,95,139,0) 72%, rgba(16,88,130,1) 100%);
-    background: -ms-linear-gradient(45deg, rgba(23,112,163,0) 0%, rgba(18,95,139,0) 72%, rgba(16,88,130,1) 100%);
-    background: linear-gradient(45deg, rgba(23,112,163,0) 0%, rgba(18,95,139,0) 72%, rgba(16,88,130,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1770a3', endColorstr='#105882', GradientType=1 );
-    
-}
-
-.templatemo_box:hover div.templatemo_home_midheader, .templatemo_box_last:hover div.templatemo_home_midheader {
-    color: #fff;
-}
-
-.templatemo_box:hover div.templatemo_readmore, .templatemo_box_last:hover div.templatemo_readmore {
-    width: 120px;
-    margin: 30px auto 20;
-    border: 1px solid #0f95e5;
-    outline: 1px solid #025c92;
-    text-align: center;
-    line-height: 30px;
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 600;
-    background: #1e7ebc;
-}
 
 .templatemo_home_botheader {
     font-size: 22px;
@@ -373,22 +251,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-.templatemo_who {
-	/* IE10+ */
-    background-image: -ms-radial-gradient(center, ellipse closest-corner, #e9f0f5 0%, #96b7cb 100%);
-	/* Mozilla Firefox */
-    background-image: -moz-radial-gradient(center, ellipse closest-corner, #e9f0f5 0%, #96b7cb 100%);
-	/* Opera */
-    background-image: -o-radial-gradient(center, ellipse closest-corner, #e9f0f5 0%, #96b7cb 100%);
-	/* Webkit (Safari/Chrome 10) */
-    background-image: -webkit-gradient(radial, center center, 0, center center, 286, color-stop(0, #e9f0f5), color-stop(100, #96b7cb));
-	/* Webkit (Chrome 11+) */
-    background-image: -webkit-radial-gradient(center, ellipse closest-corner, #e9f0f5 0%, #96b7cb 100%);
-	/* W3C Markup */
-    background-image: radial-gradient(ellipse closest-corner at center, #e9f0f5 0%, #96b7cb 100%);
-    text-align: center;
-    padding: 50px 0px;
-}
+
 
 .templatemo_about_text {
     margin: 20px 100px;
